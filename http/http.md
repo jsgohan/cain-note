@@ -2,7 +2,9 @@
 ![](http://i.imgur.com/SmcLRqL.png)
 ![](http://i.imgur.com/awh0LmB.png)
 ## HTTP协议简介
+
 >http协议(超文本传输协议HyperText Transfer Protocol)，它是基于TCP协议的应用层传输协议，简单来说就是客户端和服务端进行数据传输的一种规则。
+
 ## URL
 http url包含了用于查找某个资源的详细信息,格式如下
 
