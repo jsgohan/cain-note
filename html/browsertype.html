@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div><span>语言版本：</span><span id="one"></span></div>
+<div><span>是否为移动终端：</span><span id="two"></span></div>
+<div><span>ios终端：</span><span id="three"></span></div>
+<div><span>android终端：</span><span id="four"></span></div>
+<div><span>是否为iPhone：</span><span id="five"></span></div>
+<div><span>是否iPad：</span><span id="six"></span></div>
+<div><span>navigator.userAgent信息：</span><span id="info"></span></div>
+
+
+</body>
+<script type="text/javascript">
+window.onload = function(){
+
+/*
+* 智能机浏览器版本信息:
+*/
+var browser={
+versions:function(){
+var u = navigator.userAgent, app = navigator.appVersion;
+return {//移动终端浏览器版本信息
+trident: u.indexOf('Trident') > -1, //IE内核
+presto: u.indexOf('Presto') > -1, //opera内核
+webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
+ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQ HD浏览器
+iPad: u.indexOf('iPad') > -1, //是否iPad
+webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+};
+}(),
+language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
+
+document.getElementById("one").innerHTML = browser.language;
+document.getElementById("two").innerHTML = browser.versions.mobile;
+document.getElementById("three").innerHTML = browser.versions.ios;
+document.getElementById("four").innerHTML = browser.versions.android;
+document.getElementById("five").innerHTML = browser.versions.iPhone;
+document.getElementById("six").innerHTML = browser.versions.iPad;
+document.getElementById("info").innerHTML = navigator.userAgent;
+}
+</script>
+</html>
