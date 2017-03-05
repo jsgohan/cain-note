@@ -1,0 +1,42 @@
+<!-- 阿里高清方案 -->  
+<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
+    flex(100, 1);</script>
+
+<link rel="stylesheet" href="css/demo.css"/>
+<!-- 字形图标 -->
+<script src="https://use.fontawesome.com/f47f4563cb.js"></script>
+
+
+<div class="box">
+  <img src="http://temp.im/640x260/444/fff" class="img-responsive">
+  <ul style="font-size:0.3rem; padding: 0.2rem">
+    <li style="font-size:0.4rem"><a href="http://www.jianshu.com/p/985d26b40199">rem布局（进阶版）的一些说明</a></li>
+    <li>1，大家先把这个页面在不同设备模式下浏览下，感受下。</li>
+    <li>2，一般来说我们的手机端效果图是640px或750px。</li>
+    <li>3，对于上图这类需要等屏宽的图片，只需让其宽度设为 100% 即可。</li>
+    <li>4，该布局方案要求凡是涉及尺寸的，单位都是rem，比如，height width margin paddint top border-radius 等等。你只需要按照效果图上标注的尺寸布局即可。</li>
+  </ul>
+  <div class="navRoot">
+    <a href="#" class="navLink active">
+      <i class="fa fa-home navLinkIco" aria-hidden="true"></i>
+      <span class="navLinkText">首页</span>
+    </a>
+    <a href="#" class="navLink">
+      <i class="fa fa-home navLinkIco" aria-hidden="true"></i>
+      <span class="navLinkText">好店</span>
+    </a>
+    <a href="#" class="navLink">
+      <i class="fa fa-home navLinkIco" aria-hidden="true"></i>
+      <span class="navLinkText">简单</span>
+    </a>
+    <a href="#" class="navLink">
+      <i class="fa fa-home navLinkIco" aria-hidden="true"></i>
+      <span class="navLinkText">复杂</span>
+    </a>
+    <a href="#" class="navLink">
+      <i class="fa fa-home navLinkIco" aria-hidden="true"></i>
+      <span class="navLinkText">异步</span>
+    </a>
+  </div>
+  
+</div>
