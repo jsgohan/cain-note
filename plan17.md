@@ -4,7 +4,9 @@
 
 - vue、pc组件：（elementui、muse-ui、vue material、iview、vuetify、radon-ui、vue-antd、keen-ui）
 
-  移动端组件：（vue-admin、vux、vonic、vue-mui、mintui、vue-weui、vum）、服务端渲染（nuxt.js）、模板引擎（vue模板引擎）
+  移动端组件：（vue-admin、vux、vonic、vue-mui、mintui、vue-weui、N3-components、vum）、服务端渲染（nuxt.js）、模板引擎（vue模板引擎）
+
+  - OnsenUI  Mobile app development framework and SDK using HTML5 and JavaScript. Create beautiful and performant cross-platform mobile apps. Based on Web Components, and provides bindings for Angular 1, 2, React and Vue.js.
 
 - js基础（面向对象的程序设计、函数表达式、dom、事件、Ajax和comet、离线应用与客户端存储）、typescript、sass（，less，stylus，postcss）、手机适配
 
@@ -107,6 +109,7 @@ vue-flatpickr  Flatpickr for VueJS
 vue-occupy  A Vue directive for occupying content places before the data has been loaded
 vue-trend  曲线图
 vue-desktop A UI library for building admin panel website.
+vue-kit  base on vue-webpack template(vue 2.x and vue-router 2.x), with bulma, chart.js, font awesome, Weui. Aims to be a quick start for building demo applications or product prototypes.
 markcook A smart and beautiful markdown editor
 json-server 模拟服务端json(Mock.js)
 dreamjs  A lightweight json data generator.
@@ -257,6 +260,8 @@ flatpickr  原生js编写的日历控件
 nativefier  Make any web page a desktop application
 commander.js  node.js command-line interfaces made easy
 PubSubJS  Dependency free publish/subscribe for JavaScript
+bulma  Modern CSS framework based on Flexbox
+Chart.js  图表
 ```
 
 ## 2017-2018前端
