@@ -14,6 +14,8 @@ window.frames['frameName'];//根据框架名称获取子框架的window对象
 
 window.frames['frameName'].functionName;//父框架调用子框架的方法
 
+frameName.document.getElementById("childid")
+
 ## 兄弟框架之间的引用
 
 self.parent.frames['frameName'];
