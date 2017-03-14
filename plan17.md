@@ -262,6 +262,11 @@ commander.js  node.js command-line interfaces made easy
 PubSubJS  Dependency free publish/subscribe for JavaScript
 bulma  Modern CSS framework based on Flexbox
 Chart.js  图表
+my-git 有关 git 的学习资料
+rasterizeHTML.js  Renders HTML into the browser's canvas
+MarkdownIME  A fresh way to write well-formatted text, by typing markdownized stuff on web
+log4js-node  A port of log4js to node.js
+Sortable  Sortable — is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. 
 ```
 
 ## 2017-2018前端

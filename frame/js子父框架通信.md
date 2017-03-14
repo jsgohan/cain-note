@@ -10,7 +10,9 @@ parent.document.getElementById("id");//根据id获取父框架对象
 
 document.getElementById("id").contentWindow.document.getElementById("childId");//根据子窗口Id获取子框架内容，获取框架对象
 
-window.frames['frameName'];//根据框架名称获取子框架的window对象
+window.frameName<==>window.frames['frameName']<==>window.frames.namedItem('frameName');//根据框架名称获取子框架的window对象
+
+window.frames[id]<==>window.frames.item(id)
 
 window.frames['frameName'].functionName;//父框架调用子框架的方法
 
