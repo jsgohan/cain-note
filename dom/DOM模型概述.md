@@ -1083,3 +1083,611 @@ document.writeln(2);
 ```
 
 注意，`writeln`方法添加的是ASCII码的换行符，渲染成HTML网页时不起作用，即在网页上显示不出换行。
+
+## 查找节点的方法
+
+以下方法用来查找某个节点。
+
+### document.querySelector()，document.querySelectorAll()
+
+`document.querySelector`方法接受一个CSS选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回`null`。
+
+```
+var el1 = document.querySelector('.myclass');
+var el2 = document.querySelector('#myParent > [ng-click]');
+
+```
+
+`document.querySelectorAll`方法与`querySelector`用法类似，区别是返回一个`NodeList`对象，包含所有匹配给定选择器的节点。
+
+```
+elementList = document.querySelectorAll('.myclass');
+
+```
+
+这两个方法的参数，可以是逗号分隔的多个CSS选择器，返回匹配其中一个选择器的元素节点。
+
+```
+var matches = document.querySelectorAll('div.note, div.alert');
+
+```
+
+上面代码返回`class`属性是`note`或`alert`的`div`元素。
+
+这两个方法都支持复杂的CSS选择器。
+
+```
+// 选中data-foo-bar属性等于someval的元素
+document.querySelectorAll('[data-foo-bar="someval"]');
+
+// 选中myForm表单中所有不通过验证的元素
+document.querySelectorAll('#myForm :invalid');
+
+// 选中div元素，那些class含ignore的除外
+document.querySelectorAll('DIV:not(.ignore)');
+
+// 同时选中div，a，script三类元素
+document.querySelectorAll('DIV, A, SCRIPT');
+
+```
+
+但是，它们不支持CSS伪元素的选择器（比如`:first-line`和`:first-letter`）和伪类的选择器（比如`:link`和`:visited`），即无法选中伪元素和伪类。
+
+如果`querySelectorAll`方法的参数是字符串`*`，则会返回文档中的所有HTML元素节点。另外，`querySelectorAll`的返回结果不是动态集合，不会实时反映元素节点的变化。
+
+最后，这两个方法除了定义在`document`对象上，还定义在元素节点上，即在元素节点上也可以调用。
+
+### document.getElementsByTagName()
+
+`document.getElementsByTagName`方法返回所有指定HTML标签的元素，返回值是一个类似数组的`HTMLCollection`对象，可以实时反映HTML文档的变化。如果没有任何匹配的元素，就返回一个空集。
+
+```
+var paras = document.getElementsByTagName('p');
+
+paras instanceof HTMLCollection // true
+
+```
+
+上面代码返回当前文档的所有`p`元素节点。
+
+HTML标签名是大小写不敏感的，因此`getElementsByTagName`方法也是大小写不敏感的。另外，返回结果中，各个成员的顺序就是它们在文档中出现的顺序。
+
+如果传入`*`，就可以返回文档中所有HTML元素。
+
+```
+var allElements = document.getElementsByTagName('*');
+
+```
+
+注意，HTML元素本身也定义了`getElementsByTagName`方法，返回该元素的后代元素中符合指定标签的元素。也就是说，这个方法不仅可以在`document`对象上调用，也可以在任何元素节点上调用。
+
+```
+var firstPara = document.getElementsByTagName('p')[0];
+var spans = firstPara.getElementsByTagName('span');
+
+```
+
+上面代码选中第一个`p`元素内部的所有`span`元素。
+
+### document.getElementsByClassName()
+
+`document.getElementsByClassName`方法返回一个类似数组的对象（`HTMLCollection`实例对象），包括了所有`class`名字符合指定条件的元素，元素的变化实时反映在返回结果中。
+
+```
+var elements = document.getElementsByClassName(names);
+
+```
+
+由于`class`是保留字，所以JavaScript一律使用`className`表示CSS的`class`。
+
+如果参数是一个空格分隔的字符串，元素的`class`必须符合所有字符串之中所有的`class`才会返回。
+
+```
+var elements = document.getElementsByClassName('foo bar');
+
+```
+
+上面代码返回同时具有`foo`和`bar`两个`class`的元素，`foo`和`bar`的顺序不重要。
+
+注意，正常模式下，CSS的`class`是大小写敏感的。（`quirks mode`下，大小写不敏感。）
+
+与`getElementsByTagName`方法一样，`getElementsByClassName`方法不仅可以`在document`对象上调用，也可以在任何元素节点上调用。
+
+```
+// 非document对象上调用
+var elements = rootElement.getElementsByClassName(names);
+
+```
+
+### document.getElementsByName()
+
+`document.getElementsByName`方法用于选择拥有`name`属性的HTML元素（比如`<form>`、`<radio>`、`<img>`、`<frame>`、`<embed>`和`<object>`等），返回一个类似数组的的对象（`NodeList`对象的实例），因为`name`属性相同的元素可能不止一个。
+
+```
+// 表单为 <form name="x"></form>
+var forms = document.getElementsByName('x');
+forms[0].tagName // "FORM"
+
+```
+
+### getElementById()
+
+`getElementById`方法返回匹配指定`id`属性的元素节点。如果没有发现匹配的节点，则返回`null`。
+
+```
+var elem = document.getElementById('para1');
+
+```
+
+注意，该方法的参数是大小写敏感的。比如，如果某个节点的`id`属性是`main`，那么`document.getElementById('Main')`将返回`null`，而不是那个节点。
+
+`document.getElementById`方法与`document.querySelector`方法都能获取元素节点，不同之处是`document.querySelector`方法的参数使用CSS选择器语法，`document.getElementById`方法的参数是HTML标签元素的`id`属性。
+
+```
+document.getElementById('myElement')
+document.querySelector('#myElement')
+
+```
+
+上面代码中，两个方法都能选中`id`为`myElement`的元素，但是`getElementById()`比`querySelector()`效率高得多。
+
+另外，这个方法只能在`document`对象上使用，不能在其他元素节点上使用。
+
+### document.elementFromPoint()
+
+`document.elementFromPoint`方法返回位于页面指定位置最上层的Element子节点。
+
+```
+var element = document.elementFromPoint(50, 50);
+
+```
+
+上面代码选中在`(50, 50)`这个坐标位置的最上层的那个HTML元素。
+
+`elementFromPoint`方法的两个参数，依次是相对于当前视口左上角的横坐标和纵坐标，单位是像素。如果位于该位置的HTML元素不可返回（比如文本框的滚动条），则返回它的父元素（比如文本框）。如果坐标值无意义（比如负值或超过视口大小），则返回`null`。
+
+## 生成节点的方法
+
+以下方法用于生成元素节点。
+
+### document.createElement()
+
+`document.createElement`方法用来生成网页元素节点。
+
+```
+var newDiv = document.createElement('div');
+
+```
+
+`createElement`方法的参数为元素的标签名，即元素节点的`tagName`属性，对于 HTML 网页大小写不敏感，即参数为`div`或`DIV`返回的是同一种节点。如果参数里面包含尖括号（即`<`和`>`）会报错。
+
+```
+document.createElement('<div>')
+// DOMException: The tag name provided ('<div>') is not a valid name
+
+```
+
+### document.createTextNode()
+
+`document.createTextNode`方法用来生成文本节点，参数为所要生成的文本节点的内容。
+
+```
+var newDiv = document.createElement('div');
+var newContent = document.createTextNode('Hello');
+newDiv.appendChild(newContent);
+
+```
+
+上面代码新建一个`div`节点和一个文本节点，然后将文本节点插入`div`节点。
+
+这个方法可以确保返回的节点，被浏览器当作文本渲染，而不是当作HTML代码渲染。因此，可以用来展示用户的输入，避免XSS攻击。
+
+```
+var div = document.createElement('div');
+div.appendChild(document.createTextNode('<span>Foo & bar</span>'));
+console.log(div.innerHTML)
+// &lt;span&gt;Foo &amp; bar&lt;/span&gt;
+
+```
+
+上面代码中，`createTextNode`方法对大于号和小于号进行转义，从而保证即使用户输入的内容包含恶意代码，也能正确显示。
+
+需要注意的是，该方法不对单引号和双引号转义，所以不能用来对HTML属性赋值。
+
+```
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+var userWebsite = '" onmouseover="alert(\'derp\')" "';
+var profileLink = '<a href="' + escapeHtml(userWebsite) + '">Bob</a>';
+var div = document.getElemenetById('target');
+div.innerHtml = profileLink;
+// <a href="" onmouseover="alert('derp')" "">Bob</a>
+
+```
+
+上面代码中，由于`createTextNode`方法不转义双引号，导致`onmouseover`方法被注入了代码。
+
+### document.createAttribute()
+
+`document.createAttribute`方法生成一个新的属性对象节点，并返回它。
+
+```
+attribute = document.createAttribute(name);
+
+```
+
+createAttribute方法的参数name，是属性的名称。
+
+```
+var node = document.getElementById("div1");
+var a = document.createAttribute("my_attrib");
+a.value = "newVal";
+node.setAttributeNode(a);
+
+// 等同于
+
+var node = document.getElementById("div1");
+node.setAttribute("my_attrib", "newVal");
+
+```
+
+### document.createDocumentFragment()
+
+createDocumentFragment方法生成一个DocumentFragment对象。
+
+```
+var docFragment = document.createDocumentFragment();
+
+```
+
+DocumentFragment对象是一个存在于内存的DOM片段，但是不属于当前文档，常常用来生成较复杂的DOM结构，然后插入当前文档。这样做的好处在于，因为DocumentFragment不属于当前文档，对它的任何改动，都不会引发网页的重新渲染，比直接修改当前文档的DOM有更好的性能表现。
+
+```
+var docfrag = document.createDocumentFragment();
+
+[1, 2, 3, 4].forEach(function(e) {
+  var li = document.createElement("li");
+  li.textContent = e;
+  docfrag.appendChild(li);
+});
+
+document.body.appendChild(docfrag);
+```
+
+## 事件相关的方法
+
+### document.createEvent()
+
+`document.createEvent`方法生成一个事件对象，该对象可以被`element.dispatchEvent`方法使用，触发指定事件。
+
+```
+var event = document.createEvent(type);
+
+```
+
+createEvent方法的参数是事件类型，比如UIEvents、MouseEvents、MutationEvents、HTMLEvents。
+
+```
+var event = document.createEvent('Event');
+event.initEvent('build', true, true);
+document.addEventListener('build', function (e) {
+  // ...
+}, false);
+document.dispatchEvent(event);
+
+```
+
+### document.addEventListener()，document.removeEventListener()，document.dispatchEvent()
+
+以下三个方法与`document`节点的事件相关。这些方法都继承自EventTarget接口
+
+```
+// 添加事件监听函数
+document.addEventListener('click', listener, false);
+
+// 移除事件监听函数
+document.removeEventListener('click', listener, false);
+
+// 触发事件
+var event = new Event('click');
+document.dispatchEvent(event);
+```
+
+## 其他方法
+
+### document.hasFocus()
+
+`document.hasFocus`方法返回一个布尔值，表示当前文档之中是否有元素被激活或获得焦点。
+
+```
+var focused = document.hasFocus();
+
+```
+
+注意，有焦点的文档必定被激活（active），反之不成立，激活的文档未必有焦点。比如如果用户点击按钮，从当前窗口跳出一个新窗口，该新窗口就是激活的，但是不拥有焦点。
+
+### document.createNodeIterator()，document.createTreeWalker()
+
+以下方法用于遍历元素节点。
+
+**（1）document.createNodeIterator()**
+
+`document.createNodeIterator`方法返回一个DOM的子节点遍历器。
+
+```
+var nodeIterator = document.createNodeIterator(
+  document.body,
+  NodeFilter.SHOW_ELEMENT
+);
+
+```
+
+上面代码返回body元素的遍历器。createNodeIterator方法的第一个参数为遍历器的根节点，第二个参数为所要遍历的节点类型，这里指定为元素节点。其他类型还有所有节点（NodeFilter.SHOW_ALL）、文本节点（NodeFilter.SHOW_TEXT）、评论节点（NodeFilter.SHOW_COMMENT）等。
+
+所谓“遍历器”，在这里指可以用nextNode方法和previousNode方法依次遍历根节点的所有子节点。
+
+```
+var nodeIterator = document.createNodeIterator(document.body);
+var pars = [];
+var currentNode;
+
+while (currentNode = nodeIterator.nextNode()) {
+  pars.push(currentNode);
+}
+
+```
+
+上面代码使用遍历器的nextNode方法，将根节点的所有子节点，按照从头部到尾部的顺序，读入一个数组。nextNode方法先返回遍历器的内部指针所在的节点，然后会将指针移向下一个节点。所有成员遍历完成后，返回null。previousNode方法则是先将指针移向上一个节点，然后返回该节点。
+
+```
+var nodeIterator = document.createNodeIterator(
+  document.body,
+  NodeFilter.SHOW_ELEMENT
+);
+
+var currentNode = nodeIterator.nextNode();
+var previousNode = nodeIterator.previousNode();
+
+currentNode === previousNode // true
+
+```
+
+上面代码中，currentNode和previousNode都指向同一个的节点。
+
+有一个需要注意的地方，遍历器返回的第一个节点，总是根节点。
+
+**（2）document.createTreeWalker()**
+
+`document.createTreeWalker`方法返回一个DOM的子树遍历器。它与createNodeIterator方法的区别在于，后者只遍历子节点，而它遍历整个子树。
+
+`document.createTreeWalker`方法的第一个参数，是所要遍历的根节点，第二个参数指定所要遍历的节点类型。
+
+```
+var treeWalker = document.createTreeWalker(
+  document.body,
+  NodeFilter.SHOW_ELEMENT
+);
+
+var nodeList = [];
+
+while(treeWalker.nextNode()) nodeList.push(treeWalker.currentNode);
+
+```
+
+上面代码遍历body节点下属的所有元素节点，将它们插入nodeList数组。
+
+### document.adoptNode()
+
+`document.adoptNode`方法将某个节点，从其原来所在的文档移除，插入当前文档，并返回插入后的新节点。
+
+```
+node = document.adoptNode(externalNode);
+
+```
+
+### document.importNode()
+
+`document.importNode`方法从外部文档拷贝指定节点，插入当前文档。
+
+```
+var node = document.importNode(externalNode, deep);
+
+```
+
+`document.importNode`方法用于创造一个外部节点的拷贝，然后插入当前文档。它的第一个参数是外部节点，第二个参数是一个布尔值，表示对外部节点是深拷贝还是浅拷贝，默认是浅拷贝（false）。虽然第二个参数是可选的，但是建议总是保留这个参数，并设为`true`。
+
+注意，`importNode方法`只是拷贝外部节点，这时该节点的父节点是null。下一步还必须将这个节点插入当前文档的DOM树。
+
+```
+var iframe = document.getElementsByTagName('iframe')[0];
+var oldNode = iframe.contentWindow.document.getElementById('myNode');
+var newNode = document.importNode(oldNode, true);
+document.getElementById("container").appendChild(newNode);
+
+```
+
+上面代码从`iframe`窗口，拷贝一个指定节点`myNode`，插入当前文档。
+
+### document.getSelection()
+
+这个方法指向`window.getSelection()`
+
+# Element对象
+
+## 特征相关的属性
+
+以下属性与元素特点本身的特征相关。
+
+### Element.attributes
+
+`Element.attributes`属性返回一个类似数组的对象，成员是当前元素节点的所有属性节点，详见本章《属性的操作》一节。
+
+### Element.id，Element.tagName
+
+`Element.id`属性返回指定元素的`id`属性，该属性可读写。
+
+`Element.tagName`属性返回指定元素的大写标签名，与`nodeName`属性的值相等。
+
+```
+// HTML代码为
+// <span id="myspan">Hello</span>
+var span = document.getElementById('myspan');
+span.id // "myspan"
+span.tagName // "SPAN"
+
+```
+
+### Element.innerHTML
+
+`Element.innerHTML`属性返回该元素包含的HTML代码。该属性可读写，常用来设置某个节点的内容。
+
+如果将该属性设为空，等于删除所有它包含的所有节点。
+
+```
+el.innerHTML = '';
+
+```
+
+上面代码等于将`el`节点变成了一个空节点，`el`原来包含的节点被全部删除。
+
+注意，如果文本节点中包含`&`、小于号（`<`）和大于号（`>`），`innerHTML`属性会将它们转为实体形式`&amp;`、`&lt;`、`&gt;`。
+
+```
+// HTML代码如下 <p id="para"> 5 > 3 </p>
+document.getElementById('para').innerHTML
+// 5 &gt; 3
+
+```
+
+由于上面这个原因，导致用`innerHTML`插入`<script>`标签，不会被执行。
+
+```
+var name = "<script>alert('haha')</script>";
+el.innerHTML = name;
+
+```
+
+上面代码将脚本插入内容，脚本并不会执行。但是，`innerHTML`还是有安全风险的。
+
+```
+var name = "<img src=x onerror=alert(1)>";
+el.innerHTML = name;
+
+```
+
+上面代码中，`alert`方法是会执行的。因此为了安全考虑，如果插入的是文本，最好用`textContent`属性代替`innerHTML`。
+
+### Element.outerHTML
+
+`Element.outerHTML`属性返回一个字符串，内容为指定元素节点的所有HTML代码，包括它自身和包含的所有子元素。
+
+```
+// HTML代码如下
+// <div id="d"><p>Hello</p></div>
+
+d = document.getElementById('d');
+d.outerHTML
+// '<div id="d"><p>Hello</p></div>'
+
+```
+
+`outerHTML`属性是可读写的，对它进行赋值，等于替换掉当前元素。
+
+```
+// HTML代码如下
+// <div id="container"><div id="d">Hello</div></div>
+
+container = document.getElementById('container');
+d = document.getElementById("d");
+container.firstChild.nodeName // "DIV"
+d.nodeName // "DIV"
+
+d.outerHTML = '<p>Hello</p>';
+container.firstChild.nodeName // "P"
+d.nodeName // "DIV"
+
+```
+
+上面代码中，`outerHTML`属性重新赋值以后，内层的`div`元素就不存在了，被`p`元素替换了。但是，变量`d`依然指向原来的`div`元素，这表示被替换的`DIV`元素还存在于内存中。
+
+### Element.className，Element.classList
+
+`className`属性用来读写当前元素节点的`class`属性。它的值是一个字符串，每个`class`之间用空格分割。
+
+`classList`属性则返回一个类似数组的对象，当前元素节点的每个`class`就是这个对象的一个成员。
+
+```
+<div class="one two three" id="myDiv"></div>
+
+```
+
+上面这个`div`元素的节点对象的`className`属性和`classList`属性，分别如下。
+
+```
+document.getElementById('myDiv').className
+// "one two three"
+
+document.getElementById('myDiv').classList
+// {
+//   0: "one"
+//   1: "two"
+//   2: "three"
+//   length: 3
+// }
+
+```
+
+从上面代码可以看出，`className`属性返回一个空格分隔的字符串，而`classList`属性指向一个类似数组的对象，该对象的`length`属性（只读）返回当前元素的`class`数量。
+
+classList对象有下列方法。
+
+- add()：增加一个class。
+- remove()：移除一个class。
+- contains()：检查当前元素是否包含某个class。
+- toggle()：将某个class移入或移出当前元素。
+- item()：返回指定索引位置的class。
+- toString()：将class的列表转为字符串。
+
+```
+myDiv.classList.add('myCssClass');
+myDiv.classList.add('foo', 'bar');
+myDiv.classList.remove('myCssClass');
+myDiv.classList.toggle('myCssClass'); // 如果myCssClass不存在就加入，否则移除
+myDiv.classList.contains('myCssClass'); // 返回 true 或者 false
+myDiv.classList.item(0); // 返回第一个Class
+myDiv.classList.toString();
+
+```
+
+下面比较一下，className和classList在添加和删除某个类时的写法。
+
+```
+// 添加class
+document.getElementById('foo').className += 'bold';
+document.getElementById('foo').classList.add('bold');
+
+// 删除class
+document.getElementById('foo').classList.remove('bold');
+document.getElementById('foo').className =
+  document.getElementById('foo').className.replace(/^bold$/, '');
+
+```
+
+toggle方法可以接受一个布尔值，作为第二个参数。如果为`true`，则添加该属性；如果为`false`，则去除该属性。
+
+```
+el.classList.toggle('abc', boolValue);
+
+// 等同于
+
+if (boolValue){
+  el.classList.add('abc');
+} else {
+  el.classList.remove('abc');
+}
+```
+
