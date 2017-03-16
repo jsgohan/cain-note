@@ -216,7 +216,6 @@ var ulElementChildNodes = document.querySelector('ul').childNodes;
     document.getElementById('para-01').firstChild.nodeName
   ) // "#text"
 </script>
-
 ```
 
 上面代码中，`p`元素与`span`元素之间有空白字符，这导致`firstChild`返回的是文本节点。
@@ -1180,7 +1179,6 @@ var elements = document.getElementsByClassName(names);
 
 ```
 var elements = document.getElementsByClassName('foo bar');
-
 ```
 
 上面代码返回同时具有`foo`和`bar`两个`class`的元素，`foo`和`bar`的顺序不重要。
@@ -1534,7 +1532,6 @@ document.getElementById("container").appendChild(newNode);
 var span = document.getElementById('myspan');
 span.id // "myspan"
 span.tagName // "SPAN"
-
 ```
 
 ### Element.innerHTML
@@ -1605,7 +1602,6 @@ d.nodeName // "DIV"
 d.outerHTML = '<p>Hello</p>';
 container.firstChild.nodeName // "P"
 d.nodeName // "DIV"
-
 ```
 
 上面代码中，`outerHTML`属性重新赋值以后，内层的`div`元素就不存在了，被`p`元素替换了。但是，变量`d`依然指向原来的`div`元素，这表示被替换的`DIV`元素还存在于内存中。
@@ -1690,14 +1686,14 @@ if (boolValue){
 
 ### 相关汇总
 
-| 属性名称                                     | 包括盒模型                      | 从元素中获取(对于整个网页来说)                       |
-| ---------------------------------------- | -------------------------- | -------------------------------------- |
-| Element.clientHeight/Element.clientWidth | 包括Padding,不包括滚动条、边框和Margin | document.documentElement               |
-| Element.clientLeft/Element.clientTop     | 包括滚动条，不包括Padding和Margin    | -                                      |
-| Element.scrollHeight/Element.scrollWidth | 包括padding，不包括边框和margin     | document.documentElement/document.body |
-| Element.scrollLeft/Element.scrollTop     | -                          | document.body                          |
-| Element.offsetHeight/Element.offsetWidth | 包括padding/border/滚动        | document.documentElement/document.body |
-| Element.offsetLeft/Element.offsetTop     | -                          | -                                      |
+| 属性名称                                     | 包括盒模型                      | 从元素中获取(对于整个网页来说)                         |
+| ---------------------------------------- | -------------------------- | ---------------------------------------- |
+| Element.clientHeight/Element.clientWidth | 包括Padding,不包括滚动条、边框和Margin | document.documentElement                 |
+| Element.clientLeft/Element.clientTop     | 包括滚动条，不包括Padding和Margin    | -                                        |
+| Element.scrollHeight/Element.scrollWidth | 包括padding，不包括边框和margin     | document.documentElement/document.body   |
+| Element.scrollLeft/Element.scrollTop     | -                          | document.body（在CSS1Compat中，document.documentElement） |
+| Element.offsetHeight/Element.offsetWidth | 包括padding/border/滚动        | document.documentElement/document.body   |
+| Element.offsetLeft/Element.offsetTop     | -                          | -                                        |
 
 ### Element.clientHeight，Element.clientWidth
 
@@ -2227,7 +2223,6 @@ d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
 ```
 var el = document.getElementById('div-01');
 el.remove();
-
 ```
 
 ### Element.focus()
