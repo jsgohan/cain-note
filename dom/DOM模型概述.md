@@ -348,7 +348,6 @@ var element = document.getElementById('top');
 while (element.firstChild) {
   element.removeChild(element.firstChild);
 }
-
 ```
 
 被移除的节点依然存在于内存之中，但不再是DOM的一部分。所以，一个节点移除以后，依然可以使用它，比如插入到另一个节点下面。
@@ -534,7 +533,7 @@ nodeItem = nodeList[index]
 
 ### HTMLCollection对象
 
-`HTMLCollection`实例对象与`NodeList`实例对象类似，也是节点的集合，返回一个类似数组的对象。`document.frames、document.links`、`docuement.forms`、`document.images`等属性，返回的都是`HTMLCollection`实例对象。
+`HTMLCollection`实例对象与`NodeList`实例对象类似，也是节点的集合，返回一个类似数组的对象。`document.frames、document.links`、`docuement.forms`、`document.images`、`document.scripts`、`parentNode.children`等属性，返回的都是`HTMLCollection`实例对象。
 
 `HTMLCollection`与`NodeList`的区别有以下几点。
 
@@ -552,7 +551,6 @@ var img1 = c.item(1);
 
 // 等价于下面的写法
 var img1 = c[1];
-
 ```
 
 `HTMLCollection`实例的`namedItem`方法根据成员的`ID`属性或`name`属性，返回该成员。如果没有对应的成员，则返回`null`。这个方法是`NodeList`实例不具有的。
@@ -703,7 +701,7 @@ document.body === document.querySelector('body') // true
 
 以下属性返回文档内部特定元素的集合，都是类似数组的对象。这些集合都是动态的，原节点有任何变化，立刻会反映在集合中。
 
-### document.links，document.forms，document.images，document.embeds
+### document.links，document.forms，document.images，document.embeds，document.frames，document.srcipts
 
 `document.links`属性返回当前文档所有设定了`href`属性的`a`及`area`元素。
 
@@ -779,7 +777,6 @@ document.scripts instanceof HTMLCollection // true
 
 document.scripts.myScript
 // <script id="myScript"></script>
-
 ```
 
 `document.styleSheets`属性返回一个类似数组的对象，代表当前网页的所有样式表。每个样式表对象都有`cssRules`属性，返回该样式表的所有CSS规则，这样这可以操作具体的CSS规则了。
@@ -809,7 +806,7 @@ document.documentURI === document.URL
 
 ### document.domain
 
-`document.domain`属性返回当前文档的域名。比如，某张网页的网址是 http://www.example.com/hello.html ，`domain`属性就等于`www.example.com`。如果无法获取域名，该属性返回`null`。
+`document.domain`属性返回当前文档的域名。比如，某张网页的网址是 `http://www.example.com/hello.html` ，`domain`属性就等于`www.example.com`。如果无法获取域名，该属性返回`null`。
 
 ```
 var badDomain = 'www.example.xxx';
@@ -1209,7 +1206,7 @@ forms[0].tagName // "FORM"
 
 ```
 
-### getElementById()
+### document.getElementById()
 
 `getElementById`方法返回匹配指定`id`属性的元素节点。如果没有发现匹配的节点，则返回`null`。
 
@@ -1523,7 +1520,7 @@ document.getElementById("container").appendChild(newNode);
 
 ### Element.attributes
 
-`Element.attributes`属性返回一个类似数组的对象，成员是当前元素节点的所有属性节点，详见本章《属性的操作》一节。
+`Element.attributes`属性返回一个类似数组的对象，成员是当前元素节点的所有属性节点。
 
 ### Element.id，Element.tagName
 
@@ -2240,4 +2237,3 @@ el.remove();
 ```
 document.getElementById('my-span').focus();
 ```
-
