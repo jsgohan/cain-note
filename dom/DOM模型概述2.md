@@ -858,3 +858,109 @@ EventUtil.addHandler(document, "readystatechange", function(event) {
 })
 ```
 
+支持：IE、Firefox 4+ 和 Opera
+
+<script>(在IE和Opera中)和<link>（仅 IE中）元素也会触发readystatechange事件，可以用来确定外部的js和css文件是否已经加载完成。
+
+#### pageshow和pagehide事件
+
+Firefox和Opera的特性，“往返缓存”（back-forward cache，或bfcache），可以在用户用浏览器的“后退”和“前进”按钮时加快页面的转换速度。这个缓存保存页面数据、DOM和js的状态。实际上是将整个页面保存在内存中。如果页面在bfcache中，那么再次打开页面时就 不会触发load事件。
+
+#### hashchange事件
+
+在url的参数列表（及url中“#”号后面的所有字符串）发生变化时通知开发人员。
+
+必须要 把hashchange事件处理程序添加给window对象，此时的event对象应该额外的增加两个属性：oldURL和newURL
+
+支持：IE8+、Firefox 3.6+、Safari 5+、Chrome和Opera 10.6+
+
+只有Firefox 6+、Chrome和Opera支持oldURL和newURL属性。最好是使用location对象来确定当前的参数列表
+
+```
+EventUtil.addHandler(window, "hashchange", function(event) {
+	alert(document.location.hash)
+})
+```
+
+如果IE8是在IE7文档模式下运行，即使功能无效它也会返回true。为了解决这个问题，可以使用更稳妥的检测方式：
+
+```
+var isSupported = ("onhashchange" in window) && (document.documentMode === undefined || document.documentMode > 7);
+```
+
+## 设备事件
+
+### orientationchange事件
+
+window.orientation属性包含3个值：0表示肖像模式，90表示向左旋转的横向模式（“主屏幕”按钮在右侧），-90表示向右旋转的横向模式（"主屏幕"按钮在左侧）
+
+```
+EventUtil.addHandler(window, "load", function(event) {
+	var div = document.getElementById("mydiv");
+	div.innerHTML = "current orientation is" + window.orientation;
+	EventUtil.addHandler(window, "orientationchange", function(event) {
+      div.innerHTML = "current orientation is" + window.orientation;
+	})
+})
+```
+
+## 触摸与手势事件
+
+
+
+## 内存和性能
+
+js中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致的原因：1.每个函数都是对象，都会占用内存，内存中的对象越多，性能就越差。2。必须事先指定所有事件处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间
+
+#### 事件委托
+
+利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件
+
+使用事件委托，只需在DOM树中尽量最高的层次上添加一个事件处理程序
+
+```
+HTML代码
+<ul id="mylinks">
+	<li id="goSomething">Go something</li>
+	<li id="doSomething">Do something</li>
+	<li id="SayHi">Say Hi</li>
+</ul>
+```
+
+```
+js代码
+var list = document.getElementById("mylinks");
+EventUtil.addHandler(list, "click", function(event) {
+  event = EventUtil.getEvent(event);
+  var target = EventUtil.getTarget(event);
+  
+  switch(target.id) {
+    case "doSomething":break;
+    case "goSomething":break;
+    case "SayHi":break;
+  }
+})
+```
+
+如果可行的话，可以考虑为document对象添加一个事件处理程序，用以处理页面上发生的某种特定类型的事件。
+
+#### 移除事件处理程序
+
+每当将事件处理程序制定给元素时，运行中的浏览器代码与支持页面交互的js代码之间就会建立一个连接。这种连接越多，页面执行起来就越慢。
+
+内存中留有那些过时不用的“空事件处理程序”，也会造成web应用程序内存与性能问题的主要原因
+
+## 模拟事件
+
+#### DOM中的事件模拟
+
+可以在document对象上使用createEvent()方法创建event对象。这个方法接收一个参数，即表示要创建的事件类型的字符串。
+
+##### 模拟鼠标事件
+
+##### 模拟键盘事件
+
+##### 模拟其他事件
+
+##### 自定义DOM事件
+
