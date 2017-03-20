@@ -261,12 +261,51 @@ nativefier  Make any web page a desktop application
 commander.js  node.js command-line interfaces made easy
 PubSubJS  Dependency free publish/subscribe for JavaScript
 bulma  Modern CSS framework based on Flexbox
-Chart.js  图表
+Chart.js  使用canvas元素实现简单的html5图表
 my-git 有关 git 的学习资料
 rasterizeHTML.js  Renders HTML into the browser's canvas
 MarkdownIME  A fresh way to write well-formatted text, by typing markdownized stuff on web
 log4js-node  A port of log4js to node.js
 Sortable  Sortable — is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. 
+matchMedia.js  matchMedia polyfill for testing media queries in JS
+ggraph  图形可视化的凌乱数据
+medium-editor  WYSIWYG编辑器的克隆，使用可改写的API来实现富文本解决方案
+moment  Parse, validate, manipulate, and display dates in javascript. 
+clipboard.js  现代拷贝到剪贴板。无flash。只有3kb gzipped
+impress.js  一个基于现代浏览器中CSS3变换和转换特性的展示框架
+sweetalert2  js alert的一个强大替代
+ace  一个用js编写的独立代码编辑器
+dragula  很简便实现拖放功能
+hyper  基于web技术的终端。采用html，css&js技术开发
+webtorrent  浏览器中streaming torrent客户端
+docsify  一个神奇的文档站点生成器
+enzyme  一个用于react的js测试工具，可以更容易地断言，操作和遍历react组件的输出。enzyme的api通过模仿jquery api来操纵和遍历dom。
+sigma.js  专用于图形绘制的js库
+eme  一个优雅的md编辑器
+async  一个使用Node模块，提供了直接的，强大的功能来处理异步js，虽然最初设计为使用Node.js可以通过npm install --save async安装，但也可以直接在浏览器中施一公
+mongotron  一个使用electron和angular js构建的mongodb gui
+AR.js  Efficient Augmented Reality for the Web using ARToolKit - 60fps on mobile!
+fabric.js  一个让开发人员能够使用html5 canvas元素的框架，是一个在canvas元素上的交互式对象模型。也是一个svg-to-canvas解析器
+socket.io  实时应用程序框架
+Ghost  一个简单，强大的发布平台
+wintersmith  一个简单而灵活的静态站点生成器。它使用插件转换（md，less，script等）内容，然后输出一个静态网站（html，css，图像等），可以托管在任何地方。
+countly-server  基于插件的实时移动，web和桌面分析平台，具有超过10个不同的sdk。countly还包括针对移动设备的大量推送通知和崩溃报告服务。
+strider  持续部署/持续集成平台。采用node.js/js编写的，并且使用mongodb作为后台存储
+fullPage.js  jquery插件，创建全屏滚动网站（单页网站）。允许创建全屏滚动网站，以及在网站的部分中添加一些横向滑块
+propeller  一个基于bootstrap和google`s material design语言的css组件框架。
+baguetteBox.js  一个简单易用的js lightbox库
+whitestorm.js  使用three.js
+animatelo  极度流行的animate.css库的端口，它用web animations api克隆替代css转换。所有原始的animate.css效果都被重建，但现在的api是基于js类而不是css类，该库轻量且不依赖jq，在旧版浏览器要求polyfill
+yargs  通过使用node.js构建功能全面的命令行应用，能轻松配置命令，解析多个参数，并设置快捷方式等，还能自动生成帮助菜单
+webgradients  多种漂亮的渐变色。直接复制css到项目中就可以使用
+sticky-kit  jq插件，允许在页面附加元素，设置跟随滚动的侧边栏效果
+scrolldir  超轻量的js库，用以检查滚动条的移动，并根据选择的元素切换 上/下 数据属性。平滑的用户体验
+svgo  用以优化svg文件的nodejs工具，将他们从非必要的信息中剥离出来
+store.js  一个跨浏览器的用于高级本地存储的解决方案，实现了浏览器的本地存储的js封装api，不是通过cookie和flash技术实现，而是使用localstorage，globalstorage和userdata行为
+snarkdown  是一个用js编写的极简的md解析器。功能不是最健全，但可能是最容易实现的一款解析器
+unfetch  让开发者更好地处理异步请求，他能在大多数浏览器上受支持，但fetch()方法在ie浏览器中仍不可用
+kissui.scrollanim  使用css3+js实现的用于创建滚动动画的库，应用在元素上后，当此元素出现在浏览器可视区域时便会执行对应的动画。使用scrollanim时需要用到kissui.css
+neurojs  用于在浏览器中进行深度学习js框架，可以通过强化学习进行全栈神经网络
 ```
 
 ## 2017-2018前端
