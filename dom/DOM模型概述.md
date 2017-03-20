@@ -367,7 +367,6 @@ var divA = document.getElementById('A');
 var newSpan = document.createElement('span');
 newSpan.textContent = 'Hello World!';
 divA.parentNode.replaceChild(newSpan, divA);
-
 ```
 
 上面代码是如何替换指定节点。
@@ -700,7 +699,7 @@ document.body === document.querySelector('body') // true
 
 以下属性返回文档内部特定元素的集合，都是类似数组的对象。这些集合都是动态的，原节点有任何变化，立刻会反映在集合中。
 
-### document.links，document.forms，document.images，document.embeds，document.frames，document.srcipts
+### document.links，document.forms，document.images，document.embeds，document.srcipts
 
 `document.links`属性返回当前文档所有设定了`href`属性的`a`及`area`元素。
 
@@ -853,7 +852,6 @@ document.location.search // "?x=111"
 document.location.hash // "#part1"
 document.location.user // "user"
 document.location.password // "passed"
-
 ```
 
 `location`对象有以下方法。
