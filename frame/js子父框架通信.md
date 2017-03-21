@@ -33,3 +33,4 @@ window.top.frames;//获取顶层框架中的所有子框架
 每个window对象都有一个location属性，可以改变框架的载入路径
 
 window.frames[0].location('url')
+

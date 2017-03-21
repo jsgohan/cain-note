@@ -1684,14 +1684,19 @@ if (boolValue){
 
 ### 相关汇总
 
-| 属性名称                                     | 包括盒模型                      | 从元素中获取(对于整个网页来说)                         |
-| ---------------------------------------- | -------------------------- | ---------------------------------------- |
-| Element.clientHeight/Element.clientWidth | 包括Padding,不包括滚动条、边框和Margin | document.documentElement                 |
-| Element.clientLeft/Element.clientTop     | 包括滚动条，不包括Padding和Margin    | -                                        |
-| Element.scrollHeight/Element.scrollWidth | 包括padding，不包括边框和margin     | document.documentElement/document.body   |
-| Element.scrollLeft/Element.scrollTop     | -                          | document.body（在CSS1Compat中，document.documentElement） |
-| Element.offsetHeight/Element.offsetWidth | 包括padding/border/滚动        | document.documentElement/document.body   |
-| Element.offsetLeft/Element.offsetTop     | -                          | -                                        |
+| 属性名称                                     | 包括盒模型                                    | 从元素中获取(对于整个网页来说)                         |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Element.clientHeight/Element.clientWidth | 包括Padding,不包括滚动条、边框和Margin               | document.documentElement                 |
+| Element.clientLeft/Element.clientTop     | 包括滚动条，不包括Padding和Margin                  | -                                        |
+| Element.scrollHeight/Element.scrollWidth | 包括padding，不包括边框和margin                   | document.documentElement/document.body   |
+| Element.scrollLeft/Element.scrollTop     | -                                        | document.body（在CSS1Compat中，document.documentElement） |
+| Element.offsetHeight/Element.offsetWidth | 包括padding/border/滚动                      | document.documentElement/document.body   |
+| Element.offsetLeft/Element.offsetTop     | -                                        | -                                        |
+| 以下是window元素里：                            |                                          |                                          |
+| window.screenX/window.screenY            | 返回浏览器窗口左上角相对于当前屏幕左上角（`(0, 0)`）的水平距离和垂直距离，单位为像素。 |                                          |
+| window.innerHeight/window.innerWidth     | 包括滚动条的高度和宽度                              | 网页在当前窗口中可见部分的高度和宽度，即“视口”（viewport），单位为像素。 |
+| window.outerHeight/window.outerWidth     |                                          | 返回浏览器窗口的高度和宽度，包括浏览器菜单和边框，单位为像素。          |
+| window.pageXOffset/window.pageYOffset    |                                          | 回页面的水平/垂直滚动距离，单位为像素。                     |
 
 ### Element.clientHeight，Element.clientWidth
 

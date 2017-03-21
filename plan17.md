@@ -110,6 +110,7 @@ vue-occupy  A Vue directive for occupying content places before the data has bee
 vue-trend  曲线图
 vue-desktop A UI library for building admin panel website.
 vue-kit  base on vue-webpack template(vue 2.x and vue-router 2.x), with bulma, chart.js, font awesome, Weui. Aims to be a quick start for building demo applications or product prototypes.
+vue-waterfall  vue版瀑布流
 markcook A smart and beautiful markdown editor
 json-server 模拟服务端json(Mock.js)
 dreamjs  A lightweight json data generator.
@@ -306,6 +307,9 @@ snarkdown  是一个用js编写的极简的md解析器。功能不是最健全�
 unfetch  让开发者更好地处理异步请求，他能在大多数浏览器上受支持，但fetch()方法在ie浏览器中仍不可用
 kissui.scrollanim  使用css3+js实现的用于创建滚动动画的库，应用在元素上后，当此元素出现在浏览器可视区域时便会执行对应的动画。使用scrollanim时需要用到kissui.css
 neurojs  用于在浏览器中进行深度学习js框架，可以通过强化学习进行全栈神经网络
+handsontable、SlickGrid(配置和学习难度较高)、ag grid、jQuery-KingTable（jq）、w2ui(jq)、
+bootstrap-waterfall  瀑布流布局
+waterfall.js（raphamorim） 瀑布流布局
 ```
 
 ## 2017-2018前端
