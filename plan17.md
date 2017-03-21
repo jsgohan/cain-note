@@ -310,6 +310,8 @@ neurojs  用于在浏览器中进行深度学习js框架，可以通过强化学
 handsontable、SlickGrid(配置和学习难度较高)、ag grid、jQuery-KingTable（jq）、w2ui(jq)、
 bootstrap-waterfall  瀑布流布局
 waterfall.js（raphamorim） 瀑布流布局
+url-search-params  Simple polyfill for URLSearchParams standard
+
 ```
 
 ## 2017-2018前端

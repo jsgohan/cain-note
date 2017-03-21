@@ -153,7 +153,7 @@ meta标签的http-equiv属性语法格式是：
 用法：
 
 ```
-<meta http-equiv="Set-Cookie"content="cookie value=xxx;expires=Friday,12-Jan-200118:18:18GMT；path=/"> 
+<meta http-equiv="Set-Cookie"content="cookie value=xxx;expires=Friday,12-Jan-200118:18:18GMT;path=/"> 
 ```
 
 注意：必须使用GMT的时间格式。
