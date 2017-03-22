@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <div>
+<label for="os">Operating System</label>
+<select name="os" id="os">
+    <option>Choose</option>
+    <optgroup label="Windows">
+        <option value="7 Home Basic">7 Home Basic</option>
+        <option value="7 Home Premium">7 Home Premium</option>
+        <option value="7 Professional">7 Professional</option>
+        <option value="7 Ultimate">7 Ultimate</option>
+        <option value="Vista">Vista</option>
+        <option value="XP">XP</option>
+    </optgroup>
+<select>
+</div>
+ </body>
+ <script type="text/javascript">
+	var table = document.createElement('table');
+var tbody = document.createElement('tbody');
+table.appendChild(tbody);
+
+for (var i = 0; i <= 9; i++) {
+  var rowcount = i + 1;
+  tbody.insertRow(i);
+  tbody.rows[i].insertCell(0);
+  tbody.rows[i].insertCell(1);
+  tbody.rows[i].insertCell(2);
+  tbody.rows[i].cells[0].appendChild(document.createTextNode('Row ' + rowcount + ', Cell 1'));
+  tbody.rows[i].cells[1].appendChild(document.createTextNode('Row ' + rowcount + ', Cell 2'));
+  tbody.rows[i].cells[2].appendChild(document.createTextNode('Row ' + rowcount + ', Cell 3'));
+}
+
+table.createCaption();
+table.caption.appendChild(document.createTextNode('A DOM-Generated Table'));
+
+document.body.appendChild(table);
+ </script>
+</html>
