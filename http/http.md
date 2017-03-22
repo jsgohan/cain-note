@@ -1,6 +1,8 @@
 # http 学习 #
-![](http://i.imgur.com/SmcLRqL.png)
-![](http://i.imgur.com/awh0LmB.png)
+![http1](D:\worksoft\somethingrepo\simplerepo\http\resource\http1.png)
+
+![http2](D:\worksoft\somethingrepo\simplerepo\http\resource\http2.png)
+
 ## HTTP协议简介
 
 >http协议(超文本传输协议HyperText Transfer Protocol)，它是基于TCP协议的应用层传输协议，简单来说就是客户端和服务端进行数据传输的一种规则。
@@ -14,7 +16,7 @@ http表示要通过HTTP协议来定位网络资源，host表示合法的Internet
 
 ##HTTP请求
 下图能很好的表达http请求的所发送的数据格式
-![](http://i.imgur.com/0ejq5l6.png)
+![http3](D:\worksoft\somethingrepo\simplerepo\http\resource\http3.png)
 由上图可以看到，http请求由请求行，消息报头，请求正文三部分构成
 ### 请求行
 请求行由请求方法，URL字段和HTTP协议版本三部分构成，总的来说请求行就是定义了本次请求的请求方式，请求的地址，以及所遵循的HTTP协议版本例如：
@@ -56,7 +58,7 @@ User-Agent
 
 与http 请求类似，先上一张图
 
-![](http://i.imgur.com/CxYTi4E.png)
+![http4](D:\worksoft\somethingrepo\simplerepo\http\resource\http4.png)
 
 http响应也由三部分组成，包括状态行，消息报头，响应正文
 
@@ -86,8 +88,3 @@ http响应也由三部分组成，包括状态行，消息报头，响应正文
 ### 消息报头
 
 ## 相应正文
-
-
-
-
->全文摘自[https://segmentfault.com/a/1190000004457479](https://segmentfault.com/a/1190000004457479 "简书")

@@ -311,7 +311,9 @@ handsontable、SlickGrid(配置和学习难度较高)、ag grid、jQuery-KingTab
 bootstrap-waterfall  瀑布流布局
 waterfall.js（raphamorim） 瀑布流布局
 url-search-params  Simple polyfill for URLSearchParams standard
-
+create-react-native-app  为开发者快速创建零配置的react native项目。
+flex-cheatsheet  提供了交互式的css flexbox教程，介绍了flexbox的使用语法与经典案例
+awesome-github-vue  vue开源项目汇总
 ```
 
 ## 2017-2018前端
