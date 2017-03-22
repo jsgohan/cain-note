@@ -27,16 +27,10 @@
 ## 优先级
 
 ```
-express（，koa，pm2，forever）
-node
-elementui
-服务端渲染
-（handlebars.js，pug）模板引擎
-css预处理
-手机端适配
-造数工具
-实现一个简单vue组件
-文档生成工具
+造数工具（导出，图形化界面）
+简历
+开发者统一登录平台
+vue组件开发
 ```
 
 ## callback hell(回调地狱)可以处理的异步方式
