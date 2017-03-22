@@ -314,6 +314,10 @@ url-search-params  Simple polyfill for URLSearchParams standard
 create-react-native-app  为开发者快速创建零配置的react native项目。
 flex-cheatsheet  提供了交互式的css flexbox教程，介绍了flexbox的使用语法与经典案例
 awesome-github-vue  vue开源项目汇总
+omi  开放现代的Web组件化框
+Mars  腾讯移动Web前端知识库
+fetch  A window.fetch JavaScript polyfill.
+localForage  Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.
 ```
 
 ## 2017-2018前端
