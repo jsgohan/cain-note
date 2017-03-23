@@ -29,8 +29,14 @@
 ```
 造数工具（导出，图形化界面）
 简历
-开发者统一登录平台
+数据工坊vue版
 vue组件开发
+开发者统一登录平台
+
+问题：
+后端java+前端vue  之间通信要如何处理
+前端vue 如果有用到webpack的require.ensure会不会影响工程的使用
+前端vue 如果用到服务端渲染，nodejs和vue和java之间要怎么通信
 ```
 
 ## callback hell(回调地狱)可以处理的异步方式
