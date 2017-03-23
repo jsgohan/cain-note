@@ -35,8 +35,9 @@ vue组件开发
 
 问题：
 后端java+前端vue  之间通信要如何处理
-前端vue 如果有用到webpack的require.ensure会不会影响工程的使用
-前端vue 如果用到服务端渲染，nodejs和vue和java之间要怎么通信
+后端java+前端vue 如果有用到webpack的require.ensure会不会影响工程的使用
+后端java+前端vue+node 如果用到服务端渲染，nodejs和vue和java之间要怎么通信
+前端vue+node 可以用node的api吗
 ```
 
 ## callback hell(回调地狱)可以处理的异步方式
