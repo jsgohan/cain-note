@@ -27,6 +27,8 @@
 ## 优先级
 
 ```
+blog(youngwind)  梁少锋的vue源码分析
+vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发、
 造数工具（导出，图形化界面）
 简历
 数据工坊vue版
@@ -37,15 +39,8 @@ vue组件开发
 后端java+前端vue  之间通信要如何处理
 后端java+前端vue 如果有用到webpack的require.ensure会不会影响工程的使用
 后端java+前端vue+node 如果用到服务端渲染，nodejs和vue和java之间要怎么通信
-前端vue+node 可以用node的api吗
+前端vue+node+mongodb 纯js的工程怎么玩转？可以用node的api吗
 ```
-
-## callback hell(回调地狱)可以处理的异步方式
-
-- async.js
-- promises
-- generators
-- async functions
 
 ## vue-demo
 
@@ -75,6 +70,10 @@ mmf-blog-vue2-ssr
 vue-blog
 web-dojo vue2服务端渲染登陆页
 vue-multipage 多页脚手架
+pagekit  cms系统
+swoole-vue-webim  聊天工具
+vue-express-mongodb  前后端分离
+vueBlog  前后端分离blog
 ```
 
 ## 最新新起的前端框架
@@ -109,6 +108,9 @@ vue-decorators  Decorators for VueJS
 vue-flatpickr  Flatpickr for VueJS
 vue-occupy  A Vue directive for occupying content places before the data has been loaded
 vue-trend  曲线图
+vue-head  head头部封装
+Vue-Socket.io  websocket.io vue版本
+vue-meta  meta头部封装
 vue-desktop A UI library for building admin panel website.
 vue-kit  base on vue-webpack template(vue 2.x and vue-router 2.x), with bulma, chart.js, font awesome, Weui. Aims to be a quick start for building demo applications or product prototypes.
 vue-waterfall  vue版瀑布流
