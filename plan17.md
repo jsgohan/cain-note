@@ -36,10 +36,11 @@ vue组件开发
 开发者统一登录平台
 
 问题：
-后端java+前端vue  之间通信要如何处理
-后端java+前端vue 如果有用到webpack的require.ensure会不会影响工程的使用
-后端java+前端vue+node 如果用到服务端渲染，nodejs和vue和java之间要怎么通信
-前端vue+node+mongodb 纯js的工程怎么玩转？可以用node的api吗
+后端java+前端vue  之间通信要如何处理(直接把生成的vue放到java工程中运行)
+后端java+前端vue 如果有用到webpack的require.ensure会不会影响工程的使用(require.ensure只是把对应的模块分块打包，主块和副块之间有依赖关系)
+后端java+前端vue+node 如果用到服务端渲染，nodejs和vue和java之间要怎么通信(vue的服务端渲染是在node环境中执行的，node环境必须存在，至于怎么和java合目前没有思路)
+前端vue+node+mongodb 纯js的工程怎么玩转？
+前端vue  是否可以用node的api
 ```
 
 ## vue-demo
