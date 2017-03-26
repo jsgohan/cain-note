@@ -78,6 +78,8 @@ pagekit  cms系统
 swoole-vue-webim  聊天工具
 vue-express-mongodb  前后端分离
 vueBlog  前后端分离blog
+doubanMovie
+doubanMovie-SSR
 ```
 
 ## 最新新起的前端框架
@@ -325,6 +327,9 @@ omi  开放现代的Web组件化框
 Mars  腾讯移动Web前端知识库
 fetch  A window.fetch JavaScript polyfill.
 localForage  Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.
+hypernova  A service for server-side rendering your JavaScript views
+jsoup  jsoup: Java HTML Parser, with best of DOM, CSS, and jquery
+passport  Simple, unobtrusive authentication for Node.js.
 ```
 
 ## 2017-2018前端
