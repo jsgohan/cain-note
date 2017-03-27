@@ -330,6 +330,8 @@ localForage  Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage
 hypernova  A service for server-side rendering your JavaScript views
 jsoup  jsoup: Java HTML Parser, with best of DOM, CSS, and jquery
 passport  Simple, unobtrusive authentication for Node.js.
+consolidate.js 模板引擎汇总
+egg.js  A simple javascript library to add easter eggs to web pages.
 ```
 
 ## 2017-2018前端
