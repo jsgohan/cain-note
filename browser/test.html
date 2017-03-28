@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试接口</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+	$(function() {
+		$.ajax("http://218.207.214.230:80/DataWorkshopServer/test/login.do", {
+			data : {
+				"user_name" : "123",
+				"user_pwd" : "456"
+			},
+			type : "POST",
+			dataType : "json",
+			success : function(data, status) {
+				console.log(data);
+			},
+			error : function() {
+				console.log("ajax调用失败");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
