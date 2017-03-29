@@ -2,9 +2,9 @@
 
 ## 任务计划
 
-- vue、pc组件：（elementui、muse-ui、vue material、iview、vuetify、radon-ui、vue-antd、keen-ui）
+- vue、、pc组件：（elementui、muse-ui、vue material、iview、vuetify、radon-ui、vue-antd、keen-ui、[atui](https://github.com/aliqin/atui)）
 
-  移动端组件：（vue-admin、vux、vonic、vue-mui、mintui、vue-weui、N3-components、vum）、服务端渲染（nuxt.js）、模板引擎（vue模板引擎）
+  移动端组件：（vue-admin、vux、vonic、vue-mui、mintui、vue-weui、N3-components、vum、[vue-blu](https://github.com/chenz24/vue-blu)）、服务端渲染（nuxt.js）、模板引擎（vue模板引擎）
 
   - OnsenUI  Mobile app development framework and SDK using HTML5 and JavaScript. Create beautiful and performant cross-platform mobile apps. Based on Web Components, and provides bindings for Angular 1, 2, React and Vue.js.
 
@@ -28,7 +28,7 @@
 
 ```
 blog(youngwind)  梁少锋的vue源码分析
-vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发、
+nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发、
 造数工具（导出，图形化界面）
 简历
 数据工坊vue版
@@ -80,6 +80,7 @@ vue-express-mongodb  前后端分离
 vueBlog  前后端分离blog
 doubanMovie
 doubanMovie-SSR
+mi-by-vue  模仿小米官网
 ```
 
 ## 最新新起的前端框架
@@ -120,6 +121,8 @@ vue-meta  meta头部封装
 vue-desktop A UI library for building admin panel website.
 vue-kit  base on vue-webpack template(vue 2.x and vue-router 2.x), with bulma, chart.js, font awesome, Weui. Aims to be a quick start for building demo applications or product prototypes.
 vue-waterfall  vue版瀑布流
+Vueditor  vue编辑框
+nuxt-helpers  ssr by nuxt.js
 node-interview  如何通过饿了么的node面试
 markcook A smart and beautiful markdown editor
 json-server 模拟服务端json(Mock.js)
@@ -337,7 +340,18 @@ consolidate.js 模板引擎汇总
 egg.js  A simple javascript library to add easter eggs to web pages.
 jPages  jq分页
 awesome-wechat-weapp  微信小程序开发资源汇总
+awesome-github-wechat-weapp  微信小程序开元项目汇总
 awesome-weex  weex开发资源汇总
+simplemde-markdown-editor  md编辑框
+koa-grace  基于koa的标准前后端分离框架
+mini-toastr   不依赖于任何库的roastr组件
+quill  text editor工具
+fine-uploader   多功能uploader组件
+onepage-scroll  Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin
+in-view  进入屏幕视野内的元素会发生变化
+lightgallery.js  图片、视频画廊
+bamei  简易node开发框架
+bulma  Modern CSS framework based on Flexbox
 ```
 
 ## 2017-2018前端
