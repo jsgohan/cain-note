@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<script src="mobile-util.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			-webkit-text-size-adjust: none;
+		}
+		html {
+			background-color: #f7f7f7;
+		}
+		body {
+			width: 16rem;
+			margin: 0 auto;
+			line-height: 1.4;
+			background-color: #fff;
+		}
+
+
+		.app {
+			position: relative;
+			display: -webkit-flex;
+			align-items: center;
+			padding: 0.65rem 0.5rem;
+			border-bottom: 1px solid #cfcfcf;
+		}
+
+		.app__icon {
+			width: 2.35rem;
+			height: 2.35rem;
+			border-radius: 0.4rem;
+			overflow: hidden;
+		}
+		.app__icon__img {
+			display: block;
+			width: 100%;
+		}
+
+		.app__text {
+			margin-left: 0.45rem;
+			margin-right: auto;
+		}
+		.app__text__title {
+			font-size: 0.875rem;
+			color: #181818;
+		}
+		.app__text__summary {
+			font-size: 0.6rem;
+			color: #828282;
+		}
+
+		.app__button {
+			display: block;
+			padding: 0.2rem 0.65rem;
+			font-size: 0.65rem;
+			text-align: center;
+			color: #fff;
+			background-color: #3cba1a;
+			border-radius: 0.2rem;
+			text-decoration: none;
+		}
+
+		.app__label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 2.2rem;
+			height: 1.6rem;
+			background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABACAMAAACpzkDwAAAAY1BMVEX////kNyDkNyDkNyDkNyDkNyDkNyDkNyDkNyDkNyD99vXkNyDkNyDkNyDkNyD1xcHkNyD////99vX76+r64d/41tT2y8j0wLzztK/xqKLvm5TtjYXrf3bqcGToX1HmTTzkNyDPEQg9AAAAEXRSTlMAESIzRFVmd4iZqqq7zN3u7uYy9NoAAAHASURBVHja1dXbkoIwEATQJtyXyxJFIKiE///KJSJCVhQ3ZB62H7Sssk6Nk8agt54ijXwG2EXzJHAxxuKkScAwx5KaRS702FBTbdQnuKtrI9V3sJbFV0rezR9aIWouNzcQrKs6fOHi9i74FPG+AiHD60zmnBFuhHjPJh7eZhVuN6sVMeATuO+bRr3Ksu234TzAdh4wV5048WYTznzgD3BfV93gnvsNOPWAz+FusWJev4GzT9kX8COdKav1uL1P+gLOfWAv3KofoT/gRejAABZPPf4FJwzYDTeqGxpc+IAZrK2i5hcdjh0Yw7IUChbV9C83w7kHmMOC3+BmePIkP/QLOHGwA+74cVxFxdszr2bYZLtLuFJrVbA8XU+3VY9wxrAPburH4V34QU5wDOyE720YYHkc740BNl/DEj6oCl/VKR7lCH+7sAGX0xVXXe/H+QUr8NOV5oAEjgESOAINHIIGDkAD25h3DbbjguLcVuEYNHACGjhzaOCcgQQuXNDAAWjgGDSwxYPTYRc0cAgaOAURzIhg24uY4BxEsEcEx6CBC4cIjkADkwwMkqqNMM3AoBoYVAODphIKZkRwSuTCxz/LDzuIyYMbR8EsAAAAAElFTkSuQmCC") no-repeat;
+			background-size: contain;
+		}
+	</style>
+	<title>REM</title>
+</head>
+<body>
+
+<div class="app">
+	<div class="app__icon">
+		<img class="app__icon__img" src="icon.png">
+	</div>
+	<div class="app__text">
+		<h2 class="app__text__title">忍者必须死Ⅱ</h2>
+		<p class="app__text__summary">史上最萌的手游，安装量过10万。</p>
+	</div>
+	<a class="app__button" href="#">下载</a>
+	<i class="app__label"></i>
+</div>
+</body>
+</html>
+

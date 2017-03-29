@@ -18,7 +18,7 @@
 
 - 博客、前后端系统、造数工具、组件库、页面自动生成平台、用electron写开发者平台、用pwa写开发者平台
 
-- weex、pwa、electron、react、react native、web worker (service worker)
+- 小程序、weex、pwa、electron、react、react native、web worker (service worker)
 
 - docker（微服务 springboot）、ngnix
 
@@ -336,6 +336,8 @@ everyauth  也是登录认证
 consolidate.js 模板引擎汇总
 egg.js  A simple javascript library to add easter eggs to web pages.
 jPages  jq分页
+awesome-wechat-weapp  微信小程序开发资源汇总
+awesome-weex  weex开发资源汇总
 ```
 
 ## 2017-2018前端
@@ -812,159 +814,3 @@ vue-cli 默认配置
 ![前端图谱](前端图谱.jpg)
 
 ![前端技术栈](前端技术栈.png)
-
-## 移动端适配方案
-
-### 像素
-
-1. 设备像素
-
->屏幕的物理像素，任何设备屏幕的物理像素的数量都是固定不变的，单位是pt
-
-2. css像素
-
-> 在css、js中使用的抽象概念，单位是px
->
-> css像素也可以称为设备独立像素（device-independent pixels），简称为dips，单位是dp
-
-### 视口
-
-桌面浏览器中，浏览器窗口就是约束你的css布局视口（又称初始包含块）。它是所有css百分比宽度推算的根源，它的作用是给css布局限制一个最大宽度，视口的宽度和浏览器窗口宽度一致。
-
-#### 布局视口
-
-一个没有为移动端做优化的网页，会尽可能缩小网页让用户看到所有东西。浏览器厂商为了让用户在小屏幕下网页也能够显示地很好，所以把视口宽度设置地很大，一般在 768px ~ 1024px 之间，最常见的宽度是 980px。所以，在手机上，视口与移动端浏览器屏幕宽度不再相关联，是完全独立的，这个浏览器厂商定的视口被称为布局视口。
-
-可以这样设置布局视口的宽度：
-
-> <meta name="viewport" content="width=640">
-
-媒体查询与布局视口
-
-700px 指的是布局视口的宽度
-
-> @media (min-width: 700px){
->
->     ...
->
-> }
-
-document.documentElement.clientWidth/Height返回布局视口的尺寸
-
-#### 视觉视口
-
-视觉视口是用户正在看到的网页的区域，大小是屏幕中CSS像素的数量。
-
-window.innerWidth/Height返回视觉视口的尺寸
-
-#### 理想视口
-
-布局视口明显对用户是不友好的，完全忽略了手机本身的尺寸。所以苹果引入了理想视口的概念，它是对设备来说最理想的布局视口尺寸。理想视口中的网页用户最理想的宽度，用户进入页面的时候不需要缩放。
-
-其实，如果我们把布局视口的宽度改成屏幕的宽度不就不用缩放了么。可以这样设置告诉浏览器使用它的理想视口：
-
-> <meta name="viewport" content="width=device-width">
-
-定义理想视口是浏览器的事情，并不能简单地认为是开发者定义的，开发者只能使用。
-
-screen.width/height返回理想视口的尺寸，有严重的兼容性问题—可能返回两种值：
-
-1. 理想视口的尺寸（下载浏览器）
-2. 屏幕的设备像素尺寸（内置浏览器）
-
-### 缩放
-
-#### 缩放于设备像素、css像素的关系
-
-缩放是在放大或缩小CSS像素，比如一个宽度为 200px 的元素无论放大，还是200个CSS像素。但是因为这些像素被放大了，所以CSS像素也就跨越了更多的设备像素。缩小则相反。
-
-#### 缩放与视口
-
-缩放会影响视觉视口的尺寸
-
-页面被用户放大，视觉视口内CSS像素数量减少；被用户缩小，视觉视口内CSS像素数量增多就行了。这个道理应该是不难想的。
-
-用户缩放不会影响布局视口
-
-> 注意，这是『用户缩放』，后面会说开发者设置缩放的情况
-
-#### 缩放比例
-
-在下载浏览器中，可以这么算（理想视口与视觉视口的比）：
-
-> zoom level = screen.width / window.innerWidth
-
-#### 禁止缩放
-
-> <meta name="viewport" content="user-scalable=no">
-
-#### 设置缩放
-
-> <meta name="viewport" content="initial-scale=2">
-
-使用initial-scale有一个副作用：同时也会将布局视口的尺寸设置为缩放后的尺寸。所以initial-scale=1与width=device-width的效果是一样的。
-
-### 完美视口
-
-解决各种浏览器兼容问题的理想视口设置
-
-> <meta name="viewport" content="width=device-width,initial-scale=1">
-
-### 设备像素比
-
-在缩放程度为100%（这个条件很重要，因为缩放也会影响他们）时，他们的比例叫做设备像素比(device pixel ratio)：
-
-> dpr = 设备像素 / CSS像素
-
-可以通过JS得到： window.devicePixelRatio
-
-设备像素比也和视口有关：
-
-> dpr = 屏幕横向设备像素 / 理想视口的宽
-
-### 适配
-
-目前的三种方法：
-
-- 固定高度，宽度自适应
-- 固定宽度，viewport缩放
-- rem做宽度，viewport缩放
-
-#### 固定高度，宽度自适应
-
-[demo](http://www.meow.re/demo/screen-adaptation-in-mobileweb/app-fixed-height.html)
-
-这也是目前使用最多的方法，垂直方向用定值，水平方向用百分比、定值、flex都行。腾讯、京东、百度、天猫、亚马逊的首页都是使用的这种方法。
-
-随着屏幕宽度变化，页面也会跟着变化，效果就和PC页面的流体布局差不多，在哪个宽度需要调整的时候使用_响应式布局_调调就行（比如网易新闻），这样就实现了『适配』。
-
-原理
-
-这种方法使用了完美视口：
-
-> <meta name="viewport" content="width=device-width,initial-scale=1">
-
-这样设置之后，我们就可以不用管手机屏幕的尺寸进行开发了。
-
-#### 固定宽度，viewport缩放
-
-[demo2](http://www.meow.re/demo/screen-adaptation-in-mobileweb/app-fixed-width.html)
-
-设计图、页面宽度、viewport width使用一个宽度，浏览器帮我们完成缩放。单位使用px即可。
-
-目前已知荔枝FM、网易新闻在使用这种方法。
-
-原理
-
-这种方法需要根据屏幕宽度来动态生成viewport，生成的 viewport 基本是这样：
-
-> <meta name="viewport" content="width=640,initial-scale=0.5,maximum-scale=0.5,minimum-scale=0.5,user-scalable=no">
-
-640 是我们根据设计图定下的，0.5 是根据屏幕宽度动态生成的。
-
-生成的viewport告诉浏览器网页的布局视口使用 640px，然后把页面缩放成50%，这是绝对的等比例缩放。图片、文字等等所有元素都被缩放在手机屏幕中。
-
-#### rem做宽度，viewport缩放
-
-[demo3](http://www.meow.re/demo/screen-adaptation-in-mobileweb/app-rem.html)
-
