@@ -120,6 +120,7 @@ vue-meta  meta头部封装
 vue-desktop A UI library for building admin panel website.
 vue-kit  base on vue-webpack template(vue 2.x and vue-router 2.x), with bulma, chart.js, font awesome, Weui. Aims to be a quick start for building demo applications or product prototypes.
 vue-waterfall  vue版瀑布流
+node-interview  如何通过饿了么的node面试
 markcook A smart and beautiful markdown editor
 json-server 模拟服务端json(Mock.js)
 dreamjs  A lightweight json data generator.
@@ -143,6 +144,7 @@ Hilo alibaba 游戏解决方案
 tmallfe.github.io 天猫前端
 flexboxgrid flex布局
 director 和jq绝配的路由
+stateman、pathjs、fd-router 路由
 history.js 路由
 bluebird promise lib
 DDFE-blog 滴滴博客
@@ -330,8 +332,10 @@ localForage  Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage
 hypernova  A service for server-side rendering your JavaScript views
 jsoup  jsoup: Java HTML Parser, with best of DOM, CSS, and jquery
 passport  Simple, unobtrusive authentication for Node.js.
+everyauth  也是登录认证
 consolidate.js 模板引擎汇总
 egg.js  A simple javascript library to add easter eggs to web pages.
+jPages  jq分页
 ```
 
 ## 2017-2018前端
