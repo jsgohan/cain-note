@@ -34,6 +34,13 @@ nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件�
 数据工坊vue版
 vue组件开发
 开发者统一登录平台
+php、thinkphp、laravel
+postcss/手淘高清方案源码分析
+vue代码继续写并读源码(nuxt.js/组件库)
+nodejs
+小程序入门
+nginx
+web安全学习
 ```
 
 ## 问题
@@ -352,6 +359,8 @@ in-view  进入屏幕视野内的元素会发生变化
 lightgallery.js  图片、视频画廊
 bamei  简易node开发框架
 bulma  Modern CSS framework based on Flexbox
+lib-flexible  手淘伸缩可适配方案
+px2rem  px转rem工具
 ```
 
 ## 2017-2018前端
