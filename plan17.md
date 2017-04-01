@@ -30,11 +30,10 @@
 blog(youngwind)  梁少锋的vue源码分析
 nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发、
 造数工具（导出，图形化界面）
-简历
-数据工坊vue版
+简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog）
+数据工坊mui改成前端项目
 vue组件开发
-开发者统一登录平台
-php、thinkphp、laravel
+php、laravel
 postcss/手淘高清方案源码分析
 vue代码继续写并读源码(nuxt.js/组件库)
 nodejs
@@ -361,6 +360,8 @@ bamei  简易node开发框架
 bulma  Modern CSS framework based on Flexbox
 lib-flexible  手淘伸缩可适配方案
 px2rem  px转rem工具
+pills  A simple responsive CSS Grid for humans
+grd  A CSS grid framework using Flexbox. 
 ```
 
 ## 2017-2018前端
