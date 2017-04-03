@@ -1,0 +1,30 @@
+/*默认浏览器可视区域：小于1024*/
+.fluid1 div[class^='col']{background-color: #dedef8;border: 1px #122b40 solid;}
+
+/*浏览器可视区域：大于等于1024*/
+@media screen and (min-width: 1024px){
+    .fluid1 div[class^='col']{background-color: #5bc0d8;border: 1px #122b40 solid;}
+}
+/*浏览器可视区域：大于等于1200*/
+@media screen and (min-width: 1200px){
+
+}
+/*浏览器可视区域：大于等于1600*/
+@media screen and (min-width: 1600px){
+
+}
+
+/* iPad 横竖屏通用 */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+
+/* iPad 横屏 */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+}
+
+/* iPad 竖屏 */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+}

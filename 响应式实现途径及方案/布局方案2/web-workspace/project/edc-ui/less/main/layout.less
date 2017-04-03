@@ -1,0 +1,21 @@
+/*************************************************************************
+ *                               布局实例
+ *************************************************************************/
+
+/******************************** fluid1 *********************************/
+.fluid1 .row-top .col-left{height: 200px;}
+.fluid1 .row-top .col-center,.row-top .col-right{height: 100%;}
+.fluid1 .row-bottom{height:300px;}
+.fluid1 .row-bottom .col-left,.row-bottom .col-center,.row-bottom .col-right{height: 100%;}
+.fluid1 .col{height: 300px;}
+
+/*浏览器可视区域：大于等于1024*/
+@media screen and (min-width: 1024px){
+  .fluid1 .row-top{height: 70%;}
+  .fluid1 .row-top .col-left{height: 100%;}
+  .fluid1 .row-top .col-center,.row-top .col-right{height: 50%;}
+  .fluid1 .row-bottom{height:30%;}
+  .fluid1 .row-bottom .col-left,.row-bottom .col-center,.row-bottom .col-right{height: 100%;}
+  .fluid1 .col{height: 100%;}
+
+}

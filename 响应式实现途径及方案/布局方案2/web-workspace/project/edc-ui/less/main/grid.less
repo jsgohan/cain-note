@@ -1,0 +1,47 @@
+/*************************************************************************
+ *                               网格布局
+ *************************************************************************/
+
+//==============================容器================================//
+//固定宽度且水平居中
+.container {
+  .container-fixed();
+
+  @media screen and (min-width: @screen-xs-min) {
+    width: @container-xs;
+  }
+  @media screen and (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media screen and (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media screen and (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+//满屏
+.container-fluid {
+  .container-fixed();
+}
+
+
+
+//==============================列================================//
+.make-grid-columns();
+
+//超小屏幕响应式列
+.make-grid(xs);
+
+//小屏幕响应式列
+@media screen and (min-width: @screen-sm-min) {
+  .make-grid(sm);
+}
+//中等屏幕响应式列
+@media screen and (min-width: @screen-md-min) {
+  .make-grid(md);
+}
+//大屏幕响应式列
+@media screen and (min-width: @screen-lg-min) {
+  .make-grid(lg);
+}

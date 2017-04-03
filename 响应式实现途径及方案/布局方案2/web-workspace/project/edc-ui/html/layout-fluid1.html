@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <title>流动性布局1</title>
+    <!--引用公共样式-->
+    <link href="../less/css/edc-ui.css" rel="stylesheet">
+    <!--引用个性样式-->
+    <link href="../css/layout-fluid1.css" rel="stylesheet">
+</head>
+<body class="fluid1">
+     <div class="container-fluid">
+         <!--第1行-->
+        <div class="row row-top" >
+            <!--左边-->
+            <div class="col-xs-12 col-sm-4  col-left">
+                1
+            </div>
+            <!--中间-->
+            <div class="col-xs-12 col-sm-4 col" >
+                <div class="row col" >
+                    <div class="col-xs-6 col-sm-12 col-center" >2</div>
+                    <div class="col-xs-6 col-sm-12 col-center" >3</div>
+                </div>
+            </div>
+            <!--右边-->
+            <div class="col-xs-12 col-sm-4 col" >
+                <div class="row col" >
+                    <div class="col-xs-6 col-sm-12 col-right">4</div>
+                    <div class="col-xs-6 col-sm-12 col-right">5</div>
+                </div>
+            </div>
+        </div>
+        <!--第2行-->
+        <div class="row row-bottom" >
+            <div class="col-xs-4 col-sm-4 col-left" >6</div>
+            <div class="col-xs-4 col-sm-4 col-center" >7</div>
+            <div class="col-xs-4 col-sm-4 col-right" >8</div>
+        </div>
+     </div>
+</body>
+    <!--ie9以下支持响应式插件-->
+    <script type="text/javascript" src="../../../common/plugins/respond/respond.min.js"></script>
+</html>
