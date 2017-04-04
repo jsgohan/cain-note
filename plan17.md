@@ -37,6 +37,7 @@ postcss/手淘高清方案源码分析
 vue组件开发
 微信公众号开发
 nodejs
+websocket
 小程序入门
 weex入门
 pwa入门
