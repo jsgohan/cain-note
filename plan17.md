@@ -27,19 +27,20 @@
 ## 优先级
 
 ```
-blog(youngwind)  梁少锋的vue源码分析
-mmf-blog、nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发、
-数据工坊mui改成前端项目
+blog(youngwind)  梁少锋的vue源码分析 vue代码继续写并读源码(nuxt.js/组件库)
+mmf-blog、nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发
 简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog）
 php、laravel
 nginx
 postcss/手淘高清方案源码分析
-vue代码继续写并读源码(nuxt.js/组件库)
 造数工具（导出，图形化界面）
 vue组件开发
 微信公众号开发
 nodejs
 小程序入门
+weex入门
+pwa入门
+electron入门
 web安全学习
 ```
 
