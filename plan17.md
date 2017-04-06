@@ -389,6 +389,8 @@ wept  小程序实时运行工具
 localtunnel  
 weixin-java-tools  微信公众号java sdk
 fuse-box  新的打包工具
+shelljs  shell命令
+
 ```
 
 ## 2017-2018前端
