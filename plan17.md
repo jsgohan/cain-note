@@ -30,11 +30,9 @@
 ---------------------VUE-----------------------
 blog(youngwind)  梁少锋的vue源码分析 vue代码继续写并读源码(nuxt.js/组件库)
 mmf-blog、nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发
-简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog）
+简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog 微信公众号版）
 造数工具（导出，图形化界面）
 vue组件开发
----------------------PHP-----------------------
-php、laravel
 --------------------LINUX----------------------
 centos7
 --------------------NGINX----------------------
@@ -43,14 +41,16 @@ nginx
 postcss/手淘高清方案源码分析
 ---------------------微信-----------------------
 微信公众号开发
----------------------node-----------------------
-nodejs
----------------------HTTP-----------------------
-websocket
 --------------------小程序-----------------------
 小程序入门
+---------------------HTTP-----------------------
+websocket
+---------------------node-----------------------
+nodejs
 ---------------------WEEX-----------------------
 weex入门
+---------------------PHP-----------------------
+php、laravel
 ---------------------PWA------------------------
 pwa入门
 -------------------ELECTRON---------------------
@@ -379,6 +379,16 @@ lib-flexible  手淘伸缩可适配方案
 px2rem  px转rem工具
 pills  A simple responsive CSS Grid for humans
 grd  A CSS grid framework using Flexbox. 
+postcss-grid-kiss  postcss plugin
+laravel-elixir-vue-2  vue+laravel
+redis(huangz1990)  中文翻译
+tomcat-redis-session-manager  用redis+tomcat解决session共享问题
+nginx-book  nginx书
+zanui-weapp  小程序ui
+wept  小程序实时运行工具
+localtunnel  
+weixin-java-tools  微信公众号java sdk
+fuse-box  新的打包工具
 ```
 
 ## 2017-2018前端
