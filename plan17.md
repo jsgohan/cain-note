@@ -18,7 +18,7 @@
 
 - 博客、前后端系统、造数工具、组件库、页面自动生成平台、用electron写开发者平台、用pwa写开发者平台
 
-- 小程序、weex、pwa、electron、react、react native、web worker (service worker)
+- 小程序、weex、pwa、electron、react、angular4、react native、web worker (service worker)
 
 - docker（微服务 springboot）、ngnix
 
@@ -30,7 +30,7 @@
 ---------------------VUE-----------------------
 blog(youngwind)  梁少锋的vue源码分析 vue代码继续写并读源码(nuxt.js/组件库)
 mmf-blog、nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的vue组件初始开发
-简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog 微信公众号版）
+简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog 微信公众号版node做服务端，mongodb做数据库，组件挂到公众号上，小程序开发）
 造数工具（导出，图形化界面）
 vue组件开发
 --------------------LINUX----------------------
@@ -67,6 +67,7 @@ web安全学习
 后端java+前端vue+node 如果用到服务端渲染，nodejs和vue和java之间要怎么通信(vue的服务端渲染是在node环境中执行的，node环境必须存在，至于怎么和java合目前没有思路，大部分的思路是把node当做中间件，用node做服务端渲染，取的数据调java工程生成的数据)
 前端vue+node+mongodb 纯js的工程怎么玩转？
 前端vue  是否可以用node的api(不行，浏览器不能运行node，因此不能在前端使用node的api。起初误认为前端有使用require，后才想到用的是es6的import，如果要用require，要用browserify模拟commonjs)
+运用前后端分离，一般要通过nginx反向代理找后端服务，或者直接把vue打包生成的丢到jav工程中执行；vue-cli开发阶段用的是http-proxy-middleware实现动态代理
 ```
 
 ## vue-demo
@@ -390,7 +391,17 @@ localtunnel
 weixin-java-tools  微信公众号java sdk
 fuse-box  新的打包工具
 shelljs  shell命令
-
+webpack-seed  基于webpack的多页应用脚手架
+Jcrop  jq图片剪裁插件
+vue-cropperjs  基于vue的图片剪裁工具
+Learn-Laravel-5  laravel5教程
+dnode  node端rpc（可以和java）
+wechat  微信公众号平台消息接口服务中间件
+wechat-api   调用微信公众号api
+wechat-oauth
+weixin-robot  微信公众号自动 回复机器人
+react-isomorphic-boilerplate   react多页脚手架
+awesome-angular  ng文档
 ```
 
 ## 2017-2018前端
