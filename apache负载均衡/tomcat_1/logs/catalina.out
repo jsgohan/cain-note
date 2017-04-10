@@ -1,0 +1,24 @@
+四月 10, 2017 4:02:12 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\ding\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ding\bin;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\CVSNT;C:\Users\ding\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;.
+四月 10, 2017 4:02:13 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1159 ms
+四月 10, 2017 4:02:13 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:02:13 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:02:13 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:02:14 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 4:02:14 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:02:14 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:02:15 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:02:15 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:02:16 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:02:16 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3

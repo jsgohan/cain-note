@@ -1,0 +1,56 @@
+2016-4-11 11:36:45 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.6.0_38\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\NetSarang;D:\Oracle\product\10.1.0\Client_1\bin;C:\Program Files\Java\jdk1.6.0_38\bin;D:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;D:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\apache-maven-3.1.1-bin\apache-maven-3.1.1\lib;;D:\PROGRA~2\BOSSFL~1\tuxedo\bin;D:\PROGRA~2\BOSSFL~1;;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\CVSNT\;.
+2016-4-11 11:36:45 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 679 ms
+2016-4-11 11:36:45 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+2016-4-11 11:36:45 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+2016-4-11 11:36:45 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory tess
+2016-4-11 11:36:46 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+2016-4-11 11:36:46 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2016-4-11 11:36:46 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+2016-4-11 11:36:46 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+2016-4-11 11:36:46 org.apache.catalina.startup.Catalina start
+信息: Server startup in 659 ms
+2016-4-11 11:36:53 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+2016-4-11 11:36:53 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+2016-4-11 11:36:53 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009
+2016-4-11 11:36:54 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+2016-4-11 11:36:54 org.apache.coyote.http11.AbstractHttp11Protocol destroy
+信息: Stopping Coyote HTTP/1.1 on http-8080
+2016-4-11 11:36:54 org.apache.coyote.ajp.AjpProtocol destroy
+信息: Stopping Coyote AJP/1.3 on ajp-8009
+2016-4-11 11:36:58 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.6.0_38\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\NetSarang;D:\Oracle\product\10.1.0\Client_1\bin;C:\Program Files\Java\jdk1.6.0_38\bin;D:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;D:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\apache-maven-3.1.1-bin\apache-maven-3.1.1\lib;;D:\PROGRA~2\BOSSFL~1\tuxedo\bin;D:\PROGRA~2\BOSSFL~1;;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\CVSNT\;.
+2016-4-11 11:36:58 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 321 ms
+2016-4-11 11:36:58 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+2016-4-11 11:36:58 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+2016-4-11 11:36:58 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory tess
+2016-4-11 11:36:59 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+2016-4-11 11:36:59 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2016-4-11 11:36:59 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+2016-4-11 11:36:59 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+2016-4-11 11:36:59 org.apache.catalina.startup.Catalina start
+信息: Server startup in 379 ms
+2016-4-11 11:37:01 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+2016-4-11 11:37:01 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009

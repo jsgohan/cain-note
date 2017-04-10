@@ -1,0 +1,40 @@
+2015-08-03 14:23:23,364 [Thread-16](2973)[INFO] base.service.BaseService - get localimpbean name is[com.newland.fms.service.ejb.NXFMSServiceBean]
+2015-08-03 14:23:23,365 [Thread-16](2974)[WARN] base.service.BaseService - =====init bean [com.newland.fms.service.ejb.NXFMSServiceBean] for service[FMS_FileUploadImp,FMS_fileOpeImp,FMS_BaseParamTabGetImp,FMS_FileNodeQueryImp,FMS_GetFileChildFNodeImp,FMS_FileMapBuildImp,FMS_FileNodeDetailGetImp,FMS_AdvSearchImp,FMS_DeeplySearchImp,FMS_FileReadRecordImp,FMS_GetFileTreeDataImp,FMS_CondFieldQueryImp,FMS_QueryCondMgr,FMS_MyFavMgr,FMS_MyFavFileMgr,FMS_FileFullIndexScan,FMS_OptimizeLuceneIndex,FMS_RebuildLuceneIndex,FMS_CustomWordMgr,NXFMS_FileMainInfoMgr,NXFMS_FileAccessCtrlListMgr,FMS_H_File_Main_Info,FMS_File_Op_Log,FMS_RoleMgr,CommonTransfer,FMS_DeptMgr,FMS_StaffMgr,FMS_TagMgr,FMS_OperationLogMgr,FMS_FileLockMonitorMgr,FMS_FileRecyclerImp,FMS_FileAuditImp,FMS_AccessApplyImp,ACD_RequirementController,ACD_DictiController,ACD_TempletController,ACD_DocumentController,ACD_OtherController,ACD_ImportController,ACD_UserConfigController]=====
+
+
+2015-08-03 14:23:23,398 [Thread-16](3007)[INFO] base.service.BaseService - get localimpbean name is[fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean]
+2015-08-03 14:23:23,401 [Thread-16](3010)[WARN] base.service.BaseService - =====init bean [fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean] for service[SM_DepartmentMgr,SM_RoleMgr,PortalServer,SM_StaffMgr,SM_FunctionMgr,SM_OperationMgr,SM_SmsMgr]=====
+
+
+2015-08-03 14:30:24,458 [Thread-16](3229)[INFO] base.service.BaseService - get localimpbean name is[com.newland.fms.service.ejb.NXFMSServiceBean]
+2015-08-03 14:30:24,458 [Thread-16](3229)[WARN] base.service.BaseService - =====init bean [com.newland.fms.service.ejb.NXFMSServiceBean] for service[FMS_FileUploadImp,FMS_fileOpeImp,FMS_BaseParamTabGetImp,FMS_FileNodeQueryImp,FMS_GetFileChildFNodeImp,FMS_FileMapBuildImp,FMS_FileNodeDetailGetImp,FMS_AdvSearchImp,FMS_DeeplySearchImp,FMS_FileReadRecordImp,FMS_GetFileTreeDataImp,FMS_CondFieldQueryImp,FMS_QueryCondMgr,FMS_MyFavMgr,FMS_MyFavFileMgr,FMS_FileFullIndexScan,FMS_OptimizeLuceneIndex,FMS_RebuildLuceneIndex,FMS_CustomWordMgr,NXFMS_FileMainInfoMgr,NXFMS_FileAccessCtrlListMgr,FMS_H_File_Main_Info,FMS_File_Op_Log,FMS_RoleMgr,CommonTransfer,FMS_DeptMgr,FMS_StaffMgr,FMS_TagMgr,FMS_OperationLogMgr,FMS_FileLockMonitorMgr,FMS_FileRecyclerImp,FMS_FileAuditImp,FMS_AccessApplyImp,ACD_RequirementController,ACD_DictiController,ACD_TempletController,ACD_DocumentController,ACD_OtherController,ACD_ImportController,ACD_UserConfigController]=====
+
+
+2015-08-03 14:30:24,496 [Thread-16](3267)[INFO] base.service.BaseService - get localimpbean name is[fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean]
+2015-08-03 14:30:24,499 [Thread-16](3270)[WARN] base.service.BaseService - =====init bean [fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean] for service[SM_DepartmentMgr,SM_RoleMgr,PortalServer,SM_StaffMgr,SM_FunctionMgr,SM_OperationMgr,SM_SmsMgr]=====
+
+
+2015-08-03 15:04:29,984 [Thread-50](2981)[INFO] base.service.BaseService - get localimpbean name is[com.newland.fms.service.ejb.NXFMSServiceBean]
+2015-08-03 15:04:29,985 [Thread-50](2982)[WARN] base.service.BaseService - =====init bean [com.newland.fms.service.ejb.NXFMSServiceBean] for service[FMS_FileUploadImp,FMS_fileOpeImp,FMS_BaseParamTabGetImp,FMS_FileNodeQueryImp,FMS_GetFileChildFNodeImp,FMS_FileMapBuildImp,FMS_FileNodeDetailGetImp,FMS_AdvSearchImp,FMS_DeeplySearchImp,FMS_FileReadRecordImp,FMS_GetFileTreeDataImp,FMS_CondFieldQueryImp,FMS_QueryCondMgr,FMS_MyFavMgr,FMS_MyFavFileMgr,FMS_FileFullIndexScan,FMS_OptimizeLuceneIndex,FMS_RebuildLuceneIndex,FMS_CustomWordMgr,NXFMS_FileMainInfoMgr,NXFMS_FileAccessCtrlListMgr,FMS_H_File_Main_Info,FMS_File_Op_Log,FMS_RoleMgr,CommonTransfer,FMS_DeptMgr,FMS_StaffMgr,FMS_TagMgr,FMS_OperationLogMgr,FMS_FileLockMonitorMgr,FMS_FileRecyclerImp,FMS_FileAuditImp,FMS_AccessApplyImp,ACD_RequirementController,ACD_DictiController,ACD_TempletController,ACD_DocumentController,ACD_OtherController,ACD_ImportController,ACD_UserConfigController]=====
+
+
+2015-08-03 15:04:30,021 [Thread-50](3018)[INFO] base.service.BaseService - get localimpbean name is[fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean]
+2015-08-03 15:04:30,024 [Thread-50](3021)[WARN] base.service.BaseService - =====init bean [fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean] for service[SM_DepartmentMgr,SM_RoleMgr,PortalServer,SM_StaffMgr,SM_FunctionMgr,SM_OperationMgr,SM_SmsMgr]=====
+
+
+2015-08-03 15:14:13,525 [Thread-16](3594)[INFO] base.service.BaseService - get localimpbean name is[com.newland.fms.service.ejb.NXFMSServiceBean]
+2015-08-03 15:14:13,527 [Thread-16](3596)[WARN] base.service.BaseService - =====init bean [com.newland.fms.service.ejb.NXFMSServiceBean] for service[FMS_FileUploadImp,FMS_fileOpeImp,FMS_BaseParamTabGetImp,FMS_FileNodeQueryImp,FMS_GetFileChildFNodeImp,FMS_FileMapBuildImp,FMS_FileNodeDetailGetImp,FMS_AdvSearchImp,FMS_DeeplySearchImp,FMS_FileReadRecordImp,FMS_GetFileTreeDataImp,FMS_CondFieldQueryImp,FMS_QueryCondMgr,FMS_MyFavMgr,FMS_MyFavFileMgr,FMS_FileFullIndexScan,FMS_OptimizeLuceneIndex,FMS_RebuildLuceneIndex,FMS_CustomWordMgr,NXFMS_FileMainInfoMgr,NXFMS_FileAccessCtrlListMgr,FMS_H_File_Main_Info,FMS_File_Op_Log,FMS_RoleMgr,CommonTransfer,FMS_DeptMgr,FMS_StaffMgr,FMS_TagMgr,FMS_OperationLogMgr,FMS_FileLockMonitorMgr,FMS_FileRecyclerImp,FMS_FileAuditImp,FMS_AccessApplyImp,ACD_RequirementController,ACD_DictiController,ACD_TempletController,ACD_DocumentController,ACD_OtherController,ACD_ImportController,ACD_UserConfigController]=====
+
+
+2015-08-03 15:14:13,569 [Thread-16](3638)[INFO] base.service.BaseService - get localimpbean name is[fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean]
+2015-08-03 15:14:13,574 [Thread-16](3643)[WARN] base.service.BaseService - =====init bean [fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean] for service[SM_DepartmentMgr,SM_RoleMgr,PortalServer,SM_StaffMgr,SM_FunctionMgr,SM_OperationMgr,SM_SmsMgr]=====
+
+
+2015-08-03 16:01:50,841 [Thread-16](4078)[INFO] base.service.BaseService - get localimpbean name is[com.newland.fms.service.ejb.NXFMSServiceBean]
+2015-08-03 16:01:50,859 [Thread-16](4096)[WARN] base.service.BaseService - =====init bean [com.newland.fms.service.ejb.NXFMSServiceBean] for service[FMS_FileUploadImp,FMS_fileOpeImp,FMS_BaseParamTabGetImp,FMS_FileNodeQueryImp,FMS_GetFileChildFNodeImp,FMS_FileMapBuildImp,FMS_FileNodeDetailGetImp,FMS_AdvSearchImp,FMS_DeeplySearchImp,FMS_FileReadRecordImp,FMS_GetFileTreeDataImp,FMS_CondFieldQueryImp,FMS_QueryCondMgr,FMS_MyFavMgr,FMS_MyFavFileMgr,FMS_FileFullIndexScan,FMS_OptimizeLuceneIndex,FMS_RebuildLuceneIndex,FMS_CustomWordMgr,NXFMS_FileMainInfoMgr,NXFMS_FileAccessCtrlListMgr,FMS_H_File_Main_Info,FMS_File_Op_Log,FMS_RoleMgr,CommonTransfer,FMS_DeptMgr,FMS_StaffMgr,FMS_TagMgr,FMS_OperationLogMgr,FMS_FileLockMonitorMgr,FMS_FileRecyclerImp,FMS_FileAuditImp,FMS_AccessApplyImp,ACD_RequirementController,ACD_DictiController,ACD_TempletController,ACD_DocumentController,ACD_OtherController,ACD_ImportController,ACD_UserConfigController]=====
+
+
+2015-08-03 16:01:50,926 [Thread-16](4163)[INFO] base.service.BaseService - get localimpbean name is[fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean]
+2015-08-03 16:01:50,928 [Thread-16](4165)[WARN] base.service.BaseService - =====init bean [fzsmp.systemmgr.service.ejb.FZSMPSystemMgrBean] for service[SM_DepartmentMgr,SM_RoleMgr,PortalServer,SM_StaffMgr,SM_FunctionMgr,SM_OperationMgr,SM_SmsMgr]=====
+
+

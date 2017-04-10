@@ -1,0 +1,619 @@
+2015-08-03 14:24:22,678 [http-8080-exec-10](62287)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/]
+2015-08-03 14:24:22,678 [http-8080-exec-10](62287)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out
+2015-08-03 14:24:23,281 [http-8080-exec-10](62890)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/acd/login.jsp]
+2015-08-03 14:24:23,281 [http-8080-exec-10](62890)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/acd
+2015-08-03 14:24:23,634 [http-8080-exec-2](63243)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 14:24:23,634 [http-8080-exec-2](63243)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 14:25:23,344 [http-8080-exec-5](122953)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 14:25:23,344 [http-8080-exec-5](122953)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 14:25:23,411 [http-8080-exec-5](123020)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 14:25:23,414 [http-8080-exec-5](123023)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@eff545]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 14:25:23,766 [http-8080-exec-5](123375)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:d9bc581e85f869846c46cf60f6970d1768f42d7ade6e0611b46014d96869ab50d2de5bfc9b287af9a0f135633bbebf1931e1ba4332c92968e5f519e06d480820fbd6fb48a7117eabd9ec0b3fa0dbcd289f8391a2d8145a97aea50b85364ebad4af22b4a0641a227fe459e6d80c247b456854dc55f5fb4fff3988d0887e33b767
+2015-08-03 14:25:23,766 [http-8080-exec-5](123375)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 14:25:23,766 [http-8080-exec-5](123375)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 14:25:23,790 [http-8080-exec-5](123399)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 14:25:23,790 [http-8080-exec-5](123399)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1eae15f]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [8088]
+param named[staff_pwd_code] = [46205b5dacc132b60a46c9a83337d54de02307a7f3f8251de41b21513b7f2f305ebdd73c51aa601755317dd5e29a4455e07f870632f203fa5bcb61368f6c3ee65d738c9143e32e1facb78dc79fef0cc14766efd586c82ca6455c3b3ce1ccb7dd88c3480decf84bbb4938b55bcc9b18905c4de16badc4c30652e90ee454f4056f]
+param named[staff_pwd] = [12345678]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 14:25:23,826 [http-8080-exec-5](123435)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 14:25:24,068 [http-8080-exec-5](123677)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 14:25:24,123 [http-8080-exec-5](123732)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 14:25:24,123 [http-8080-exec-5](123732)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 14:31:15,316 [http-8080-exec-1](54087)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/acd/login.jsp]
+2015-08-03 14:31:15,317 [http-8080-exec-1](54088)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/acd
+2015-08-03 14:31:15,629 [http-8080-exec-9](54400)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 14:31:15,629 [http-8080-exec-9](54400)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 14:32:15,999 [http-8080-exec-3](114770)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 14:32:15,999 [http-8080-exec-3](114770)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 14:32:16,031 [http-8080-exec-3](114802)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 14:32:16,035 [http-8080-exec-3](114806)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@d9205]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 14:32:16,172 [http-8080-exec-3](114943)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:f83296be6990ebf75d46982f05e39494bf69625a9738373de84afc2ae438b09ad9013a9da453462780a060652ebc479ff13716b808b198f48f5961ecc9728844c54e7b8cb9629b34058451eadb76525b46d46db6b446de04196548d89892e9a6f2f421b3857b990b5f9f4de7afed723486805249cfcee4e8bdc7886319f101b5
+2015-08-03 14:32:16,172 [http-8080-exec-3](114943)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 14:32:16,173 [http-8080-exec-3](114944)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 14:32:16,189 [http-8080-exec-3](114960)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 14:32:16,189 [http-8080-exec-3](114960)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@6f19d5]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [4245]
+param named[staff_pwd_code] = [f43f1579314b4ebaae0c003719460ec01bb10725833d3bca58b3188367d3b714888d3c882ff58acc565468df97259a6cf9c7a7610e041a9a1502f2923c8399e15dddfa4a6e80c910db3264109c8ba8da94e4411245fd90dffb56af0704410cda820bca0548413acf86b8c6b7740b6da5cca58b00ab8de531ec9acab077c3cbd8]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 14:32:16,231 [http-8080-exec-3](115002)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 14:32:16,247 [http-8080-exec-3](115018)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 14:32:16,260 [http-8080-exec-3](115031)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 14:32:16,260 [http-8080-exec-3](115031)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:01:48,941 [http-8080-exec-7](1887712)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:01:48,941 [http-8080-exec-7](1887712)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:01:48,967 [http-8080-exec-7](1887738)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:01:48,967 [http-8080-exec-7](1887738)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:01:53,958 [http-8080-exec-7](1892729)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:01:53,958 [http-8080-exec-7](1892729)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:01:53,964 [http-8080-exec-7](1892735)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:01:53,964 [http-8080-exec-7](1892735)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@10aa282]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 15:01:53,964 [http-8080-exec-7](1892735)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:f83296be6990ebf75d46982f05e39494bf69625a9738373de84afc2ae438b09ad9013a9da453462780a060652ebc479ff13716b808b198f48f5961ecc9728844c54e7b8cb9629b34058451eadb76525b46d46db6b446de04196548d89892e9a6f2f421b3857b990b5f9f4de7afed723486805249cfcee4e8bdc7886319f101b5
+2015-08-03 15:01:53,964 [http-8080-exec-7](1892735)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 15:01:53,964 [http-8080-exec-7](1892735)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:01:53,983 [http-8080-exec-7](1892754)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:01:53,983 [http-8080-exec-7](1892754)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1bde3d2]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [8070]
+param named[staff_pwd_code] = [f43f1579314b4ebaae0c003719460ec01bb10725833d3bca58b3188367d3b714888d3c882ff58acc565468df97259a6cf9c7a7610e041a9a1502f2923c8399e15dddfa4a6e80c910db3264109c8ba8da94e4411245fd90dffb56af0704410cda820bca0548413acf86b8c6b7740b6da5cca58b00ab8de531ec9acab077c3cbd8]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 15:01:54,000 [http-8080-exec-7](1892771)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 15:01:54,004 [http-8080-exec-7](1892775)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:01:54,009 [http-8080-exec-7](1892780)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:01:54,009 [http-8080-exec-7](1892780)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:02:54,695 [http-8080-exec-3](1953466)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:02:54,696 [http-8080-exec-3](1953467)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:02:54,721 [http-8080-exec-3](1953492)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:02:54,721 [http-8080-exec-3](1953492)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:02:58,775 [http-8080-exec-3](1957546)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:02:58,775 [http-8080-exec-3](1957546)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:02:58,780 [http-8080-exec-3](1957551)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:02:58,780 [http-8080-exec-3](1957551)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@d83365]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 15:02:58,780 [http-8080-exec-3](1957551)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:f83296be6990ebf75d46982f05e39494bf69625a9738373de84afc2ae438b09ad9013a9da453462780a060652ebc479ff13716b808b198f48f5961ecc9728844c54e7b8cb9629b34058451eadb76525b46d46db6b446de04196548d89892e9a6f2f421b3857b990b5f9f4de7afed723486805249cfcee4e8bdc7886319f101b5
+2015-08-03 15:02:58,780 [http-8080-exec-3](1957551)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 15:02:58,780 [http-8080-exec-3](1957551)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:02:58,791 [http-8080-exec-3](1957562)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:02:58,791 [http-8080-exec-3](1957562)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@6f4652]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [5585]
+param named[staff_pwd_code] = [f43f1579314b4ebaae0c003719460ec01bb10725833d3bca58b3188367d3b714888d3c882ff58acc565468df97259a6cf9c7a7610e041a9a1502f2923c8399e15dddfa4a6e80c910db3264109c8ba8da94e4411245fd90dffb56af0704410cda820bca0548413acf86b8c6b7740b6da5cca58b00ab8de531ec9acab077c3cbd8]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 15:02:58,806 [http-8080-exec-3](1957577)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 15:02:58,809 [http-8080-exec-3](1957580)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:02:58,825 [http-8080-exec-3](1957596)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:02:58,825 [http-8080-exec-3](1957596)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:12:28,253 [http-8080-exec-1](481250)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:12:28,254 [http-8080-exec-1](481251)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:12:28,290 [http-8080-exec-1](481287)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:12:28,292 [http-8080-exec-1](481289)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1d6b049]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 15:12:28,703 [http-8080-exec-1](481700)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:94ad25af0998936a5d919327300f0bf93c267fbc35dec812ac03e85a947f4907b0007052540cda37e4ceaef36185fa0ee6d4a7e63dcccdff7894a20ae9cf25c985814d34db3514dc7b6d429301d9e45bb285c4f447b75d5c45fa24c076c886acde4bb6df12485207ceb8b68c7aff402a78de8fef2712d46abcc318a71da93c97
+2015-08-03 15:12:28,703 [http-8080-exec-1](481700)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 15:12:28,703 [http-8080-exec-1](481700)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:12:28,712 [http-8080-exec-1](481709)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:12:28,712 [http-8080-exec-1](481709)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1ed2061]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [1846]
+param named[staff_pwd_code] = [449688e78fad66cf24acd23757b95baab7e34dc11a4b6049afe6b4c3557e380bb12b44b8d37e607ffbb52b27ae504cc14fab8c5b80bc1b01fa8323df9eac3251abcfafac9acbca534bf8e2a5a29bcf37e28fc4a7d5c8bf784e3583245008d9399585e6a918c579a55fe3f610b77131fb4bca398c6d36d9824e18994fb8da47cc]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 15:12:28,748 [http-8080-exec-1](481745)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 15:12:28,781 [http-8080-exec-1](481778)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:12:28,786 [http-8080-exec-1](481783)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:12:28,786 [http-8080-exec-1](481783)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:12:34,781 [http-8080-exec-1](487778)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:12:34,781 [http-8080-exec-1](487778)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:12:34,784 [http-8080-exec-1](487781)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:12:34,784 [http-8080-exec-1](487781)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@19d688]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 15:12:34,785 [http-8080-exec-1](487782)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:94ad25af0998936a5d919327300f0bf93c267fbc35dec812ac03e85a947f4907b0007052540cda37e4ceaef36185fa0ee6d4a7e63dcccdff7894a20ae9cf25c985814d34db3514dc7b6d429301d9e45bb285c4f447b75d5c45fa24c076c886acde4bb6df12485207ceb8b68c7aff402a78de8fef2712d46abcc318a71da93c97
+2015-08-03 15:12:34,785 [http-8080-exec-1](487782)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 15:12:34,785 [http-8080-exec-1](487782)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:12:34,798 [http-8080-exec-1](487795)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:12:34,798 [http-8080-exec-1](487795)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@c8f0a4]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [0743]
+param named[staff_pwd_code] = [449688e78fad66cf24acd23757b95baab7e34dc11a4b6049afe6b4c3557e380bb12b44b8d37e607ffbb52b27ae504cc14fab8c5b80bc1b01fa8323df9eac3251abcfafac9acbca534bf8e2a5a29bcf37e28fc4a7d5c8bf784e3583245008d9399585e6a918c579a55fe3f610b77131fb4bca398c6d36d9824e18994fb8da47cc]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 15:12:34,817 [http-8080-exec-1](487814)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 15:12:34,821 [http-8080-exec-1](487818)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:12:34,826 [http-8080-exec-1](487823)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:12:34,826 [http-8080-exec-1](487823)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:13:21,784 [http-8080-exec-3](534781)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:13:21,784 [http-8080-exec-3](534781)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:13:21,811 [http-8080-exec-3](534808)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:13:21,811 [http-8080-exec-3](534808)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:13:26,008 [http-8080-exec-3](539005)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:13:26,008 [http-8080-exec-3](539005)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:13:26,012 [http-8080-exec-3](539009)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:13:26,012 [http-8080-exec-3](539009)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1c0adca]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 15:13:26,012 [http-8080-exec-3](539009)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:94ad25af0998936a5d919327300f0bf93c267fbc35dec812ac03e85a947f4907b0007052540cda37e4ceaef36185fa0ee6d4a7e63dcccdff7894a20ae9cf25c985814d34db3514dc7b6d429301d9e45bb285c4f447b75d5c45fa24c076c886acde4bb6df12485207ceb8b68c7aff402a78de8fef2712d46abcc318a71da93c97
+2015-08-03 15:13:26,012 [http-8080-exec-3](539009)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 15:13:26,012 [http-8080-exec-3](539009)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:13:26,019 [http-8080-exec-3](539016)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:13:26,019 [http-8080-exec-3](539016)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@e1469c]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [7344]
+param named[staff_pwd_code] = [449688e78fad66cf24acd23757b95baab7e34dc11a4b6049afe6b4c3557e380bb12b44b8d37e607ffbb52b27ae504cc14fab8c5b80bc1b01fa8323df9eac3251abcfafac9acbca534bf8e2a5a29bcf37e28fc4a7d5c8bf784e3583245008d9399585e6a918c579a55fe3f610b77131fb4bca398c6d36d9824e18994fb8da47cc]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 15:13:26,036 [http-8080-exec-3](539033)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 15:13:26,040 [http-8080-exec-3](539037)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:13:26,045 [http-8080-exec-3](539042)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:13:26,045 [http-8080-exec-3](539042)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:14:26,088 [http-8080-exec-1](16157)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 15:14:26,088 [http-8080-exec-1](16157)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 15:14:26,179 [http-8080-exec-2](16248)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:14:26,183 [http-8080-exec-2](16252)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@12d294f]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 15:14:26,702 [http-8080-exec-2](16771)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:91a2c6e3fe8160151b0c416bf511d9f4efc4a56abffe56535ce4c23b43f22748332d21eaca746f0e8240047d9de509762854a3522cb5604e0eb111650b6e6c0e6011e4eb0942c855f066415603f5b24286e89597ba5bf63112cd1123ea919395d85a7204716b09031cba27a6a14379fe28b4b9c9961a946f7addfd4b9344b93d
+2015-08-03 15:14:26,702 [http-8080-exec-2](16771)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 15:14:26,702 [http-8080-exec-2](16771)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:14:26,722 [http-8080-exec-3](16791)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 15:14:26,722 [http-8080-exec-3](16791)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@18fea98]
+param named[staff_no] = [SX20150713027]
+param named[image_code] = [6367]
+param named[staff_pwd_code] = [62a2007a7e8c89ccc47f6d88b3f151352c953349b4a033e1d18d6f3dfeeafc5b64ba974726ed179f9bfaa9af2e512aa18308ab89ba6382dadf9626933f7b549aa648b6e09189a24b38786cea47b621784530b3814275b794399889129977401d5139416d3032a4364e0084e5d4cde09227824a24d69e0d6101d6d293e4024b73]
+param named[staff_pwd] = [123QWE]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 15:14:26,762 [http-8080-exec-3](16831)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 15:14:26,785 [http-8080-exec-3](16854)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 15:14:26,790 [http-8080-exec-4](16859)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 15:14:26,791 [http-8080-exec-4](16860)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:01:57,264 [http-8080-exec-1](10501)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/acd/login.jsp]
+2015-08-03 16:01:57,281 [http-8080-exec-1](10518)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/acd
+2015-08-03 16:01:57,654 [http-8080-exec-9](10891)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 16:01:57,654 [http-8080-exec-9](10891)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:02:05,417 [http-8080-exec-9](18654)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 16:02:05,418 [http-8080-exec-9](18655)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:02:05,466 [http-8080-exec-9](18703)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:02:05,472 [http-8080-exec-9](18709)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@98f352]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 16:02:05,786 [http-8080-exec-9](19023)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:acaa2f84c51d7c88bff3b60e54f64268bb68c9d57ff971f16627b5b37b1911c458227201aeb9ba094b8ff427f810b1eb3cde338bc647eafe7bc83aaa5e6ab8e29610ca6318d999a72ffd8d29e529efaf01fd34b1047b8a0d4a0a0453fcb1ddb3f6ba14b07921763f34827ee5a16014516401c4ad27c6766909dbfbedf19d2ac5
+2015-08-03 16:02:05,786 [http-8080-exec-9](19023)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 16:02:05,786 [http-8080-exec-9](19023)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:02:05,855 [http-8080-exec-9](19092)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:02:05,855 [http-8080-exec-9](19092)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@b6f7f5]
+param named[staff_no] = [11]
+param named[image_code] = [4265]
+param named[staff_pwd_code] = [303c6d8a64767a0449b7a4908bb7c8c6bb3a4669c0c567a6bfb4271d967b0c2d76c6cff57c849eb3edb6367f44f90fb2b8592cff0620bd1831dc8782c701a91911cb5d756c475347419a7801191940677f1a8a02449a08f0e6a5c83fcfd609e9d31917f12788d685466e617cdc4ec4fbce4bf8186a8a0624128fdddc6f4aa70d]
+param named[staff_pwd] = [12qwe]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 16:02:05,896 [http-8080-exec-9](19133)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 16:02:05,923 [http-8080-exec-9](19160)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:02:05,933 [http-8080-exec-9](19170)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 16:02:05,933 [http-8080-exec-9](19170)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:04:02,625 [http-8080-exec-1](135862)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 16:04:02,625 [http-8080-exec-1](135862)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:04:02,632 [http-8080-exec-1](135869)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:04:02,632 [http-8080-exec-1](135869)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1fcbac1]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 16:04:02,632 [http-8080-exec-1](135869)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:acaa2f84c51d7c88bff3b60e54f64268bb68c9d57ff971f16627b5b37b1911c458227201aeb9ba094b8ff427f810b1eb3cde338bc647eafe7bc83aaa5e6ab8e29610ca6318d999a72ffd8d29e529efaf01fd34b1047b8a0d4a0a0453fcb1ddb3f6ba14b07921763f34827ee5a16014516401c4ad27c6766909dbfbedf19d2ac5
+2015-08-03 16:04:02,632 [http-8080-exec-1](135869)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 16:04:02,632 [http-8080-exec-1](135869)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:04:02,656 [http-8080-exec-1](135893)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:04:02,656 [http-8080-exec-1](135893)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@97f621]
+param named[staff_no] = [07382]
+param named[image_code] = [1380]
+param named[staff_pwd_code] = [334b7878bef7992c5fbef65eb10595b36fc67d9644b59861802af9bf2885755974145f5bcab613f11bd3a2373f4849b346cdc1e616f17c34f6d2354754174ce5c004c0a3de72b30549bc634ce792445b7745095499b948435d1bbcc780c12f60f9c4634bf9770e8c25c012bb8daa1fc47c0d8813960ee5b83e1e29c50851d571]
+param named[staff_pwd] = [123qwe]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 16:04:02,672 [http-8080-exec-1](135909)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 16:04:02,678 [http-8080-exec-1](135915)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:04:02,684 [http-8080-exec-1](135921)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 16:04:02,684 [http-8080-exec-1](135921)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:15:18,295 [http-8080-exec-5](811532)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 16:15:18,295 [http-8080-exec-5](811532)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:15:18,309 [http-8080-exec-5](811546)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:15:18,309 [http-8080-exec-5](811546)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1408325]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 16:15:18,309 [http-8080-exec-5](811546)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:acaa2f84c51d7c88bff3b60e54f64268bb68c9d57ff971f16627b5b37b1911c458227201aeb9ba094b8ff427f810b1eb3cde338bc647eafe7bc83aaa5e6ab8e29610ca6318d999a72ffd8d29e529efaf01fd34b1047b8a0d4a0a0453fcb1ddb3f6ba14b07921763f34827ee5a16014516401c4ad27c6766909dbfbedf19d2ac5
+2015-08-03 16:15:18,309 [http-8080-exec-5](811546)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 16:15:18,309 [http-8080-exec-5](811546)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:15:18,326 [http-8080-exec-5](811563)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:15:18,326 [http-8080-exec-5](811563)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@16602cb]
+param named[staff_no] = [10488]
+param named[image_code] = [0523]
+param named[staff_pwd_code] = [334b7878bef7992c5fbef65eb10595b36fc67d9644b59861802af9bf2885755974145f5bcab613f11bd3a2373f4849b346cdc1e616f17c34f6d2354754174ce5c004c0a3de72b30549bc634ce792445b7745095499b948435d1bbcc780c12f60f9c4634bf9770e8c25c012bb8daa1fc47c0d8813960ee5b83e1e29c50851d571]
+param named[staff_pwd] = [123qwe]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 16:15:18,348 [http-8080-exec-5](811585)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 16:15:18,352 [http-8080-exec-5](811589)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:15:18,360 [http-8080-exec-5](811597)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 16:15:18,360 [http-8080-exec-5](811597)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:15:19,418 [http-8080-exec-5](812655)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 16:15:19,418 [http-8080-exec-5](812655)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:15:19,454 [http-8080-exec-5](812691)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 16:15:19,454 [http-8080-exec-5](812691)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:15:19,914 [http-8080-exec-5](813151)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 16:15:19,914 [http-8080-exec-5](813151)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:15:19,944 [http-8080-exec-5](813181)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/verify_image.jsp]
+2015-08-03 16:15:19,944 [http-8080-exec-5](813181)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:29:18,917 [http-8080-exec-1](1652154)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/frame/login/checkImageCode.jsp]
+2015-08-03 16:29:18,917 [http-8080-exec-1](1652154)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/frame/login
+2015-08-03 16:29:18,950 [http-8080-exec-1](1652187)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:29:18,950 [http-8080-exec-1](1652187)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@1caefb0]
+param named[method] = [GET_RSAPUBLICKEY]
+param named[service_name] = [PortalServer]
+
+
+
+2015-08-03 16:29:18,950 [http-8080-exec-1](1652187)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - Modulus:acaa2f84c51d7c88bff3b60e54f64268bb68c9d57ff971f16627b5b37b1911c458227201aeb9ba094b8ff427f810b1eb3cde338bc647eafe7bc83aaa5e6ab8e29610ca6318d999a72ffd8d29e529efaf01fd34b1047b8a0d4a0a0453fcb1ddb3f6ba14b07921763f34827ee5a16014516401c4ad27c6766909dbfbedf19d2ac5
+2015-08-03 16:29:18,950 [http-8080-exec-1](1652187)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - PublicExponent:10001
+2015-08-03 16:29:18,950 [http-8080-exec-1](1652187)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:29:18,969 [http-8080-exec-1](1652206)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service named[PortalServer]...
+2015-08-03 16:29:18,970 [http-8080-exec-1](1652207)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - serviceName=[PortalServer]
+poolName=[null]
+httpObj=[null]
+dbSessionSeq=[null]
+token=[null]
+dbOpe=[base.db.RemoteDBOpe@681db8]
+param named[staff_no] = [02764]
+param named[image_code] = [5621]
+param named[staff_pwd_code] = [334b7878bef7992c5fbef65eb10595b36fc67d9644b59861802af9bf2885755974145f5bcab613f11bd3a2373f4849b346cdc1e616f17c34f6d2354754174ce5c004c0a3de72b30549bc634ce792445b7745095499b948435d1bbcc780c12f60f9c4634bf9770e8c25c012bb8daa1fc47c0d8813960ee5b83e1e29c50851d571]
+param named[staff_pwd] = [123qwe]
+param named[method] = [LOGIN]
+param named[service_name] = [PortalServer]
+param named[enforce] = [0]
+param named[client_ip] = [127.0.0.1]
+
+
+
+2015-08-03 16:29:18,985 [http-8080-exec-1](1652222)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - select a.staff_id, a.dept_id, b.dept_name, 
+ a.staff_no, a.staff_pwd, a.staff_name, a.mobile_nbr, a.email, a.staff_seq,
+ decode(sign(a.pwd_update_date - sysdate + ?), 1, 0, 1) pwd_expired, a.sts, a.boss_staff_id,
+ a.create_date, a.cancel_date, a.create_staff_id, a.update_staff_id, a.update_date,
+ a.error_times, a.lock_flag, a.lock_time, a.inure_time, a.expire_time, a.default_portal_id,
+ row_number() over (order by a.staff_seq asc) rn
+ from sm_staff_info a left join sm_department_info b on a.dept_id = b.dept_id where 1 = 1
+ and a.staff_no = ? and a.sts = ?
+2015-08-03 16:29:19,088 [http-8080-exec-1](1652325)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - d_inure_time:Thu May 14 09:37:40 CST 2015
+2015-08-03 16:29:19,088 [http-8080-exec-1](1652325)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - d_expire_time:Sat Apr 20 09:37:40 CST 2115
+2015-08-03 16:29:19,089 [http-8080-exec-1](1652326)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - now_date:Mon Aug 03 16:29:19 CST 2015
+2015-08-03 16:29:19,089 [http-8080-exec-1](1652326)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - DateTime.diffDate(now_date, d_inure_time, 4) :7023099088
+2015-08-03 16:29:19,089 [http-8080-exec-1](1652326)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - DateTime.diffDate(now_date, d_expire_time, 4) :-3146576900912
+2015-08-03 16:29:19,089 [http-8080-exec-1](1652326)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - staff_pwd:123qwe
+2015-08-03 16:29:19,089 [http-8080-exec-1](1652326)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - staff_pwd_code:123qwe
+2015-08-03 16:29:19,093 [http-8080-exec-1](1652330)[DEBUG] fzsmp.systemmgr.dao.LoginDAO - select a.verify_code, a.staff_id, a.client_ip,
+       to_char(a.login_time, 'YYYYMMDDHH24MISS') login_time,
+       to_char(a.logout_time, 'YYYYMMDDHH24MISS') logout_time,
+       to_char(a.pulse_time, 'YYYYMMDDHH24MISS') pulse_time, a.sts,
+       b.staff_no, b.staff_name, b.mobile_nbr, b.email, b.boss_staff_id,
+       b.dept_id, e.dept_name,
+       b.default_portal_id portal_id, e.city_code, e.county_code, 
+       row_number() over(order by a.login_time desc) rn
+  from sm_login_info a, sm_staff_info b, sm_department_info e 
+ where a.staff_id = b.staff_id and b.dept_id = e.dept_id  and a.staff_id = ?
+2015-08-03 16:29:19,171 [http-8080-exec-1](1652408)[DEBUG] fzsmp.systemmgr.dao.LoginDAO - sql:insert into sm_login_info
+  (verify_code, staff_id, client_ip, login_time, logout_time, pulse_time, sts, permanent)
+values
+  (?, ?, ?, sysdate, null, sysdate, '0', 'N')
+2015-08-03 16:29:19,226 [http-8080-exec-1](1652463)[DEBUG] fzsmp.systemmgr.dao.StaffMgrDAO - sql:update sm_staff_info set error_times = ? where staff_id = ?
+2015-08-03 16:29:19,733 [http-8080-exec-1](1652970)[DEBUG] fzsmp.systemmgr.dao.LoginDAO - select a.verify_code, a.staff_id, a.client_ip,
+       to_char(a.login_time, 'YYYYMMDDHH24MISS') login_time,
+       to_char(a.logout_time, 'YYYYMMDDHH24MISS') logout_time,
+       to_char(a.pulse_time, 'YYYYMMDDHH24MISS') pulse_time, a.sts,
+       b.staff_no, b.staff_name, b.mobile_nbr, b.email, b.boss_staff_id,
+       b.dept_id, e.dept_name,
+       b.default_portal_id portal_id, e.city_code, e.county_code, 
+       row_number() over(order by a.login_time desc) rn
+  from sm_login_info a, sm_staff_info b, sm_department_info e 
+ where a.staff_id = b.staff_id and b.dept_id = e.dept_id  and a.staff_id = ?
+2015-08-03 16:29:19,782 [http-8080-exec-1](1653019)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - verify_code:8db3842b50c52bc01ac083d50c9eee27
+2015-08-03 16:29:19,782 [http-8080-exec-1](1653019)[DEBUG] fzsmp.systemmgr.service.imp.PortalServerImp - call service[PortalServer] end.
+2015-08-03 16:29:19,794 [http-8080-exec-1](1653031)[DEBUG] fzsmp.common.servlet.LoginStsFilter - :get request[/fms_out/acd/document.jsp]
+2015-08-03 16:29:19,794 [http-8080-exec-1](1653031)[DEBUG] fzsmp.common.servlet.LoginStsFilter - url_path:/fms_out/acd

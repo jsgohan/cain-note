@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:31 +0800] "POST /AuctionManagement/auction/selectBuyers.do?xxxx=1459296391909 HTTP/1.1" 200 568
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:36 +0800] "POST /AuctionManagement/auction/valid/addBuyer.do?xxxx=1459296396581 HTTP/1.1" 200 4
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:45 +0800] "GET /AuctionManagement//js/jquery-easyui-1.4.2/themes/default/images/calendar_arrows.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:45 +0800] "POST /AuctionManagement/auction/quit.do?xxxx=1459296405058 HTTP/1.1" 200 92
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:49 +0800] "POST /AuctionManagement/auction/managerLogin.do?xxxx=1459296409405 HTTP/1.1" 200 198
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:54 +0800] "POST /AuctionManagement/auction/managerLogin.do?xxxx=1459296414058 HTTP/1.1" 200 206
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:06:59 +0800] "POST /AuctionManagement/auction/selectBuyers.do?xxxx=1459296419096 HTTP/1.1" 200 568
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:07:04 +0800] "GET /AuctionManagement/upload/1459170054950man.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:07:04 +0800] "POST /AuctionManagement/auction/selectBuyers.do?xxxx=1459296424323 HTTP/1.1" 200 568
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:07:15 +0800] "POST /AuctionManagement/auction/selectBuyers.do?xxxx=1459296435361 HTTP/1.1" 200 568
+0:0:0:0:0:0:0:1 - - [30/Mar/2016:08:07:29 +0800] "POST /AuctionManagement/auction/selectBuyers.do?xxxx=1459296449389 HTTP/1.1" 200 568

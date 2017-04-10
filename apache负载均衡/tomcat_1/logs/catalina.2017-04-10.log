@@ -1,0 +1,1218 @@
+四月 10, 2017 3:59:28 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 3:59:28 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1094 ms
+四月 10, 2017 3:59:28 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 3:59:28 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 3:59:28 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 3:59:29 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 3:59:29 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 3:59:29 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 3:59:30 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 3:59:30 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 3:59:31 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 3:59:31 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 3:59:32 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 3:59:32 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 3:59:32 下午 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 3:59:32 下午 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+四月 10, 2017 3:59:32 下午 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 3:59:32 下午 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 3:59:32 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 3597 ms
+四月 10, 2017 3:59:42 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 3:59:45 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 3:59:49 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 4:02:12 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\ding\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ding\bin;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\CVSNT;C:\Users\ding\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;.
+四月 10, 2017 4:02:13 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1159 ms
+四月 10, 2017 4:02:13 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:02:13 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:02:13 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:02:14 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 4:02:14 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:02:14 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:02:15 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:02:15 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:02:16 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:02:16 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:02:18 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:02:19 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 915 ms
+四月 10, 2017 4:02:19 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:02:19 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:02:19 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:02:20 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 4:02:20 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:02:20 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:02:21 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:02:21 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:02:22 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:02:22 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:02:24 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:02:24 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:02:24 下午 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:02:24 下午 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:02:24 下午 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:02:24 下午 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:02:24 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 5296 ms
+四月 10, 2017 4:02:27 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 4:02:28 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 4:02:28 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 4:03:41 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:03:42 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1075 ms
+四月 10, 2017 4:03:42 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:03:42 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:03:42 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:03:42 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 4:03:42 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:03:42 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:03:43 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:03:43 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:03:44 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:03:44 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:03:46 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:03:46 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:03:46 下午 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:03:46 下午 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:03:46 下午 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:03:46 下午 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:03:46 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 4949 ms
+四月 10, 2017 4:04:50 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:04:51 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 898 ms
+四月 10, 2017 4:04:51 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:04:51 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:04:51 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:04:51 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 4:04:51 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:04:51 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:04:52 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:04:52 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:04:53 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:04:54 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:04:56 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:04:56 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:04:56 下午 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:04:56 下午 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:04:56 下午 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:04:56 下午 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:04:56 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 5258 ms
+四月 10, 2017 4:05:02 下午 org.apache.catalina.tribes.io.BufferPool getBufferPool
+信息: Created a buffer pool with max size:104857600 bytes of type:org.apache.catalina.tribes.io.BufferPool15Impl
+四月 10, 2017 4:05:03 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=1014, securePort=-1, UDP Port=-1, id={83 15 65 -103 -45 104 67 8 -66 60 -85 -7 -12 54 11 9 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:05:09 下午 org.apache.catalina.tribes.group.interceptors.TcpFailureDetector memberDisappeared
+信息: Verification complete. Member disappeared[org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=7027, securePort=-1, UDP Port=-1, id={83 15 65 -103 -45 104 67 8 -66 60 -85 -7 -12 54 11 9 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]]
+四月 10, 2017 4:05:09 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberDisappeared
+信息: Received member disappeared:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=7027, securePort=-1, UDP Port=-1, id={83 15 65 -103 -45 104 67 8 -66 60 -85 -7 -12 54 11 9 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]
+四月 10, 2017 4:11:08 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:11:09 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 905 ms
+四月 10, 2017 4:11:09 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:11:09 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:11:09 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:11:09 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4001
+四月 10, 2017 4:11:09 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:11:09 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:11:10 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4000,{192, 168, 182, 1},4000, alive=378408, securePort=-1, UDP Port=-1, id={-115 -29 -54 -30 -124 -17 65 -113 -106 -127 -53 -1 30 61 27 -112 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:11:10 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:11:10 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:11:10 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=1030, securePort=-1, UDP Port=-1, id={109 -33 -125 93 -36 -17 65 -115 -92 -87 58 112 84 -52 66 47 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:11:10 下午 org.apache.catalina.tribes.io.BufferPool getBufferPool
+信息: Created a buffer pool with max size:104857600 bytes of type:org.apache.catalina.tribes.io.BufferPool15Impl
+四月 10, 2017 4:11:11 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:11:12 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:11:13 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:11:14 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:11:14 下午 org.apache.coyote.http11.Http11Protocol init
+严重: Error initializing endpoint
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:368)
+	at org.apache.coyote.http11.Http11Protocol.init(Http11Protocol.java:125)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:52)
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:357)
+	... 14 more
+
+四月 10, 2017 4:11:14 下午 org.apache.catalina.startup.Catalina start
+严重: Catalina.start: 
+LifecycleException:  Protocol handler initialization failed: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:868)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:11:14 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 4921 ms
+四月 10, 2017 4:11:14 下午 org.apache.catalina.core.StandardServer await
+严重: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:359)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:654)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:11:14 下午 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:11:14 下午 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:11:15 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 10, 2017 4:11:15 下午 org.apache.catalina.ha.session.JvmRouteBinderValve stopInternal
+信息: JvmRouteBinderValve stopped
+四月 10, 2017 4:11:15 下午 org.apache.coyote.http11.AbstractHttp11Protocol destroy
+信息: Stopping Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:11:15 下午 org.apache.catalina.tribes.group.interceptors.TcpFailureDetector memberDisappeared
+信息: Verification complete. Member disappeared[org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5235, securePort=-1, UDP Port=-1, id={109 -33 -125 93 -36 -17 65 -115 -92 -87 58 112 84 -52 66 47 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]]
+四月 10, 2017 4:11:15 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberDisappeared
+信息: Received member disappeared:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5235, securePort=-1, UDP Port=-1, id={109 -33 -125 93 -36 -17 65 -115 -92 -87 58 112 84 -52 66 47 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]
+四月 10, 2017 4:11:24 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:11:25 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 891 ms
+四月 10, 2017 4:11:25 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:11:25 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:11:25 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:11:25 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4001
+四月 10, 2017 4:11:25 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:11:25 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:11:26 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4000,{192, 168, 182, 1},4000, alive=394437, securePort=-1, UDP Port=-1, id={-115 -29 -54 -30 -124 -17 65 -113 -106 -127 -53 -1 30 61 27 -112 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:11:26 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:11:26 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:11:26 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=1028, securePort=-1, UDP Port=-1, id={-97 -78 118 125 -21 76 67 -2 -102 -47 98 -111 42 -37 -9 -74 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:11:26 下午 org.apache.catalina.tribes.io.BufferPool getBufferPool
+信息: Created a buffer pool with max size:104857600 bytes of type:org.apache.catalina.tribes.io.BufferPool15Impl
+四月 10, 2017 4:11:27 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:11:27 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:11:29 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:11:29 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:11:29 下午 org.apache.coyote.http11.Http11Protocol init
+严重: Error initializing endpoint
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:368)
+	at org.apache.coyote.http11.Http11Protocol.init(Http11Protocol.java:125)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:52)
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:357)
+	... 14 more
+
+四月 10, 2017 4:11:29 下午 org.apache.catalina.startup.Catalina start
+严重: Catalina.start: 
+LifecycleException:  Protocol handler initialization failed: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:868)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:11:29 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 4821 ms
+四月 10, 2017 4:11:29 下午 org.apache.catalina.core.StandardServer await
+严重: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:359)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:654)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:11:29 下午 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:11:29 下午 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:11:30 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 10, 2017 4:11:30 下午 org.apache.catalina.ha.session.JvmRouteBinderValve stopInternal
+信息: JvmRouteBinderValve stopped
+四月 10, 2017 4:11:30 下午 org.apache.catalina.tribes.group.interceptors.TcpFailureDetector memberDisappeared
+信息: Verification complete. Member disappeared[org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5148, securePort=-1, UDP Port=-1, id={-97 -78 118 125 -21 76 67 -2 -102 -47 98 -111 42 -37 -9 -74 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]]
+四月 10, 2017 4:11:30 下午 org.apache.coyote.http11.AbstractHttp11Protocol destroy
+信息: Stopping Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:11:31 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberDisappeared
+信息: Received member disappeared:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5148, securePort=-1, UDP Port=-1, id={-97 -78 118 125 -21 76 67 -2 -102 -47 98 -111 42 -37 -9 -74 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]
+四月 10, 2017 4:11:45 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=1009, securePort=-1, UDP Port=-1, id={118 -5 -127 107 -116 -76 76 97 -88 48 47 117 -115 48 -58 -8 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:11:51 下午 org.apache.catalina.tribes.group.interceptors.TcpFailureDetector memberDisappeared
+信息: Verification complete. Member disappeared[org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=7127, securePort=-1, UDP Port=-1, id={118 -5 -127 107 -116 -76 76 97 -88 48 47 117 -115 48 -58 -8 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]]
+四月 10, 2017 4:11:51 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberDisappeared
+信息: Received member disappeared:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=7127, securePort=-1, UDP Port=-1, id={118 -5 -127 107 -116 -76 76 97 -88 48 47 117 -115 48 -58 -8 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]
+四月 10, 2017 4:12:00 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:12:01 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1241 ms
+四月 10, 2017 4:12:01 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:12:01 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:12:01 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:12:02 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4001
+四月 10, 2017 4:12:02 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:12:02 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:12:02 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4000,{192, 168, 182, 1},4000, alive=431017, securePort=-1, UDP Port=-1, id={-115 -29 -54 -30 -124 -17 65 -113 -106 -127 -53 -1 30 61 27 -112 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:12:03 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:12:03 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:12:03 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=1025, securePort=-1, UDP Port=-1, id={-77 -41 -32 -103 10 17 79 53 -77 22 62 -88 -29 -19 56 104 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:12:03 下午 org.apache.catalina.tribes.io.BufferPool getBufferPool
+信息: Created a buffer pool with max size:104857600 bytes of type:org.apache.catalina.tribes.io.BufferPool15Impl
+四月 10, 2017 4:12:04 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:12:04 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:12:06 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:12:06 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:12:06 下午 org.apache.coyote.http11.Http11Protocol init
+严重: Error initializing endpoint
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:368)
+	at org.apache.coyote.http11.Http11Protocol.init(Http11Protocol.java:125)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:52)
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:357)
+	... 14 more
+
+四月 10, 2017 4:12:06 下午 org.apache.catalina.startup.Catalina start
+严重: Catalina.start: 
+LifecycleException:  Protocol handler initialization failed: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:868)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:12:06 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 4763 ms
+四月 10, 2017 4:12:06 下午 org.apache.catalina.core.StandardServer await
+严重: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:359)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:654)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:12:06 下午 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:12:06 下午 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:12:07 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 10, 2017 4:12:07 下午 org.apache.catalina.ha.session.JvmRouteBinderValve stopInternal
+信息: JvmRouteBinderValve stopped
+四月 10, 2017 4:12:07 下午 org.apache.coyote.http11.AbstractHttp11Protocol destroy
+信息: Stopping Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:12:07 下午 org.apache.catalina.tribes.group.interceptors.TcpFailureDetector memberDisappeared
+信息: Verification complete. Member disappeared[org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5034, securePort=-1, UDP Port=-1, id={-77 -41 -32 -103 10 17 79 53 -77 22 62 -88 -29 -19 56 104 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]]
+四月 10, 2017 4:12:07 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberDisappeared
+信息: Received member disappeared:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5034, securePort=-1, UDP Port=-1, id={-77 -41 -32 -103 10 17 79 53 -77 22 62 -88 -29 -19 56 104 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]
+四月 10, 2017 4:12:25 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:12:25 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 895 ms
+四月 10, 2017 4:12:25 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:12:25 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:12:25 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:12:26 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4001
+四月 10, 2017 4:12:26 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:12:26 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:12:26 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4000,{192, 168, 182, 1},4000, alive=455069, securePort=-1, UDP Port=-1, id={-115 -29 -54 -30 -124 -17 65 -113 -106 -127 -53 -1 30 61 27 -112 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:12:27 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:12:27 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:12:27 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=1019, securePort=-1, UDP Port=-1, id={118 7 16 82 64 -46 71 -60 -115 96 122 115 -36 79 -22 78 }, payload={}, command={}, domain={}, ]
+四月 10, 2017 4:12:27 下午 org.apache.catalina.tribes.io.BufferPool getBufferPool
+信息: Created a buffer pool with max size:104857600 bytes of type:org.apache.catalina.tribes.io.BufferPool15Impl
+四月 10, 2017 4:12:28 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:12:28 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:12:30 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:12:30 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:12:30 下午 org.apache.coyote.http11.Http11Protocol init
+严重: Error initializing endpoint
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:368)
+	at org.apache.coyote.http11.Http11Protocol.init(Http11Protocol.java:125)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:52)
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:357)
+	... 14 more
+
+四月 10, 2017 4:12:30 下午 org.apache.catalina.startup.Catalina start
+严重: Catalina.start: 
+LifecycleException:  Protocol handler initialization failed: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:868)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:437)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:12:30 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 5127 ms
+四月 10, 2017 4:12:31 下午 org.apache.catalina.core.StandardServer await
+严重: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:359)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:654)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:608)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:12:31 下午 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:12:31 下午 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:12:32 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 10, 2017 4:12:32 下午 org.apache.catalina.ha.session.JvmRouteBinderValve stopInternal
+信息: JvmRouteBinderValve stopped
+四月 10, 2017 4:12:32 下午 org.apache.catalina.tribes.group.interceptors.TcpFailureDetector memberDisappeared
+信息: Verification complete. Member disappeared[org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5424, securePort=-1, UDP Port=-1, id={118 7 16 82 64 -46 71 -60 -115 96 122 115 -36 79 -22 78 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]]
+四月 10, 2017 4:12:32 下午 org.apache.coyote.http11.AbstractHttp11Protocol destroy
+信息: Stopping Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:12:32 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberDisappeared
+信息: Received member disappeared:org.apache.catalina.tribes.membership.MemberImpl[tcp://{192, 168, 182, 1}:4001,{192, 168, 182, 1},4001, alive=5424, securePort=-1, UDP Port=-1, id={118 7 16 82 64 -46 71 -60 -115 96 122 115 -36 79 -22 78 }, payload={}, command={66 65 66 89 45 65 76 69 88 ...(9)}, domain={}, ]
+四月 10, 2017 4:18:01 下午 org.apache.catalina.core.AprLifecycleListener init
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_111\bin;E:\Oracle\product\10.1.0\Client_1\bin;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin\client;E:\Oracle\product\10.1.0\Client_1\jre\1.4.2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 & MySQL Utilities 1.5\Doctrine extensions for PHP\;E:\maven\apache-maven-3.1.1-bin\apache-maven-3.1.1\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre6\jre\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\CVSNT\;C:\Users\ding\AppData\Roaming\npm;.
+四月 10, 2017 4:18:02 下午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 922 ms
+四月 10, 2017 4:18:02 下午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+四月 10, 2017 4:18:02 下午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.0
+四月 10, 2017 4:18:02 下午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+四月 10, 2017 4:18:02 下午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/192.168.182.1:4000
+四月 10, 2017 4:18:02 下午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+四月 10, 2017 4:18:02 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+四月 10, 2017 4:18:03 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+四月 10, 2017 4:18:03 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+四月 10, 2017 4:18:04 下午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+四月 10, 2017 4:18:05 下午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory test3
+四月 10, 2017 4:18:07 下午 org.apache.catalina.startup.HostConfig deployDirectory
+严重: Error deploying web application directory test3
+org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool: 18
+	at org.apache.tomcat.util.bcel.classfile.Constant.readConstant(Constant.java:128)
+	at org.apache.tomcat.util.bcel.classfile.ConstantPool.<init>(ConstantPool.java:61)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.readConstantPool(ClassParser.java:210)
+	at org.apache.tomcat.util.bcel.classfile.ClassParser.parse(ClassParser.java:120)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:1842)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsJar(ContextConfig.java:1731)
+	at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1690)
+	at org.apache.catalina.startup.ContextConfig.processAnnotations(ContextConfig.java:1676)
+	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1242)
+	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:875)
+	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:313)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4667)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:785)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:763)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:558)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1124)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1047)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:542)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1390)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:355)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:89)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:312)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:292)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:998)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:990)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:275)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:424)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:648)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:138)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:576)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:288)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:415)
+
+四月 10, 2017 4:18:07 下午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+四月 10, 2017 4:18:07 下午 org.apache.coyote.http11.Http11Protocol init
+信息: Initializing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:18:07 下午 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:18:07 下午 org.apache.coyote.ajp.AjpProtocol init
+信息: Initializing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:18:07 下午 org.apache.coyote.ajp.AjpProtocol start
+信息: Starting Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:18:07 下午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 4960 ms
+四月 10, 2017 4:19:52 下午 org.apache.catalina.connector.CoyoteAdapter service
+严重: An exception or error occurred in the container during the request processing
+java.lang.NullPointerException
+	at org.apache.catalina.connector.Request.getServletContext(Request.java:1541)
+	at org.apache.catalina.connector.CoyoteAdapter.postParseRequest(CoyoteAdapter.java:636)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:398)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:249)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:267)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:245)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:260)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+四月 10, 2017 4:37:01 下午 org.apache.catalina.core.StandardServer await
+信息: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+四月 10, 2017 4:37:01 下午 org.apache.coyote.http11.AbstractHttp11Protocol pause
+信息: Pausing Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:37:01 下午 org.apache.coyote.ajp.AjpProtocol pause
+信息: Pausing Coyote AJP/1.3 on ajp-8009
+四月 10, 2017 4:37:02 下午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+四月 10, 2017 4:37:02 下午 org.apache.catalina.ha.session.JvmRouteBinderValve stopInternal
+信息: JvmRouteBinderValve stopped
+四月 10, 2017 4:37:02 下午 org.apache.coyote.http11.AbstractHttp11Protocol destroy
+信息: Stopping Coyote HTTP/1.1 on http-8080
+四月 10, 2017 4:37:02 下午 org.apache.coyote.ajp.AjpProtocol destroy
+信息: Stopping Coyote AJP/1.3 on ajp-8009
