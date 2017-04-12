@@ -20,7 +20,7 @@
 
 - 小程序、weex、pwa、electron、react、angular4、react native、web worker (service worker)
 
-- docker（微服务 springboot）、ngnix
+- docker（微服务 springboot）、ngnix、redis
 
 - php、yii2、laravel
 
@@ -34,7 +34,7 @@ mmf-blog、nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的
 造数工具（导出，图形化界面）
 vue组件开发
 --------------------NGINX----------------------
-nginx/负载均衡
+nginx/负载均衡/图片服务器/静态站点
 ---------------------CSS-----------------------
 postcss/手淘高清方案源码分析
 ---------------------微信-----------------------
@@ -43,8 +43,10 @@ postcss/手淘高清方案源码分析
 小程序入门
 ---------------------HTTP-----------------------
 websocket
----------------------node-----------------------
+---------------------NODE-----------------------
 nodejs
+--------------------REDIS----------------------
+redis、node-redis
 --------------------LINUX----------------------
 centos7
 ---------------------WEEX-----------------------
@@ -402,6 +404,9 @@ wechat-oauth
 weixin-robot  微信公众号自动 回复机器人
 react-isomorphic-boilerplate   react多页脚手架
 awesome-angular  ng文档
+pwa-collection  pwa收集
+node_redis  node版redis
+node-xml2js  node xml转js
 ```
 
 ## 2017-2018前端
