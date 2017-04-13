@@ -407,6 +407,8 @@ awesome-angular  ng文档
 pwa-collection  pwa收集
 node_redis  node版redis
 node-xml2js  node xml转js
+request-promise  promise版http请求
+request   http请求
 ```
 
 ## 2017-2018前端
