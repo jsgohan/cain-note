@@ -409,6 +409,13 @@ node_redis  node版redis
 node-xml2js  node xml转js
 request-promise  promise版http请求
 request   http请求
+node-formidable  解决文件上传服务器的方法
+connect-multiparty   解决文件上传服务器的方法
+multiparty  解决文件上传服务器的方法
+koablog-mongo  koa example
+examples  koa example
+koa-bookshelf  koa example
+bigpipe-example  koa example
 ```
 
 ## 2017-2018前端
