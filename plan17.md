@@ -2,9 +2,9 @@
 
 ## 任务计划
 
-- vue、、pc组件：（elementui、muse-ui、vue material、iview、vuetify、radon-ui、vue-antd、keen-ui、[atui](https://github.com/aliqin/atui)）
+- vue、、pc组件：（element、muse-ui、vue material、iview、vuetify、radon-ui、vue-antd、keen-ui、[atui](https://github.com/aliqin/atui)）
 
-  移动端组件：（vue-admin、vux、vonic、vue-mui、mintui、vue-weui、N3-components、vum、[vue-blu](https://github.com/chenz24/vue-blu)）、服务端渲染（nuxt.js）、模板引擎（vue模板引擎）
+  移动端组件：（vue-admin、vux、vonic、vue-mui、mint-ui、vue-weui、N3-components、vum、[vue-blu](https://github.com/chenz24/vue-blu)）、服务端渲染（nuxt.js）、模板引擎（vue模板引擎）
 
   - OnsenUI  Mobile app development framework and SDK using HTML5 and JavaScript. Create beautiful and performant cross-platform mobile apps. Based on Web Components, and provides bindings for Angular 1, 2, React and Vue.js.
 
@@ -33,9 +33,9 @@ mmf-blog、nuxt.js、vue-hackernews-2.0、重写vue-admin、vue-auth、简单的
 简历（mui手机版，服务端java maven和vue电脑版，服务端node参照mmf-blog 微信公众号版node做服务端，mongodb做数据库，组件挂到公众号上，小程序开发）
 造数工具（导出，图形化界面）
 vue组件开发
---------------------NGINX----------------------
+--------------------NGINX-----------------------
 nginx/负载均衡/图片服务器/静态站点
----------------------CSS-----------------------
+---------------------CSS------------------------
 postcss/手淘高清方案源码分析
 ---------------------微信-----------------------
 微信公众号开发
@@ -43,20 +43,26 @@ postcss/手淘高清方案源码分析
 nodejs、express、koa2
 --------------------小程序-----------------------
 小程序入门
----------------------HTTP-----------------------
+-------------------WEBPACK----------------------
+webpack2
+------------------TS/COFFEE---------------------
+typescript、coffeescript
+--------------------HTTP------------------------
 websocket
---------------------REDIS----------------------
+--------------------REDIS-----------------------
 redis、node-redis
---------------------LINUX----------------------
+--------------------LINUX-----------------------
 centos7
 ---------------------WEEX-----------------------
 weex入门
----------------------PHP-----------------------
+---------------------PHP------------------------
 php、laravel
 ---------------------PWA------------------------
 pwa入门
 -------------------ELECTRON---------------------
 electron入门
+---------------------性能-----------------------
+web前端性能
 ---------------------安全-----------------------
 web安全学习
 ```

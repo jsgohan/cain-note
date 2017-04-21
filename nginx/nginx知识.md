@@ -116,10 +116,6 @@ main(int argc, char *const *argv)
     ngx_debug_init();
 ```
 
-
-
-
-
 ## 官方配置案例
 
 ### nginx.conf
@@ -291,10 +287,6 @@ types {
 }
 ```
 
-
-
-
-
 ## nginx使用ssl模块配置https支持
 
 默认情况下ssl模块并未被安装，如果要使用该模块则需要在编译时指定–with-http_ssl_module参数，安装模块依赖于OpenSSL库和一些引用文件，通常这些文件并不在同一个软件包中。通常这个文件名类似libssl-dev。
@@ -347,3 +339,234 @@ https://YOUR_DOMAINNAME_HERE
 3. server_name www.centos.bz;
 4. rewrite ^(.*) https://$server_name$1 permanent;
 5. }
+
+
+
+## 相当好的资料
+
+Nginx配置文件主要分为四部分：main(全局设置)、server(主机设置)、upstream(上游服务器设置，主要为反向代理、负载均衡相关配置)和location(URL匹配特定位置后的设置)，每部分包含若干个指令。
+
+- main部分设置的指令将影响其他所有部分的设置
+- server部分的指令主要用于指定虚拟主机域名、IP和端口
+- upstream指令用于设置一系列的后端服务器，设置反向代理及后端服务器的负载均衡
+- location部分用于匹配网页位置（比如，根目录“/”,"/images",等等）
+
+他们之间的关系是：server继承main，location继承server，upstream既不会继承指令也不会被继承。
+
+下面的nginx.conf简单的实现nginx在前端做反向代理服务器的例子，处理js、png等静态文件，jsp等动态请求转发到其他服务器tomcat：
+
+```
+user  www www;
+worker_processes  2;
+error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+pid        logs/nginx.pid;
+events {
+    use epoll;
+    worker_connections  2048;
+}
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+    #access_log  logs/access.log  main;
+    sendfile        on;
+    # tcp_nopush     on;
+    keepalive_timeout  65;
+  # gzip压缩功能设置
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers    4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 6;
+    gzip_types text/html text/plain text/css text/javascript application/json application/javascript application/x-javascript application/xml;
+    gzip_vary on;
+
+  # http_proxy 设置
+    client_max_body_size   10m;
+    client_body_buffer_size   128k;
+    proxy_connect_timeout   75;
+    proxy_send_timeout   75;
+    proxy_read_timeout   75;
+    proxy_buffer_size   4k;
+    proxy_buffers   4 32k;
+    proxy_busy_buffers_size   64k;
+    proxy_temp_file_write_size  64k;
+    proxy_temp_path   /usr/local/nginx/proxy_temp 1 2;
+  # 设定负载均衡后台服务器列表 
+    upstream  backend  { 
+              #ip_hash; 
+              server   192.168.10.100:8080 max_fails=2 fail_timeout=30s ;  
+              server   192.168.10.101:8080 max_fails=2 fail_timeout=30s ;  
+    }
+  # 很重要的虚拟主机配置
+    server {
+        listen       80;
+        server_name  itoatest.example.com;
+        root   /apps/oaapp;
+        charset utf-8;
+        access_log  logs/host.access.log  main;
+        #对 / 所有做负载均衡+反向代理
+        location / {
+            root   /apps/oaapp;
+            index  index.jsp index.html index.htm;
+            proxy_pass        http://backend;  
+            proxy_redirect off;
+            # 后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
+            proxy_set_header  Host  $host;
+            proxy_set_header  X-Real-IP  $remote_addr;  
+            proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+            proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+
+        }
+        #静态文件，nginx自己处理，不去backend请求tomcat
+        location  ~* /download/ {  
+            root /apps/oa/fs;  
+
+        }
+        location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|js|css)$   
+        {   
+            root /apps/oaapp;   
+            expires      7d; 
+        }
+           location /nginx_status {
+            stub_status on;
+            access_log off;
+            allow 192.168.10.0/24;
+            deny all;
+        }
+        location ~ ^/(WEB-INF)/ {   
+            deny all;   
+        }
+        #error_page  404              /404.html;
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+  ## 其它虚拟主机，server 指令开始
+}
+```
+
+## location正则语法
+
+> 语法:location [=|~|~*|^~] /uri/ { … }
+> 默认:否
+>
+> 上下文:server
+
+- ~* 前缀选择不区分大小写的匹配
+-  ~ 选择区分大小写的匹配
+-  = 将只执行严格匹配.例子：如果经常发生”/”请求，那么使用 “location = /” 将加速处理这个请求。
+- ^~ 如果路径匹配那么不测试正则表达式
+
+```
+location = / {
+# 只匹配 / 查询。
+[ configuration A ]
+}
+
+location / {
+# 匹配任何查询，因为所有请求都已 / 开头。但是正则表达式规则和长的块规则将被优先和查询匹配。
+[ configuration B ]
+}
+
+location ^~ /images/ {
+# 匹配任何已 /images/ 开头的任何查询并且停止搜索。任何正则表达式将不会被测试。
+[ configuration C ]
+}
+
+location ~* \.(gif|jpg|jpeg)$ {
+# 匹配任何已 gif、jpg 或 jpeg 结尾的请求。然而所有 /images/ 目录的请求将使用 Configuration C。
+[ configuration D ]
+}
+
+例子请求:
+
+/ -> configuration A
+
+/documents/document.html -> configuration B
+
+/images/1.gif -> configuration C
+
+/documents/1.jpg -> configuration D
+注意：按任意顺序定义这4个配置结果将仍然一样。
+```
+
+## nginx虚拟目录alias和root目录
+
+nginx是通过alias设置虚拟目录，在nginx的配置中，alias目录和root目录是有区别的：
+
+- alias指定的目录是准确的，即location匹配访问的path目录下的文件直接是在alias目录下查找的
+- root指定的目录是location匹配访问的path目录的上一级目录，这个path目录一定要是真实存在root指定目录下的
+- 使用alias标签的目录块中不能使用rewrite的break；另外，alias指定的目录后面必须要加上"/"符号
+- alias虚拟目录配置中，location匹配的path目录如果后面不带"/"，那么访问的url地址中这个path目录后面加不加"/"不影响访问，访问时会自动加上"/"；但是如果location匹配的path目录后面加上"/"，那么访问的url地址中这个path目录必须要加上"/"，访问时不会自动加"/"
+- root目录配置中，location匹配的path目录后带不带"/"，都不会影响访问
+
+```
+举例说明（比如nginx配置的域名是www.wangshibo.com）：
+（1）
+location /huan/ {
+      alias /home/www/huan/;
+}
+
+在上面alias虚拟目录配置下，访问http://www.wangshibo.com/huan/a.html实际指定的是/home/www/huan/a.html。
+注意：alias指定的目录后面必须要加上"/"，即/home/www/huan/不能改成/home/www/huan
+
+上面的配置也可以改成root目录配置，如下，这样nginx就会去/home/www/huan下寻找http://www.wangshibo.com/huan的访问资源，两者配置后的访问效果是一样的！
+location /huan/ {
+       root /home/www/;
+}
+
+上面的例子中alias设置的目录名和location匹配访问的path目录名一致，这样可以直接改成root目录配置；那要是不一致呢？
+再看一例：
+location /web/ {
+      alias /home/www/html/;
+}
+
+访问http://www.wangshibo.com/web的时候就会去/home/www/html/下寻找访问资源。
+这样的话，还不能直接改成root目录配置。
+如果非要改成root目录配置，就只能在/home/www下将html->web（做软连接，即快捷方式），如下：
+location /web/ {
+     root /home/www/;
+}
+
+# ln -s /home/www/web /home/www/html       //即保持/home/www/web和/home/www/html内容一直
+```
+
+所以，一般情况下，在nginx配置中的良好习惯是：
+
+- **在location /中配置root目录**；
+- **在location /path中配置alias虚拟目录**。
+
+以下例子解释虚拟目录alias和root的区别
+
+```
+server {
+          listen 80;
+          server_name www.wangshibo.com;
+          index index.html index.php index.htm;
+          access_log /usr/local/nginx/logs/image.log;
+
+    location / {
+        root /var/www/html;
+        }
+
+   location /haha {                                          //匹配的path目录haha不需要真实存在alias指定的目录中
+       alias /var/www/html/ops/;                       //后面的"/"符号一定要带上
+       rewrite ^/opp/hen.php(.*)$ /opp/hen.php?s=$1 last;
+    # rewrite ^/opp/(.*)$ /opp/hen.php?s=$1 last;
+       }
+
+   location /wang {                    //匹配的path目录wang一定要真实存在root指定的目录中（就/var/www/html下一定要有wang目录存在）
+      root /var/www/html;
+     }
+
+ }
+```
+

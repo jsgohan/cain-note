@@ -84,6 +84,19 @@ function readAsText(){
         result.innerHTML=this.result;  
     }  
 }  
+
+function readAsArrayBuffer(){  
+    var file = document.getElementById("file").files[0];  
+    var reader = new FileReader();  
+    //将文件以文本形式读入页面  
+    reader.readAsArrayBuffer(file);  
+    reader.onload=function(f){  
+        var result=document.getElementById("result");  
+        console.log(this.result)
+        //显示文件  
+        result.innerHTML=this.result;  
+    }  
+}  
 </script>  
 <body>
 <p>  
@@ -92,6 +105,7 @@ function readAsText(){
     <input type="button" value="读取图像" onclick="readAsDataURL()" />  
     <input type="button" value="读取二进制数据" onclick="readAsBinaryString()" />  
     <input type="button" value="读取文本文件" onclick="readAsText()" />  
+    <input type="button" value="读取文本文件" onclick="readAsArrayBuffer()" /> 
 </p>  
 <div id="result" name="result"></div>  
 <div id="fileRead"></div>
