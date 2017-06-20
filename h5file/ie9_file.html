@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <div id="headImgPicview">
+            <img src="" id="headImgPic" width="200" height="auto"/>
+        </div>
+        <input type="text" id="headImgShow" name="headImg"
+                placeholder="图片(.jpg .jpeg .png)" size="40"
+                pattern="(.jpg$)|(.jpeg$)|(.png)|(.JPG$)|(.JPEG$)|(.PNG$)"
+                data-foolish-msg="请选择图片！"
+                value=""
+                required readonly/>
+        <div class="am-form-group am-form-file" style="width: 175px">
+            <button type="button" class="am-btn am-btn-default am-btn-sm">
+                <i class="am-icon-cloud-upload"></i> 选择要上传的图片</button>
+                <input type="file" id="headImg" onchange="imgcheck('headImg',this)" multiple>
+        </div>
+    </div> 
+</body>
+<script type="text/javascript">
+    //文件动态上传方法+格式判断
+    function imgcheck(imgid,file){
+        if(!(/.jpg$/.exec($('#'+imgid).val())
+                ||(/.png/.exec($('#'+imgid).val()))
+                ||(/.jpeg$/.exec($('#'+imgid).val()))
+                ||(/.JPG$/.exec($('#'+imgid).val()))
+                ||(/.PNG$/.exec($('#'+imgid).val()))
+                ||(/.JPEG$/.exec($('#'+imgid).val())) 
+            )){
+            alert("图片格式不正确！应为：.jpg .jpeg .png");
+            $('#'+imgid).val('');
+        }else{
+            var imgURL = document.getElementById(imgid);
+            $('#'+imgid+'Show').attr('placeholder',imgURL.value);
+        }
+    }
+    //调用图片预览
+    //previewImage(imgid+'Pic',file);
+</script>
+</html>
