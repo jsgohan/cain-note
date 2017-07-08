@@ -1,4 +1,4 @@
-# 2017计划
+# 计划
 
 ## 任务计划
 
@@ -8,21 +8,19 @@
 
   - OnsenUI  Mobile app development framework and SDK using HTML5 and JavaScript. Create beautiful and performant cross-platform mobile apps. Based on Web Components, and provides bindings for Angular 1, 2, React and Vue.js.
 
-- js基础（面向对象的程序设计、函数表达式、dom、事件、Ajax和comet、离线应用与客户端存储）、typescript、sass（，less，stylus，postcss）、手机适配
-
-- node（fs、path、process、buffer、events、stream、child process、http、assert、cluster、os、net和dns）、expresss（koa，pm2，forever）、mongodb（nedb、rxdb、lowdb）、mocha
+- node（fs、path、process、buffer、events、stream、child process、http、assert、cluster、os、net和dns）、expresss（koa，pm2，forever）、mongodb（nedb、rxdb、lowdb）、mocha、mock
 
 - webpack
 
+- 小程序、微信公众号、weex、react、react native、pwa、electron、angular4
+
+- ios、安卓
+
+- js基础（面向对象的程序设计、函数表达式、dom、事件、Ajax和comet、离线应用与客户端存储）、typescript、postcss（，less，stylus，sass）、手机适配
+
 - http基础、ajax（async.js、promises、generators、async functions）、（websocket，comet，轮询）、跨域
 
-- 博客、前后端系统、造数工具、组件库、页面自动生成平台、用electron写开发者平台、用pwa写开发者平台
-
-- 小程序、weex、pwa、electron、react、angular4、react native、web worker (service worker)
-
 - docker（微服务 springboot）、ngnix、redis
-
-- php、yii2、laravel
 
 ## 优先级
 
@@ -36,7 +34,7 @@ vue组件开发
 --------------------NGINX-----------------------
 nginx/负载均衡/图片服务器/静态站点
 ---------------------CSS------------------------
-postcss/手淘高清方案源码分析
+postcss
 ---------------------微信-----------------------
 微信公众号开发
 ---------------------NODE-----------------------
@@ -45,20 +43,22 @@ nodejs、express、koa2
 小程序入门
 -------------------WEBPACK----------------------
 webpack2
-------------------TS/COFFEE---------------------
-typescript、coffeescript
+--------------------REACT-----------------------
+react、react native
 --------------------HTTP------------------------
 websocket
+---------------------WEEX-----------------------
+weex入门
+---------------------PWA------------------------
+pwa入门
+-------------------ANGULAR----------------------
+angular、ionic
+------------------TS/COFFEE---------------------
+typescript、coffeescript
 --------------------REDIS-----------------------
 redis、node-redis
 --------------------LINUX-----------------------
 centos7
----------------------WEEX-----------------------
-weex入门
----------------------PHP------------------------
-php、laravel
----------------------PWA------------------------
-pwa入门
 -------------------ELECTRON---------------------
 electron入门
 ---------------------性能-----------------------
@@ -82,16 +82,12 @@ web安全学习
 
 ```
 blog(youngwind)  梁少锋的vue源码分析
-高 CMS-of-Blog 支持md、vue2
-中 jackblog-vue 各个版本都有，用了个别组件
-vue-2.0-FamilyBucket：支持jq
-高 vue2-auth：DD案例
-高 vueAdmin：element组件
+高 vue-element-admin：element组件
 vue-cli-multi-page：vue-cli多页
-vue-pack
 vue-cnodejs：cnode社区
-高 vue2-elm：饿了么（vue-sell）
-高 vue-tutorial
+高 vue2-elm：饿了么+vue2-manage+node-elm
+vue-weixin
+
 vue-zhihu-daily：在线知乎 手机端
 zhihu-daily-vue： 知乎vue2
 vue-ssr-starter-kit、vue-ssr
@@ -422,6 +418,32 @@ koablog-mongo  koa example
 examples  koa example
 koa-bookshelf  koa example
 bigpipe-example  koa example
+generator-koa  A Koa generator for Yeoman.
+promise-polyfill  Lightweight ES6 Promise polyfill for the browser and node. A+ Compliant
+autoprefixer  Parse CSS and add vendor prefixes to rules by Can I Use
+postcss-cssnext  PostCSS plugin to use tomorrow's CSS syntax, today.
+precss  Use Sass-like markup in your CSS
+node-querystring  querystring parser for node and the browser - supporting nesting (used by Express, Connect, etc)
+qs  A querystring parser with nesting support
+serve-favicon  favicon serving middleware
+compression  Node.js compression middleware
+q  A promise library for JavaScript
+power-assert  Provides descriptive assertion messages through standard assert interface. 
+node-jsonwebtoken  JsonWebToken implementation for node.js
+highlight.js  Javascript syntax highlighter
+jpp.js  Jpp.js is a library to extend some useful functions for JavaScript. 
+excanvas  解决ie8不兼容canvas
+Respond  A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)
+PIE  A behavior for Internet Explorer allowing it to recognize and render various CSS3 box decoration properties
+prepack  Prepack is a partial evaluator for JavaScript. Prepack rewrites a JavaScript bundle, resulting in JavaScript code that executes more efficiently.
+next.js  Framework for server-rendered React apps
+vuefire  Firebase bindings for Vue.js
+k6  A modern load testing tool, using Go and JavaScript
+sakura   a minimal css framework/theme.
+create-react-app  Create React apps with no build configuration.
+roadhog  Cli tool for creating react apps, configurable version of create-react-app.
+vue-video-player  Live / Video Player for Vue2
+awesome-react-native  Awesome React Native components, news, tools, and learning material!
 ```
 
 ## 2017-2018前端
