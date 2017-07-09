@@ -536,7 +536,7 @@ btn.attachEvent("onclick",function() {
 
 使用attachEvent()添加的事件可以通过detachEvent()来移除，条件是必须提供相同的参数。与DOM方法一样，匿名函数不能被移除。
 
-### 跨浏览器的时间处理程序
+### 跨浏览器的事件处理程序
 
 可以创建一个方法addHandler()，它的职责是视情况分别使用DOM0级方法、DOM2级方法或IE方法添加事件。
 
