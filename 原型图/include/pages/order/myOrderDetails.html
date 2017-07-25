@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--IOS中Safari允许全屏浏览 （网站开启对 web app 程序的支持）-->
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <!--页面不缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!--
+    IOS中Safari顶端状态条样式
+    注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px
+-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <!--忽略将数字变为电话号码  不自动将地址和email转为链接地址-->
+    <meta name="format-detection" content="telephone=no;address=no;email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/layout.css"/>
+    <script type="text/javascript" src="../../assets/javascripts/base/sha1.js"></script>
+    <script type="text/javascript" src="../../assets/javascripts/base/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="webapp">
+    <div id="ctp-panel" style="background: #f5f5f5">
+        <div id="myOrderDetails">
+            <div class="myOrderDetails-top">
+                <div class="top-bg-img"></div>
+                <div class="payMount">订单金额:<span></span></div>
+                <div class="yezf">(余额支付)</div>
+                <div class="payState"></div>
+            </div>
+            <dl class="myOrderDetails-station">
+                <dd class="myOrderDetails-station-arrow"></dd>
+                <dd class="img">
+                    <img src=""/>
+                </dd>
+                <dt></dt>
+                <dd class="txt">
+                    <p class="charging">充电电桩:<span></span></p>
+                    <p class="cid">编号(CID):<span></span></p>
+                </dd>
+
+
+            </dl>
+            <div class="mark">
+                <p class="mark-charging-amout"><span></span>充电电量</p>
+                <p class="mark-charging-time"><span></span>充电时长</p>
+            </div>
+            <div class="orderDetails-menu">
+                <p class="order-code">订单编号:<span></span></p>
+                <p class="order-start-time">开始时间:<span></span></p>
+                <p class="order-end-time">结束时间:<span></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../assets/javascripts/base/ajax.js"></script>
+<script src="../../assets/javascripts/base/page.js"></script>
+<script src="myOrderDetails.js"></script>
+
+<script>
+    $("body").css("-webkit-overflow-scrolling", "touch");
+</script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--IOS中Safari允许全屏浏览 （网站开启对 web app 程序的支持）-->
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <!--页面不缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!--
+    IOS中Safari顶端状态条样式
+    注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px
+-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <!--忽略将数字变为电话号码  不自动将地址和email转为链接地址-->
+    <meta name="format-detection" content="telephone=no;address=no;email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <title>余额</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/layout.css?1=1"/>
+    <script src="../../assets/javascripts/base/sha1.js"></script>
+    <script type="text/javascript" src="../../assets/javascripts/base/jquery.min.js"></script>
+    <style>
+        .charging-top-mask {
+            height: 200px;
+        }
+        .account-details-list {
+            width: 100%;
+            overflow: auto;
+        }
+        .account-details-list-box {
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+<div id="webapp">
+    <div id="ctp-panel">
+        <div id="charging-panel">
+            <div class="charging-top-mask"></div>
+            <div class="charging-top" style="height: 11.25rem; overflow:hidden;">
+                <div class="add-account-btn">充值</div>
+                <div class="charging-top-position">
+                    0.00
+                </div>
+                <div class="charging-top-code" style="border: 0;color: #fff;">
+                    我的余额(元) <a href="javascript:void(0);" id="charging-top-code-transfer-btn">转账</a>
+                </div>
+
+            </div>
+
+            <div class="account-details-list-box ctp-list-box">
+                <div class="list-tips">
+                    <p class="list-tips-title">无充值记录</p>
+                    <p>请点击右上角进行充值</p>
+                </div>
+                <p class="account-details-list-title">账户明细</p>
+
+                <ul class="account-details-list">
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../../assets/javascripts/base/ajax.js"></script>
+<script src="../../assets/javascripts/base/page.js"></script>
+<script src="account.js?1=1"></script>
+
+<script>
+    $(function () {
+        var detailsH = $(window).height() - 190;
+        $('.ccount-details-list-box').height(detailsH);
+        $('.account-details-list').height(detailsH - 40);
+    });
+//    $("body").css("-webkit-overflow-scrolling", "touch");
+</script>
+</body>
+
+</html>

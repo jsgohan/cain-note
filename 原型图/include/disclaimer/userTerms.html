@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!-- <html manifest="bbs.manifest"> -->
+<html>
+
+<head>
+    <title>小南充电用户服务协议</title>
+    <meta name="keywords" content="小南充电, 用户服务协议" />
+    <meta name="description" content="小南充电用户服务协议" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--IOS中Safari允许全屏浏览 （网站开启对 web app 程序的支持）-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!--
+        IOS中Safari顶端状态条样式
+        注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px
+        -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <!--忽略将数字变为电话号码  不自动将地址和email转为链接地址-->
+    <link rel="apple-touch-icon" sizes="114x114" href="icon.png" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font: 16px/1.25 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #ctp-webview-details-container {
+            width: 100%;
+            
+        }
+
+        #ctp-webview-details-header {
+            width: inherit;
+            height: 40px;
+            background: #111;
+            text-align: center;
+            color: #fff;
+            line-height: 40px;
+        }
+
+        #ctp-webview-details-content {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        #ctp-webview-details-content-main {
+            line-height: 25px;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+        .ctp-webview-details-content-title {
+            line-height: 35px;
+        }
+
+        .ctp-webview-details-content-remark {
+            font-size: 9px;
+            color: #999;
+            line-height: 20px;
+            text-decoration: none;
+        }
+
+        .img-div {
+            width: inherit;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .img-div img {
+            display: inline-block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        #showImageBg {
+            background: #222;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .scale0 {
+            transform: scale(0, 0);
+            -moz-transform: scale(0, 0);
+            -webkit-transform: scale(0, 0);
+            -o-transform: scale(0, 0);
+            opacity: 0;
+            -webkit-opacity: 0;
+            -moz-opacity: 0;
+            -o-opacity: 0;
+        }
+
+        .scale1 {
+            transform: scale(1, 1);
+            -moz-transform: scale(1, 1);
+            -webkit-transform: scale(1, 1);
+            -o-transform: scale(1, 1);
+            opacity: 1;
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            -o-opacity: 1;
+        }
+
+        #showImageBg img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-block !important;
+            -webkit-transition-property: -webkit-transform, -webkit-opacity;
+            -webkit-transition-duration: 0.5s;
+            transition-property: transform, opacity;
+            transition-duration: 0.5s;
+            -moz-transition-property: -moz-transform, -moz-opacity;
+            -moz-transition-duration: 0.5s;
+            -o-transition-property: -o-transform, -o-opacity;
+            -o-transition-duration: 0.5s;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="ctp-webview-details-container">
+	<!-- 
+        <div id="ctp-webview-details-header">
+            详情
+        </div>
+    -->
+        <div id="ctp-webview-details-content">
+            <div id="ctp-webview-details-content-main">
+                <p>
+                </p><p style="text-align:center;"> <span style="font-size:18px;font-family:SimHei;"><strong>小南充电用户服务协议</strong></span> </p>
+                <p style="text-align:center;"> <br> </p>
+                <p> &nbsp; &nbsp; &nbsp; 深圳供电局有限公司（以下简称“我公司”或“我们”）根据您的充电需求向您提供电动汽车充电服务（以下简称“服务”），您访问和使用有关服务、应用程序提供的电动汽车充电服务适用本用户服务协议（以下简称“协议”）。&nbsp; </p> &nbsp; &nbsp; &nbsp; 在您注册、使用有关应用程序及接受我公司提供的电动汽车充电服务之前，请您认真阅读本协议。您选择并使用服务即视为您已充分阅读并接受本协议的所有条款，您同意本协议对您和我公司具有法律约束力。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第一条 用户注册</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 1.1 为使用我公司服务，您须在移动设备上下载“小南充电”应用程序（以下称“小南充电”）并进行注册，注册时您必须保证提供真实有效的信息、移动电话号码等，您知晓并同意，您一经成为小南充电注册用户，将会默认开通我公司服务账户，账号及密码默认为小南充电账户的账号及密码。
+                <br> &nbsp; &nbsp; &nbsp; 1.2 如果您是代表个人签订本协议，您应具有完全民事行为能力；如果您是代表法人实体签订本协议，您应获得授权并遵守本《用户服务协议》（并约束该法人实体）。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第二条 服务内容</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; &nbsp;您申请我公司向您提供电动汽车充电服务。您可通过下载并安装到移动设备上的“小南充电”应用程序选择并使用上述服务。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第三条 合同订立</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 您理解并同意，您通过小南充电选择并使用我们的服务，即视为接受本《用户服务协议》并依据本协议与我公司达成了合约（以下简称“合约”）。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第四条 服务使用</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 4.1 您可以通过小南充电使用电动汽车充电服务。
+                <br> &nbsp; &nbsp; &nbsp; 4.2 我公司将做出合理的努力，让您获得服务。但这受制于您请求服务之时所在位置周边是否有可提供服务的充电站。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第五条 担保及承诺</span></strong>
+                <br>
+                <p> &nbsp; &nbsp; &nbsp; 5.1 您保证，您向我们提供的信息真实、准确、完整。我们在任何时候都有权验证您所提供的信息，如我们发现您所提供的信息并非真实、准确和完整的，有权在不提供任何理由的情况下拒绝向您提供服务或拒绝您使用有关服务、应用程序。
+                    <br> &nbsp; &nbsp; &nbsp; 5.2 您使用我公司服务或小南充电，即表示您还同意以下事项：<br> &nbsp; &nbsp; &nbsp; a.您出于您个人用途使用服务或下载应用程序，并且不会转售给第三方。<br> &nbsp; &nbsp; &nbsp;&nbsp;b.您不会将服务或应用程序用于非法目的，包括（但不限于）发送或存储任何非法资料或者用于欺诈目的。<br> &nbsp; &nbsp; &nbsp; c.您不会利用服务或应用程序骚扰、妨碍他人或造成不便。<br> &nbsp; &nbsp; &nbsp; d.您不会影响网络的正常运行。<br> &nbsp; &nbsp; &nbsp;&nbsp;e.您不会尝试危害服务或应用程序。<br> &nbsp; &nbsp; &nbsp; f.当我们提出合理请求时，您会提供身份证明。<br> &nbsp; &nbsp; &nbsp; g.您将遵守国家/地区以及您在使用应用程序或服务时所处国家/地区、省和/或市的所有适用法律。
+                    <br> &nbsp; &nbsp; &nbsp;&nbsp;<b><u>5.3 如果您违反以上任一约定，我们保留立即终止向您提供服务和拒绝您使用有关服务、应用程序的权利。</u></b>
+                </p>
+                <br>
+                <strong><span style="font-family:SimHei;">第六条 付款及发票</span></strong>
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;6.1 您同意并认可小南充电现行公示或未来更新的有关服务价格标准，您可以在小南充电上查看有关服务的价格。这些价格可能会随时更新，您必须自行留意服务的价格。
+                <br> &nbsp; &nbsp; &nbsp; 6.2 您在使用服务后应根据小南充电提示及时支付费用。逾期不支付费用且经催告后仍不履行支付义务的，我公司有权拒绝您继续使用服务，同时您知悉并同意我公司有权视情况将您的违约信息提交第三方征信机构。
+                <br> &nbsp; &nbsp; &nbsp; 6.3 您在小南充电可以使用您的第三方电子支付账户（包括但不限于微信支付账户或支付宝支付账户）进行充值。处理您使用服务相关的付款时，除了受到本《用户服务协议》的约束之外，还要受电子支付服务商及信用卡/借记卡发卡行的条款和政策的约束。我们对于电子支付服务商或银行发生的错误不承担责任。我们将获取与您使用服务相关的特定交易明细。在使用这些信息时我们将严格遵守相关法律法规和公司的各项政策。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;6.4 在您提出开具发票的要求时，我们将为您开具发票，具体发票开具及申请规则，请参见应用程序上的开票说明。
+                <br> &nbsp; &nbsp; &nbsp; 6.5 我们提供订单管理功能，您可以随时通过手机应用端查询订单情况。您应在每次服务完成后及时查询实际付款情况，如有异议应当在服务完成后48小时内联系我们，我们将对您提出的异议进行解释和处理。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;6.6 为保证正常使用充电功能，启动充电时，您需要保持账户余额大于10元，启动充电后，账户余额小于2元时，将自动停止充电。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第七条 赔偿</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; <b><u>您使用小南充电的应用程序及服务，即表示您接受本《用户服务协议》并同意：对于因以下事项产生的或与以下事项相关的任何及所有索赔、费用、赔偿、损失、债务和开销（包括但不限于律师费和诉讼费），您应该予以赔偿：</u></b>
+                <br> &nbsp; &nbsp; &nbsp; a.您触犯或违反本《用户服务协议》中的任何条款或任何适用的法律法规（无论此处是否提及）。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;b.您触犯任何第三方的任何权利。
+                <br> &nbsp; &nbsp; &nbsp; c.您滥用应用程序或服务。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第八条 责任</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; <b><u>8.1 在小南充电上向您提供的信息、推荐的服务仅供您参考。我们将在合理的范围内尽力保证该等信息准确，但无法保证其中没有任何错误、缺陷、恶意软件和病毒。对于因使用或无法使用小南充电导致的任何损害，我们不承担责任（除非此类损害是由我们的故意或重大过失造成的）。此外，对于因使用（或无法使用）小南充电的电子通信手段导致的任何损害，包括（但不限于）因电子通信传达失败或延时、第三方或用于电子通信的计算机程序对电子通信的拦截或操纵，以及病毒传输导致的损害，我们不承担责任。</u></b>
+                <br> &nbsp; &nbsp; &nbsp; 8.2 您知悉并确认，我公司对电动汽车充电服务质量予以保证。我公司将在合理范围内承担相应的责任。同时，为提升服务品质，承担企业社会责任，我公司将为您提供相应的服务保障。对于超出法律规定应当赔偿的部分或存在侵权责任人、违约责任人的，我公司有权向有关当事人追偿。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第九条 授权及许可</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 9.1 在您遵守本《用户服务协议》的前提下，我们授予您有限的、非排他性的、不可转让的如下许可：&nbsp;
+                <br> &nbsp; &nbsp; &nbsp; 以将一份应用程序副本下载并安装到您拥有或控制的单台移动设备上，并仅出于您自己的个人用途运行此应用程序副本。您不得：（1）以任何方式许可、再许可、出售、转售、转让、分配、分发服务或应用程序，或以其他方式进行商业开发或提供给任何第三方；（2）修改服务或应用程序，或者据此创建衍生产品；（3）创建指向服务的互联网“链接”，或在任何其他服务器或基于无线或互联网的设备上“设计”或“镜像”任何应用程序；（4）反向工程或访问应用程序设计或构建竞争产品或服务、使用类似于服务或应用程序的设想或图形来设计或构建产品，或抄袭服务或应用程序的任何设想、特点、功能或图形，或（5）启动自动程序或脚本，每秒发送多个服务器请求或过度加重服务或应用程序负担或妨碍其工作和/或性能的程序。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;9.2 此外，您不得：（1）发送垃圾邮件或者以其他形式违反适用法律的重复或不受欢迎的邮件；（2）发送或存储侵权、淫秽、威胁、诽谤或者其他非法或侵权资料，包括危害儿童或触犯第三方隐私权的资料；（3）发送或存储包含软件病毒、蠕虫、木马或其他有害的计算机代码、文件、脚本、代理或程序的资料；（4）阻挠或扰乱应用程序、服务或其所含数据的完整性或性能；（5）尝试未经授权地访问应用程序、服务或其相关系统或网络。
+                <br> &nbsp; &nbsp; &nbsp; 9.3 在法律允许的最大范围内，我们将有权调查并起诉任何上述违法违规行为。我们可参与并协助执法部门起诉违反本《用户服务协议》的用户。如果我们认为任何内容违反本《用户服务协议》或以其他方式危害平台及/或其中的服务或应用程序，我们保留在不另行通知的情况下随时删除或禁用对这些内容的访问权限的权利。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十条 知识产权政策</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 10.1 我们遵守各类适用的知识产权法律法规，并希望用户也遵守。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;10.2 我们在服务中提供的内容（包括但不限于网页、文字、图片、音频、视频、图表等）的知识产权归我们所有，用户在使用本服务中所产生的内容的知识产权归用户或相关权利人所有。
+                <br> &nbsp; &nbsp; &nbsp; 10.3 除另有特别声明外，我们提供服务时所依托软件的著作权、专利权及其他知识产权均归我们所有。
+                <br> &nbsp; &nbsp; &nbsp; 10.4 我们在服务中所使用的商业标识，其著作权或商标权归我们所有。
+                <br> &nbsp; &nbsp; &nbsp; 10.5 上述及其他任何服务包含的内容的知识产权均受到法律保护，未经我们、用户或相关权利人书面许可，任何人不得以任何形式进行使用或创造相关衍生作品。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十一条 第三方链接</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 在您使用应用程序期间，我们可能会不时地提供由第三方拥有并控制的网站链接，以便您跟第三方沟通，向其购买产品或服务，参加其提供的促销活动。该等链接会带领您离开小南充电，并且该等链接所指向的第三方网站内容不在我们的控制范围之内，这些第三方网站各自订立了条款、条件和隐私政策。<b><u>因此，我们不会对这些网站的内容和活动负责，也不会承担任何义务，您应充分理解该等网站的内容及活动并自己全力承担浏览或访问这些网站的法律责任及风险。</u></b>
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十二条 合约期限</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 12.1 我们和您订立的这份合约是无固定期限合约。
+                <br> &nbsp; &nbsp; &nbsp; 12.2 您有权随时通过永久性删除智能手机上安装的应用程序来终止合约，这样将禁止您使用小南充电及其中的应用程序和服务。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;<b><u>12.3 如果您做出以下行为，我们有权随时终止合约并立即生效（即禁止您使用应用程序和服务）：</u></b>
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;<b><u>a.您触犯或违反本《用户服务协议》中的任何条款。</u></b>
+                <br> &nbsp; &nbsp; &nbsp; <b><u>b.我们认为，您滥用应用程序或服务。我们没有义务提前通知合约终止。终止合约之后，我们将按照本《用户服务协议》给出相关通知。</u></b>
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十三条 不可抗力及免责事由</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; <b><u>13.1 遭受不可抗力事件的一方可暂行中止履行本协议项下的义务直至不可抗力事件的影响消除为止，并且无需为此承担违约责任，但应尽最大努力克服该事件，减少损失的扩大。不可抗力指各方不能控制、不可预见或即使预见亦无法避免的事件，该事件足以妨碍、影响或延误任何一方根据本协议履行其全部或部分义务。该事件包括但不限于自然灾害、战争、政策变化等事件。</u></b>
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;<b><u>13.2 在法律允许的范围内，我们对以下情形导致的服务中断或受阻不承担责任：（1）受到计算机病毒、木马或其他恶意程序、黑客攻击的破坏。（2）用户或我们的手机软件、系统、硬件和通信线路出现故障。（3）用户操作不当。（4）用户通过非我们授权的方式使用服务。（5）其他我们无法控制或合理预见的情形。</u></b>
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十四条 其他</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 14.1 如果本《用户服务协议》的某一（些）条款被认定为无效而其他条款仍能保持有效且其执行不受影响，我们可决定是否继续履行该等其他条款。
+                <br> &nbsp; &nbsp; &nbsp; 14.2 我们保留随时修改或替换本《用户服务协议》条款，或者更改、暂停或中断服务或应用程序（包括但不限于，任何功能、数据库或内容的可用性）的权利。届时，我们只需在小南充电上发布通告或发送通知。您如果不同意我们对本《用户服务协议》所做的修改，您有权停止使用服务。如果您继续使用服务，则视为您接受我们对本《用户服务协议》所做的修改。
+                <br> &nbsp; &nbsp; &nbsp;&nbsp;14.3 我们可以通过以下途径发送通知：在小南充电上张贴一般通知；按照您在账户信息中登记的电子邮件地址或电话发送电子邮件或短信。
+                <br> &nbsp;
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十五条 管辖约定</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 本《用户服务协议》适用中国法律。本协议签订地为深圳，关于本《用户服务协议》的违约、终止、履行、解释或有效性，或者小南充电的使用所产生的或与其相关的任何冲突、赔偿或纠纷（统称为“争议”），由深圳市人民法院管辖。
+                <br>
+                <br>
+                <strong><span style="font-family:SimHei;">第十六条 其他</span></strong>
+                <br> &nbsp; &nbsp; &nbsp; 如果您对本协议或服务有意见或建议，可与我们的客户服务部门联系（联系方式为【0755-95598】），我们会给予您必要的帮助。
+                <br>
+                <div>
+                    <br>
+                </div>
+                <p></p>
+            </div>
+		</div>
+		<div id="ctp-webview-details-footer"></div>
+        <div class="main-container-content-img"></div>
+		
+	</div>
+</body>
+
+</html>

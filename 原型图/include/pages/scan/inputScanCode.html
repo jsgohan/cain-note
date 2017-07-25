@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--IOS中Safari允许全屏浏览 （网站开启对 web app 程序的支持）-->
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <!--页面不缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!--
+    IOS中Safari顶端状态条样式
+    注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px
+-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <!--忽略将数字变为电话号码  不自动将地址和email转为链接地址-->
+    <meta name="format-detection" content="telephone=no;address=no;email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <title>扫描二维码</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/layout.css"/>
+    <script type="text/javascript" src="../../assets/javascripts/base/sha1.js"></script>
+    <script type="text/javascript" src="../../assets/javascripts/base/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+</head>
+
+<body>
+<div id="webapp" style="display: none">
+    <div id="ctp-panel" style="background: #232323;">
+        <div id="inputScanCode-panel">
+            <div class="inputScanCode-panel-top">
+                <p>无法识别编码</p>
+                <p>请重新校对一下充电桩上的编码</p>
+            </div>
+            <div class="inputScanCode-panel-center">
+                <p class="charging-code"><input type="number" id="charging-code-code-input" placeholder="请输入充电桩设备号"/></p>
+                <p class="submit-btn"><span>确定输入</span></p>
+            </div>
+            <div class="inputScanCode-panel-bottom">
+                <!--<div class="light-control">开灯</div>-->
+                <div class="scan-control" style="float: initial;margin: 0 auto;">扫二维码</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../assets/javascripts/base/ajax.js"></script>
+<script src="../../assets/javascripts/base/page.js"></script>
+<script>
+    //    var SIGNURL = '/msp-charge/wechat/getsignature?url=' + window.encodeURIComponent(window.location.href.split('#')[0]);
+    var tempUrl = window.location.href.split('//')[1];
+    var SIGNURL = '/msp-charge/wechat/getsignature?url=' + window.location.href;
+    $.get(SIGNURL, function (e) {
+        wx.config({
+            debug: false,
+            appId: 'wx6d08e0b296d9e872',
+            timestamp: e.timestamp,
+            nonceStr: e.noncestr,
+            signature: e.signature,
+            jsApiList: [
+                'checkJsApi',
+                'scanQRCode'
+            ]
+        });
+
+
+    });
+</script>
+<script src="./inputScanCode.js?1=2"></script>
+<script>
+    $("body").css("-webkit-overflow-scrolling", "touch");
+</script>
+</body>
+
+</html>

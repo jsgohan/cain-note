@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--IOS中Safari允许全屏浏览 （网站开启对 web app 程序的支持）-->
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <!--页面不缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!--
+    IOS中Safari顶端状态条样式
+    注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px
+-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <!--忽略将数字变为电话号码  不自动将地址和email转为链接地址-->
+    <meta name="format-detection" content="telephone=no;address=no;email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <title>充电站列表</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/layout.css"/>
+    <script src="../../assets/javascripts/base/sha1.js"></script>
+    <script type="text/javascript" src="../../assets/javascripts/base/jquery.min.js"></script>
+    <script type="text/javascript" src="../../assets/javascripts/base/pubsub.js"></script>
+
+    <style>
+        *, html, body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+<div id="webapp">
+    <div id="ctp-panel">
+        <div id="ctp-user-bind-form-container"
+             style="display: none;position:absolute; left: 0; top: -1px; padding-bottom: 1px;background: #fff; width: 100%; height: 100%;z-index: 10">
+            <form id="ctp-user-bind-form">
+                <p class="tel"><input type="tel" placeholder="请输入手机号码"/></p>
+                <p class="description">如果您已经注册小南充电，请输入注册的手机号，否则请输入您的常用手机号。
+                    <!--<div class="ctp-user-bind-verify-img">-->
+                    <!--<div class="ctp-user-bind-verify-img-leftPart"></div>-->
+                    <!--<div class="ctp-user-bind-verify-img-rightPart">-->
+                    <!--<input type="button" value="发送验证码" id="ctp-user-bind-verify-img-sendBtn"/>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                <p class="sendCode"><input type="tel" placeholder="请输入验证码"/><a href="javascript:void(0);">发送验证码</a></p>
+                <p class="btn" style="height: 80px;"><span>提交</span></p>
+            </form>
+        </div>
+
+        <div id="stake-map-search">
+            <div class="stake-map-search-left"></div>
+            <div class="stake-map-search-center">
+                <span>&nbsp;</span>
+                <input type="text" placeholder="搜索站点"/>
+                <div class="del-dot"></div>
+            </div>
+            <div class="stake-map-search-right">地图</div>
+            <div class="stake-map-search-right-btn">搜索</div>
+
+        </div>
+        <div class="search-sub-history-mask ctp-mask"></div>
+        <div class="search-sub-history">
+            <p class="search-history-title">搜索历史</p>
+            <div class="history-list"></div>
+            <p class="btn-clear-history">清除历史</p>
+
+        </div>
+        <div class="searchTab">
+            <ul>
+                <li><i>全部电站</i><span>&nbsp;</span></li>
+                <li><i>距离最近</i><span>&nbsp;</span></li>
+                <li><i>不限车型</i><span>&nbsp;</span></li>
+            </ul>
+        </div>
+        <div class="searchTab-subDiv">
+            <ul>
+            </ul>
+        </div>
+        <div class="ctp-list-box">
+            <div class="list-tips">
+                <p class="list-tips-title">无充电站</p>
+                <p>请扩大搜索范围</p>
+            </div>
+            <div id="stake-list" class="stake-list">
+            </div>
+            <!--<div class="add-more"></div>-->
+            <!--<div class="stake-map-scan" style="right: 10px; position: fixed; bottom: 10px;"></div>-->
+        </div>
+        <div class="searchTab-subDiv-mask ctp-mask"></div>
+    </div>
+</div>
+<script src="../../assets/javascripts/base/ajax.js"></script>
+<script src="../../assets/javascripts/base/page.js"></script>
+<script src="./stakeList.js?1=2"></script>
+
+<script>
+    $("body").css("-webkit-overflow-scrolling", "touch"); //张岩2016-8-25 开启ios下滚定回弹
+    var stakeList = $('#stake-list')[0];
+</script>
+</body>
+
+</html>

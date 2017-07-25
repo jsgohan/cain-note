@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <!--页面不缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <link rel="stylesheet" href="../../assets/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/layout.css"/>
+    <script type="text/javascript" src="../../assets/javascripts/base/jquery.min.js"></script>
+    <script src="../../assets/javascripts/base/sha1.js"></script>
+    <script src="../../assets/javascripts/base/pubsub.js"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=50zc4cTsj6QqxMyzTwpmPhp9GDVBIfAC"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://wx.gtimg.com/wxpay_h5/fingerprint2.min.1.4.1.js"></script>
+    <title>找充电站</title>
+    <style>
+
+        body, html, #stake-map {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        .find-stake-share-panel {
+            height: 200px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            background: #fff;
+            z-index: 33;
+            /*display: none;*/
+        }
+
+        .find-stake-share-panel-title {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #bbb;
+            font-weight: normal;
+            font-size: 15px;
+        }
+
+        .find-stake-share-panel ul {
+            width: 240px;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+
+        .find-stake-share-panel ul li {
+            width: 60px;
+            height: 60px;
+            padding: 30px 10px;
+            line-height: 120px;
+            float: left;
+            text-align: center;
+        }
+
+        .find-stake-share-panel ul li a {
+            color: #333;
+            font-size: 15px;
+        }
+
+        li.wxhy {
+            background: url("../../assets/images/c_share_wechat.png") center top no-repeat;
+            background-size: 60px 60px;
+        }
+
+        li.qq {
+            background: url("../../assets/images/c_share_qq.png") center top no-repeat;
+            background-size: 60px 60px;
+        }
+
+        li.pyq {
+            background: url("../../assets/images/c_share_wechat_friend.png") center top no-repeat;
+            background-size: 60px 60px;
+        }
+
+        .find-stake-share-panel-btn {
+            text-align: center;
+            width: 100%;
+            font-size: 17px;
+            height: 50px;
+            line-height: 50px;
+            color: rgb(47, 185, 195);
+            border-top: 1px solid #e5e5e5;
+        }
+        .df, .fwf, .tcf {
+            font-size: 13px;
+            color: #a4a4a4;
+            line-height: 13px;
+        }
+        .df b, .fwf b, .tcf b {
+            font-weight: normal;
+        }
+        .df i, .fwf i, .tcf i {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+<div id="webapp">
+    <div id="ctp-panel">
+        <div id="stake-map-search">
+            <div class="stake-map-search-left"></div>
+            <div class="stake-map-search-center">
+                <span>&nbsp;</span>
+                <input type="text" placeholder="搜索站点"/>
+                <div class="del-dot"></div>
+
+            </div>
+            <div class="stake-map-search-right">列表</div>
+            <div class="stake-map-search-right-btn">搜索</div>
+
+        </div>
+        <div class="search-sub-history-mask ctp-mask"></div>
+        <div class="search-sub-history">
+            <p class="search-history-title">搜索历史</p>
+            <div class="history-list"></div>
+            <p class="btn-clear-history">清除历史</p>
+
+        </div>
+        <!--<div id="stack-san">扫描</div>-->
+        <div id="stake-map"></div>
+        <div id="stake-map-filter-favorite">
+            <div class="stake-map-filter"></div>
+            <div class="stake-map-favorite"></div>
+        </div>
+        <div class="stake-map-scan"></div>
+        <div id="stake-map-filterList-mask" class="stake-map-filterList-mask ctp-mask"></div>
+        <div id="stake-map-filterList" class="stake-map-filterList">
+            <p class="title">
+                筛选条件
+            </p>
+            <ul class="filter-elect-list">
+                <li class="zld">
+                    <a href="javascript:void(0);">
+                        直流电
+                    </a>
+                </li>
+                <li class="jlkc">
+                    <a href="javascript:void(0);">
+                        交流快充
+                    </a>
+                </li>
+                <li class="jlmc">
+                    <a href="javascript:void(0);">
+                        交流慢充
+                    </a>
+                </li>
+                <li class="ykx">
+                    <a href="javascript:void(0);">
+                        有空闲
+                    </a>
+                </li>
+            </ul>
+            <p class="title">
+                选择车型
+            </p>
+            <ul class="filter-car-list">
+                <li class="filter-car-list-my-car-type" style="margin-top: 0;">
+                    <img src=""/>
+                    <span></span>
+                </li>
+                <li class="change-car-type">
+                    <a href="javascript:void(0);">
+                        更换<br/>车型
+                    </a>
+                </li>
+            </ul>
+            <p class="btn-group">
+                <a href="javascript:void(0);" class="btn-group-cancel">取消</a>
+                <a href="javascript:void(0);" class="btn-group-submit">确定</a>
+            </p>
+        </div>
+
+        <div id="search-result-panel" class="search-result-panel">
+            <div class="search-result-list-item">
+                <div class="search-result-list-item-top">
+                    <p class="search-result-list-item-name"><i></i><span class="search-result-list-item-free"></span>
+                    </p>
+                    <p class="search-result-list-item-params">
+                        <span class="add-fav fav-star"></span>
+                        <span class="search-result-share"></span>
+                        <span class="search-result-foreignOpen" style="font-size: 13px;line-height: 20px; color: orange;"></span>
+                        <!--<span class="search-result-list-item-price"><i></i>元/kWh</span>-->
+                        <span class="df"><i>电费：</i><b></b></span>
+                        <span class="fwf"><i>服务费：</i><b></b></span>
+                        <span class="tcf"><i>停车费：</i><b></b></span>
+
+                    </p>
+                </div>
+                <div class="search-result-list-item-middle">
+                    <span class="search-result-list-item-middle-details">详情》</span>
+                    <p class="search-result-list-item-address"></p>
+                    <p class="search-result-list-item-distance"><i></i>
+                    </p>
+                </div>
+                <div class="search-result-list-item-bottom">
+                    <a href="javascript:void(0);" class="btn-side" style="width: 49%">周边</a>
+                    <a href="javascript:void(0);" class="btn-navigator" style="width: 49%;float: right;border-left: 1px solid #e5e5e5;"><span>导航</span></a>
+                </div>
+            </div>
+            <h2 class="search-result-panel-title"><span></span>共搜索到<i>0</i>个充电站</h2>
+            <div class="search-result-list-box">
+                <div class="stake-list search-result-list">
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="search-result-panel-mask ctp-mask"></div>
+        <div class="find-stake-share-panel-mask ctp-mask"></div>
+
+        <div class="find-stake-share-panel"
+             style=" height: 224px;width: 100%;bottom: 0;left: 0;position: absolute;background: #fff;z-index: 33;display: none">
+            <h2 class="find-stake-share-panel-title">分享到</h2>
+            <ul>
+                <li class="pyq"><a href="javascript:void(0);">朋友圈</a></li>
+                <li class="wxhy"><a href="javascript:void(0);">微信好友</a></li>
+                <li class="qq"><a href="javascript:void(0);">QQ</a></li>
+            </ul>
+            <p class="find-stake-share-panel-btn">
+                取消
+            </p>
+        </div>
+        <div class="find-stake-share-panel-mask ctp-mask"></div>
+
+
+    </div>
+</div>
+<div id="ctp-dialog-mask"></div>
+</body>
+</html>
+
+<script src="../../assets/javascripts/base/ajax.js?1=5"></script>
+<script src="../../assets/javascripts/base/page.js?1=5"></script>
+<script>
+    var SIGNURL = '/msp-charge/wechat/getsignature?url=' + encodeURIComponent(window.location.href);
+    $.get(SIGNURL, function (e) {
+        wx.config({
+            debug: false,
+            appId: 'wx6d08e0b296d9e872',
+            timestamp: e.timestamp,
+            nonceStr: e.noncestr,
+            signature: e.signature,
+            jsApiList: [
+                'checkJsApi',
+                'chooseWXPay',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'openLocation'
+            ]
+        });
+    });
+</script>
+<script src="findStake.js?1=7"></script>
+<script>
+    $("body").css("-webkit-overflow-scrolling", "touch");
+    $(function () {
+        var mapHeight = $(window).height() - 51;
+        $('#stake-map').height(mapHeight);
+    });
+</script>

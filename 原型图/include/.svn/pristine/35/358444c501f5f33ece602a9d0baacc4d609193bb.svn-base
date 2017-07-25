@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--IOS中Safari允许全屏浏览 （网站开启对 web app 程序的支持）-->
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <!--页面不缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!--
+    IOS中Safari顶端状态条样式
+    注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px
+-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <!--忽略将数字变为电话号码  不自动将地址和email转为链接地址-->
+    <meta name="format-detection" content="telephone=no;address=no;email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="wap-font-scale" content="no">
+    <title>转账</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/reset.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/layout.css"/>
+    <script src="../../assets/javascripts/base/sha1.js"></script>
+    <script type="text/javascript" src="../../assets/javascripts/base/jquery.min.js"></script>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #ctp-panel {
+            background: #f1f5f8;
+        }
+        .transfer-amount-input {
+            outline: none;
+            width: 87%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="webapp">
+    <div id="ctp-panel">
+        <div class="ctp-panel-transfer">
+            <div class="transfer-obj-details">
+                <div class="transfer-obj-details-main">
+                    <span class="transfer-obj-details-main-icon">
+                        <img class="transfer-user-avatar" src="" onerror="javascript:this.src='../../assets/images/picError.png';"/>
+                    </span>
+                    <span class="transfer-obj-details-name"></span>
+                    <span class="transfer-obj-details-tel"></span>
+                </div>
+            </div>
+        </div>
+        <div class="transfer-obj-details-account">
+            <h2 class="transfer-obj-details-account-amount">
+                转账金额<span>(当前余额:<b class="user-balance"></b>)</span>
+            </h2>
+            <div class="transfer-amount">
+                ¥<input class="transfer-amount-input" type="text" placeholder="填写转账金额"/>
+            </div>
+            <div class="transfer-remark">
+                <input class="transfer-remark-input" type="text" placeholder="添加备注(20字内)"/>
+            </div>
+            <div class="transfer-validate-code">
+                <input class="transfer-validate-input" type="number" placeholder="填写收到的手机验证码"/>
+                <a href="javascritp:void(0);" class="getValidateCode">获取验证码</a>
+            </div>
+        </div>
+        <div class="transfer-sure-btn">
+            <a href="javascript:void(0);">确定转账</a>
+        </div>
+    </div>
+</div>
+<script src="../../assets/javascripts/base/ajax.js"></script>
+<script src="../../assets/javascripts/base/page.js"></script>
+<script src="./transferSure.js"></script>
+<script>
+    $("body").css("-webkit-overflow-scrolling", "touch");
+</script>
+</body>
+
+</html>
