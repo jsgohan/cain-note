@@ -48,7 +48,7 @@ window.mobileUtil = (function(win, doc) {
                     dpr = isIos ? Math.min(win.devicePixelRatio, 3) : 1,
                     scale = 1 / dpr,
                     tid;
-
+                console.log(docEl.dataset.mw)
                 docEl.removeAttribute('data-mw');
                 docEl.dataset.dpr = dpr;
                 metaEl = doc.createElement('meta');
@@ -58,6 +58,7 @@ window.mobileUtil = (function(win, doc) {
 
                 var refreshRem = function() {
                     var width = docEl.getBoundingClientRect().width;
+                    console.log(width)
                     if (width / dpr > maxwidth) {
                         width = maxwidth * dpr;
                     }
