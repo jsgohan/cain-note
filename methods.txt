@@ -1,0 +1,574 @@
+.motto-disturb {
+  position: relative;
+}
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(55px, 9999px, 9px, 0);
+  }
+  5% {
+    clip: rect(12px, 9999px, 60px, 0);
+  }
+  10% {
+    clip: rect(85px, 9999px, 83px, 0);
+  }
+  15% {
+    clip: rect(83px, 9999px, 84px, 0);
+  }
+  20% {
+    clip: rect(39px, 9999px, 69px, 0);
+  }
+  25% {
+    clip: rect(41px, 9999px, 7px, 0);
+  }
+  30% {
+    clip: rect(32px, 9999px, 6px, 0);
+  }
+  35% {
+    clip: rect(75px, 9999px, 19px, 0);
+  }
+  40% {
+    clip: rect(5px, 9999px, 63px, 0);
+  }
+  45% {
+    clip: rect(55px, 9999px, 43px, 0);
+  }
+  50% {
+    clip: rect(80px, 9999px, 71px, 0);
+  }
+  55% {
+    clip: rect(67px, 9999px, 69px, 0);
+  }
+  60% {
+    clip: rect(45px, 9999px, 99px, 0);
+  }
+  65% {
+    clip: rect(67px, 9999px, 93px, 0);
+  }
+  70% {
+    clip: rect(12px, 9999px, 69px, 0);
+  }
+  75% {
+    clip: rect(58px, 9999px, 28px, 0);
+  }
+  80% {
+    clip: rect(53px, 9999px, 40px, 0);
+  }
+  85% {
+    clip: rect(86px, 9999px, 22px, 0);
+  }
+  90% {
+    clip: rect(35px, 9999px, 100px, 0);
+  }
+  95% {
+    clip: rect(99px, 9999px, 30px, 0);
+  }
+  100% {
+    clip: rect(8px, 9999px, 51px, 0);
+  }
+}
+.motto-disturb:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 inherit;
+  top: 0;
+  color: inherit;
+  background: inherit;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(98px, 9999px, 50px, 0);
+  }
+  5% {
+    clip: rect(97px, 9999px, 8px, 0);
+  }
+  10% {
+    clip: rect(71px, 9999px, 79px, 0);
+  }
+  15% {
+    clip: rect(72px, 9999px, 84px, 0);
+  }
+  20% {
+    clip: rect(59px, 9999px, 36px, 0);
+  }
+  25% {
+    clip: rect(44px, 9999px, 39px, 0);
+  }
+  30% {
+    clip: rect(94px, 9999px, 60px, 0);
+  }
+  35% {
+    clip: rect(78px, 9999px, 37px, 0);
+  }
+  40% {
+    clip: rect(84px, 9999px, 29px, 0);
+  }
+  45% {
+    clip: rect(27px, 9999px, 27px, 0);
+  }
+  50% {
+    clip: rect(61px, 9999px, 87px, 0);
+  }
+  55% {
+    clip: rect(100px, 9999px, 33px, 0);
+  }
+  60% {
+    clip: rect(68px, 9999px, 4px, 0);
+  }
+  65% {
+    clip: rect(100px, 9999px, 84px, 0);
+  }
+  70% {
+    clip: rect(44px, 9999px, 57px, 0);
+  }
+  75% {
+    clip: rect(90px, 9999px, 69px, 0);
+  }
+  80% {
+    clip: rect(88px, 9999px, 22px, 0);
+  }
+  85% {
+    clip: rect(81px, 9999px, 13px, 0);
+  }
+  90% {
+    clip: rect(33px, 9999px, 38px, 0);
+  }
+  95% {
+    clip: rect(1px, 9999px, 34px, 0);
+  }
+  100% {
+    clip: rect(27px, 9999px, 57px, 0);
+  }
+}
+.motto-disturb:before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 1px 0 inherit;
+  top: 0;
+  color: inherit;
+  background: inherit;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+
+
+var throttle = function(fn, delay){
+ 	var timer = null;
+ 	return function(){
+ 		var context = this, args = arguments;
+ 		clearTimeout(timer);
+ 		timer = setTimeout(function(){
+ 			fn.apply(context, args);
+ 		}, delay);
+ 	};
+ };
+ 
+ 
+ 
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ripple</title>
+  <style>
+.ripple-effect {
+  position: relative;
+  background-color: red;
+}
+.ripple {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #000;
+}
+.ripple-container {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.ripple.is-animating {
+    transition: width .4s cubic-bezier(0, 0, 0.2, 1), height .4s cubic-bezier(0, 0, 0.2, 1), opacity 0.6s cubic-bezier(0, 0, 0.2, 1), -webkit-transform .4s cubic-bezier(0, 0, 0.2, 1);
+    transition: transform .4s cubic-bezier(0, 0, 0.2, 1), width .4s cubic-bezier(0, 0, 0.2, 1), height .4s cubic-bezier(0, 0, 0.2, 1), opacity 0.6s cubic-bezier(0, 0, 0.2, 1);
+    transition: transform .4s cubic-bezier(0, 0, 0.2, 1), width .4s cubic-bezier(0, 0, 0.2, 1), height .4s cubic-bezier(0, 0, 0.2, 1), opacity 0.6s cubic-bezier(0, 0, 0.2, 1), -webkit-transform .4s cubic-bezier(0, 0, 0.2, 1); }
+}
+  </style>
+</head>
+<body>
+  <div class="ripple-effect" style="height: 50px;width: 100px;"></div>
+<script>
+(function () {
+  var utils = {
+    registerEventHandler: function (element, eventType, handler) {
+      if(element.addEventListener) {
+        element.addEventListener(eventType, handler, false)
+      } else if(element.attachEvent) {
+        element.addEventListener('on' + eventType, function (event) {
+          handler.call(element, event)
+        })
+      }
+    },
+    addClass: function (element, className) {
+      if(utils.hasClass(element, className)) return
+      element.className = (element.className || "") + " " + className
+    },
+    removeClass: function (element, className) {
+      var names = (element.className || "").split(/\s+/)
+      var resultArray = []
+      for(var i = 0, len = names.length;i < len;i++) {
+        if(names[i] !== className) resultArray.push(names[i])
+      }
+      element.className = resultArray.join(' ')
+    },
+    hasClass: function (element, className) {
+      var currentClassNames = (element.className || "").split(/\s+/)
+      return utils.arrayIndexOf(currentClassNames, className) >= 0 ? true : false
+    },
+    arrayIndexOf: function (array, item) {
+      if(typeof array.indexOf === 'function') {
+        return array.indexOf(item)
+      } else {
+        for(var i = 0, len = array.length;i < len;i++) {
+          if(array[i] === item) {
+            return i
+          }
+        }
+      }
+      return -1
+    },
+    reqAnimate: function (animate) {
+      return window.requestAnimationFrame(animate) || window.mozRequestAnimationFrame(animate) || window.webkitRequestAnimationFrame(animate) || window.msRequestAnimationFrame(animate) || window.setTimeout(animate, 1000/60)
+    }
+  }
+  
+  var rippleClassName = 'ripple-effect'
+  
+  function Ripple(element) {
+    if(!(this instanceof Ripple)) {
+      return new Ripple(element)
+    }
+    this._ele = element
+    this.init()
+  }
+  
+  Ripple._Const = {
+    FRAME_COUNT: 1
+  }
+  
+  Ripple.prototype.init = function () {    
+    this._rippleContainer = document.createElement('span')// 有overflow hidden的样式，控制波纹的边界
+    this._rippleElement  = document.createElement('span')// 波纹
+    utils.addClass(this._rippleContainer, 'ripple-container')
+    utils.addClass(this._rippleElement, 'ripple')
+    this._rippleContainer.appendChild(this._rippleElement)
+    this._ele.appendChild(this._rippleContainer)
+    this._frameCount = Ripple._Const.FRAME_COUNT// 控制点击之后在哪个刷新周期内产生波纹
+    
+    utils.registerEventHandler(this._ele, 'mousedown', this.downHandler.bind(this))
+    
+    utils.registerEventHandler(this._ele, 'mouseup', this.upHandler.bind(this))
+  }
+  
+  Ripple.prototype.downHandler = function (e) {
+    this.initRipple(e)
+    this.startRipple()
+  }
+  
+  Ripple.prototype.upHandler = function (e) {
+    this._rippleElement.style.opacity = '0'
+  }
+  
+  /**
+   * 初始化位置，大小
+   **/
+  Ripple.prototype.initRipple = function (e) {
+    var rect, x, y, scaleStr, radius
+    
+    rect = this._ele.getBoundingClientRect()
+    x = e.clientX - rect.left,
+    y = e.clientY - rect.top
+    this._offset = 'translate(' + x + 'px, ' + y + 'px)'
+    radius = Math.sqrt(rect.width*rect.width + rect.height*rect.height)
+    scaleStr = 'scale(0.001, 0.001)'
+    
+    var transformStr = this._offset + ' translate(-50%, -50%)' + ' ' + scaleStr
+    
+    this._rippleElement.style.width = radius*2 + 'px'
+    this._rippleElement.style.height = radius*2 + 'px'
+    this._rippleElement.style.transform = transformStr
+    this._rippleElement.style.msTransform = transformStr
+    this._rippleElement.style.mozTransform = transformStr
+    this._rippleElement.style.opacity = '0.4'
+    
+    utils.removeClass(this._rippleElement, 'is-animating')
+    
+    this._rippleContainer.style.width = rect.width + 'px'
+    this._rippleContainer.style.height = rect.height + 'px'
+  }
+  
+  
+  Ripple.prototype.startRipple = function () {
+    this.animationHandler = function () {
+      if(this._frameCount-- > 0) {
+        utils.reqAnimate(this.animationHandler.bind(this))
+      } else {
+        // 开始动画
+        var transformStr = this._offset + ' translate(-50%, -50%)' + ' ' + 'scale(1, 1)'
+        this._rippleElement.style.transform = transformStr
+        this._rippleElement.style.msTransform = transformStr
+        this._rippleElement.style.transform = transformStr
+        utils.addClass(this._rippleElement, 'is-animating')
+        this._frameCount = Ripple._Const.FRAME_COUNT
+      }
+    };
+    this.animationHandler.bind(this)()
+  }
+    
+  function upgradeElements() {
+    var eles = document.querySelectorAll('.' + rippleClassName)
+    for(var i = 0, len = eles.length; i < len; i++) {
+      Ripple(eles[i])
+    }
+  }
+  
+  utils.registerEventHandler(window, 'load', function () {
+    upgradeElements()
+  })
+})()
+</script>
+</body>
+</html>
+
+
+
+
+ele.getBoundingClientRect().top > window.innerHeight // 元素在当前屏下面
+
+ele.getBoundingClientRect().bottom < 0 // 元素在当前屏上面
+
+
+
+
+var scrollFunc = function (e) {
+  var direct = 0
+  e = e || window.event
+  if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件             
+    if (e.wheelDelta > 0) { //当滑轮向上滚动时
+      console.log("滑轮向上滚动")
+    }
+    if (e.wheelDelta < 0) { //当滑轮向下滚动时
+      console.log("滑轮向下滚动")
+    }
+  } else if (e.detail) {  //Firefox滑轮事件
+    if (e.detail> 0) { //当滑轮向上滚动时
+      console.log("滑轮向上滚动")
+    }
+    if (e.detail< 0) { //当滑轮向下滚动时
+      console.log("滑轮向下滚动")
+    }
+  }
+}
+//给页面绑定滑轮滚动事件
+if (document.addEventListener) {
+  document.addEventListener('DOMMouseScroll', scrollFunc, false)
+}
+//滚动滑轮触发scrollFunc方法
+window.onmousewheel = document.onmousewheel = scrollFunc  
+
+
+
+
+/**
+ * 发送ajax请求，允许传入一个配置对象和一个回调函数
+ *
+ * @param    {Object}  config     配置对象
+ * 举例：var config = {
+						method: 'GET',
+						url: 'url',
+						params: {number: 1, price: 10},
+						async: true
+         }
+ * @param    {Function}  cb       回调函数
+ *
+ */
+function ajax (config, cb) {
+	var xhttp = new XMLHttpRequest()
+	var method = config.method
+	var url = config.url
+	var params = JSON.stringify(config.params)
+	var async = config.async
+
+	if (method === 'POST') {
+		xhttp.open('POST', url, async)
+		xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8')
+		xhttp.send('info=' + params)
+	} else if (method === 'GET') {
+		url += '?' + 'info=' + params
+		xhttp.open('GET', url, async)
+		xhttp.send()
+	}
+	xhttp.onreadystatechange = function () {
+		if (xhttp.readyState === 4 && xhttp.status === 200) {
+			var data = xhttp.responseText
+			cb(data)
+		}
+	}
+}
+
+module.exports = ajax;
+
+
+
+
+
+// 滚动条样式
+*::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    background: #FAFAFA;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #E0E0E0;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: #BDBDBD;
+}
+
+
+
+
+function rand(min, max) {
+  return (Math.random() * (max - min)) + min;
+}
+
+export default class Bubble {
+  constructor(canvas) {
+    this.colors = [
+      '255, 255, 255'
+    ];
+    // adds gradient to particles on true
+    this.blurry = true;
+    // adds white border
+    this.border = false;
+    // particle radius min/max
+    this.minRadius = 10;
+    this.maxRadius = 35;
+    // particle opacity min/max
+    this.minOpacity = 0.005;
+    this.maxOpacity = 0.5;
+    // particle speed min/max
+    this.minSpeed = 0.05;
+    this.maxSpeed = 0.5;
+    // frames per second
+    this.fps = 60;
+    // number of particles
+    this.numParticles = 100;
+    // required canvas variables
+    this.canvas = document.querySelector(canvas);
+    this.ctx = this.canvas.getContext('2d');
+  }
+
+  init() {
+    this.render();
+    this.createCircle();
+  }
+
+  render() {
+    const wHeight = window.innerHeight;
+    const wWidth = window.innerWidth;
+
+    this.canvas.width = wWidth;
+    this.canvas.height = wHeight;
+
+    window.addEventListener('resize', () => {
+      this.render();
+    });
+  }
+
+  createCircle() {
+    const particle = [];
+
+    for (let i = 0; i < this.numParticles; i++) {
+      const color = this.colors[Math.floor((rand(0, this.colors.length)))];
+      particle[i] = {
+        radius: rand(this.minRadius, this.maxRadius),
+        xPos: rand(0, this.canvas.width),
+        yPos: rand(0, this.canvas.height),
+        xVelocity: rand(this.minSpeed, this.maxSpeed),
+        yVelocity: rand(this.minSpeed, this.maxSpeed),
+        color: `rgba(${color}, ${rand(this.minOpacity, this.maxOpacity)})`
+      };
+      this.draw(particle, i);
+    }
+    this.animate(particle);
+  }
+
+  draw(particle, i) {
+    const ctx = this.ctx;
+    if (this.blurry === true) {
+      const grd = ctx.createRadialGradient(particle[i].xPos,
+      particle[i].yPos,
+      particle[i].radius, particle[i].xPos, particle[i].yPos, particle[i].radius / 1.25);
+      grd.addColorStop(1.000, particle[i].color);
+      grd.addColorStop(0.000, 'rgba(255, 255, 255, 0)');
+      ctx.fillStyle = grd;
+    } else {
+      ctx.fillStyle = particle[i].color;
+    }
+    if (this.border === true) {
+      ctx.strokeStyle = '#fff';
+      ctx.stroke();
+    }
+    ctx.beginPath();
+    ctx.arc(particle[i].xPos, particle[i].yPos, particle[i].radius, 0, 2 * Math.PI, false);
+    ctx.fill();
+  }
+
+  animate(particle) {
+    setInterval(() => {
+      this.clearCanvas();
+      for (let i = 0; i < this.numParticles; i++) {
+        particle[i].xPos += particle[i].xVelocity;
+        particle[i].yPos -= particle[i].yVelocity;
+
+        if (particle[i].xPos > this.canvas.width + particle[i].radius
+        || particle[i].yPos > this.canvas.height + particle[i].radius) {
+          this.resetParticle(particle, i);
+        } else {
+          this.draw(particle, i);
+        }
+      }
+    }, 1000 / this.fps);
+  }
+
+  resetParticle(particle, i) {
+    const random = rand(0, 1);
+
+    if (random > 0.5) {
+      particle[i].xPos = -particle[i].radius;
+      particle[i].yPos = rand(0, this.canvas.height);
+    } else {
+      particle[i].xPos = rand(0, this.canvas.width);
+      particle[i].yPos = this.canvas.height + particle[i].radius;
+    }
+    this.draw(particle, i);
+  }
+
+  clearCanvas() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+}
