@@ -4,6 +4,8 @@
 
 　　解压至c:\nginx，运行nginx.exe(即nginx -c conf\nginx.conf)，默认使用80端口，日志见文件夹C:\nginx\logs
 
+start nginx.exe
+
 - 使用
 
 　　[http://localhost](http://localhost/)
