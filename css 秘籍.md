@@ -241,6 +241,187 @@ css选择器的解析是从右向左解析的。
 
 -webkit-font-smoothing: antialiased 灰度平滑
 
+##### css布局解决方案
+
+###### 居中布局
+
+- 水平居中
+
+1. 使用inline-block+text-align
+
+原理：先将子框由块元素变为行内元素，再通过设置行内块元素居中以达到水平居中
+
+用法：对子框设置display:inline-block 父框设置text-align:center;
+
+2. 使用table+text-align
+
+原理：先将子框设置为块级表单来显示，再设置子框居中以达到水平居中
+
+用法：对子框设置display:table; 父框设置text-align:center;
+
+3. 使用absolute+transform
+
+原理：将子框设置为绝对定位，移动子框达到水平居中。父框需要设置为相对定位，是父框成为子框的相对框
+
+用法：父框设置position:relative; 子框设置position:absolute;left:50%;transform:translateX(-50%);
+
+4. flex+margin
+
+原理：通过css3中的布局flex将子框转换为flex item，设置子框居中以达到居中
+
+用法：将父框设置为display:flex; 子框设置margin: 0 auto;
+
+5. flex+justify-content
+
+###### 垂直居中
+
+1. 使用table-cell+vertical-align
+
+原理：通过将父框转化为一个表格单元格显示，再通过设置属性，使表格单元格内容垂直居中
+
+用法：父框设置为display:table-cell;vertical-align:middle;
+
+2. 使用absolute+transform
+3. 使用flex+align-items
+
+###### 水平垂直居中
+
+1. absolute+transform
+2. inline-block+text-align+table-cell+vertical-align
+3. flex+justify-content+align-items
+
+###### 多列布局
+
+- 定宽+自适应
+
+1. 使用float+overflow
+
+用法：将左框设置为float:left;width、margin-left，在设置实际的右框overflow:hidden;
+
+2. float+margin
+
+##### 继承box-sizing
+
+```
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+```
+
+##### 使用:not()选择器来决定表单是否显示边框
+
+```
+不好的写法：
+.nav li {
+    border-right: 1px solid #eee;
+}
+.nav li:last-child {
+    border-right: none;
+}
+
+应该使用以下方式：
+.nav li:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+同样也可以使用 .nav li + li 或者 .nav li:first-child ~ li
+```
+
+##### 为body元素添加行高
+
+不必为每一个p、h*元素逐一添加line-height，直接添加到body元素，文本元素可以很容易的继承body的样式
+
+```
+body {
+    line-height: 1.5;
+}
+```
+
+##### 使用负的nth-child选择元素
+
+```
+使用负的nth-child可以选择1至n个元素
+li {
+    display: none;
+}
+li:nth-child(-n+3) {
+    // 选择1到第3个元素并显示
+    display: block;
+}
+```
+
+##### 使用max-height来建立css的滑块
+
+max-height与overflow:hidden一起建立纯css的滑块
+
+```
+.slider {
+    max-height: 200px;
+    overflow-y: hidden;
+    width: 300px;
+}
+.slider:hover {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+```
+
+鼠标移入滑块元素时增大它的max-height值，便可以显示溢出部分
+
+##### 为破碎图像定义样式
+
+```
+img {
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    height: auto;
+    line-height: 2;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+以添加伪元素的法则来显示用户信息和URL的引用：
+img:before {
+    content: "we are sorry, the image below is broken(";
+    display: block;
+    margin-bottom: 10px;
+}
+img:after {
+    content: "(url：)" attr(src) ")";
+    display: block;
+    font-size: 12px;
+}
+```
+
+##### 媒体查询常用样式表
+
+```
+<link rel="stylesheet" media="all and (orientation: portrait)" href="portrait.css"> // 竖放加载
+<link rel="stylesheet" media="all and (orientation: landscape)" href="landscope.css"> // 横放加载
+```
+
+##### meta标签
+
+以下标签在开发webapp中起到非常重要的作用
+
+```
+<meta content="width=device-width, initial-scale=1.0, maxium-scale=1.0, user-scalable=0" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+```
+
+其中
+
+第二个是safari私有meta标签，表示允许全屏模式浏览
+
+第三个meta标签是iphone的私有标签，指定iphone的safari顶端的状态条的样式
+
+第四个告诉设备忽略将页面中的数字识别为电话号码
+
 
 
 
