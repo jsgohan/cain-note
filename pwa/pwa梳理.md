@@ -272,5 +272,220 @@ Cache Storage 选项卡提供了一个已使用（Service Worker 线程）Cache 
 - 来自 Service Worker 的内容会在 Size 字段中标注为 `from ServiceWorker`
 - Service Worker 发出的请求会在 Name 字段中添加 ⚙ 图标。
 
+### PWA的离线存储
 
+对于网址可寻址的资源，使用[Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache)（服务工作线程的一部分）。
 
+对于所有其他的数据，使用 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)（具有一个 Promise 包装器）。
+
+以上两个API都是异步的（IndexedDB基于事件，CacheAPI基于Promise）。它们使用**网页工作线程**、**窗口**和**服务工作线程**。IndexedDB在每个位置都可用。服务工作线程（和CacheAPI）目前在Chrome、Firefox、Opera中可用，并正在针对Edge进行开发。IndexedDB的Promise包装器隐藏了IndexedDB库自带的一些强大但同时也非常复杂的machinery（如事务处理、架构版本）。IndexedDB将支持observers，可以轻松实现标签之间的同步。
+
+##### 其他存储机制怎样？
+
+Web Storage（如LocalStorage和SessionStorage）是同步的，**不支持网页工作线程**，并对大小和类型（仅限字符串）进行限制。
+
+Cookie具有自身的用途，也是同步的，**缺少网页工作线程支持**，同时对大小进行限制。
+
+WebSQL不具有广泛的浏览器支持，不建议使用。
+
+File System API在Chrome以外的任意浏览器上都不受支持。
+
+##### 能存储多少数据？
+
+| 浏览器  | 限制                                                         |
+| ------- | ------------------------------------------------------------ |
+| Chrome  | 可用空间 <6%                                                 |
+| Firefox | 可用空间 <10%（但在存储50M数据后将提示用户进行更多存储请求） |
+| Safari  | <50MB                                                        |
+| IE10    | <250MB（并在存储10MB后提示用户）                             |
+
+##### 了解应用使用功能了多少存储空间？
+
+在chrome中，可以使用[Quota Management API ](https://www.w3.org/TR/quota-api/)查询目前使用的存储空间大小
+
+##### 缓存逐出是如何工作的？
+
+| 浏览器  | 逐出政策                          |
+| ------- | --------------------------------- |
+| Chrome  | 在 Chrome 耗尽空间后采用 LRU 策略 |
+| Firefox | 在整个磁盘已装满时采用 LRU 策略   |
+| Safari  | 无逐出                            |
+| Edge    | 无逐出                            |
+
+### 添加到主屏幕
+
+PWA提供了manifest.json配置文件，可以让开发者自定义添加至桌面时的图标、显示名称、启动方式等信息，并提供API方便开发者管理网络应用安装横幅，让用户可以方便快捷地将站点添加到主屏幕。
+
+通过配置manifest.json进行相应配置，可以实现以下功能：
+
+- 基本功能
+  - 自定义名称
+  - 自定义图标
+  - 设置启动网址
+  - 设置作用域
+- 改善应用功能体验
+  - 添加启动画面
+  - 设置显示类型
+  - 指定显示方向
+  - 设置主题色
+- 应用安装横幅
+  - 引导用户添加应用
+  - 引导用户安装原生应用
+
+##### 自定义名称
+
+- name：{string} 应用名称，用于安装横幅、启动画面显示
+- short_name: {string} 应用短名称，用于主屏幕显示
+
+> 目前如果修改了manifest.json的应用名称，已添加到主屏幕的名称并不会改变，只有当用户重新添加到桌面时，更改后的名称才会显示出来。但在未来版本的Chrome浏览器将支持名称自动更新
+
+##### 自定义图标
+
+- icons：{Array.< ImageObject >} 应用图标列表
+
+其中ImageObject的属性值包括：
+
+- src: {string} 图标url
+- type {string} 图标的mime类型，非必填项，该字段可让浏览器快速忽略掉不支持的图标类型
+- sizes {string} 图标尺寸，格式为width*height，宽高数值以css的px为单位。如果需要填写多个尺寸，则使用空格进行间隔，如“48X48 96X96 128X128”
+
+当PWA添加到主屏幕时，浏览器会根据有效图标的 sizes 字段进行选择。首先寻找与显示密度相匹配并且尺寸调整到 **48dp 屏幕密度的图标**；如果未找到任何图标，则会查找与设备特性匹配度最高的图标；如果匹配到的图标路径错误，将会显示浏览器默认 icon。
+
+> 需要注意的是
+>
+> 1. 在启动应用时，启动动画图像会从图标列表中提取最接近128dp的图标进行显示
+> 2. 当PWA添加到主屏幕时，浏览器会根据有效图标的 sizes 字段进行选择。首先寻找与显示密度相匹配并且尺寸调整到 48dp 屏幕密度的图标；如果未找到任何图标，则会查找与设备特性匹配度最高的图标；如果匹配到的图标路径错误，将会显示浏览器默认 icon。
+
+##### 设置启动网址
+
+- start_url: {string} 应用启动地址
+
+如果为空，则默认使用当前页面。如果start_url配置的相对地址，则基地址与manifest.json相同。
+
+##### 设置作用域
+
+有时仅仅对站点的某些模块进行PWA改造，其余部分还是普通的网页。因此超出范围的部分会以浏览器的方式显示。
+
+- scope：{string} 作用域
+
+scope应遵循如下规则：
+
+- 如果没有在 manifest 中设置 scope，则默认的作用域为 manifest.json 所在文件夹；
+- scope 可以设置为 `../` 或者更高层级的路径来扩大PWA的作用域；
+- `start_url` 必须在作用域范围内；
+- 如果 `start_url` 为相对地址，其根路径受 scope 所影响；
+- 如果 `start_url` 为绝对地址（以 `/` 开头），则该地址将永远以 `/` 作为根地址；
+
+##### 设置显示类型
+
+可以设置display属性去指定PWA从主屏幕点击启动后的显示类型
+
+- display {string} 显示类型
+
+显示类型：
+
+| 显示类型   | 描述                                                         | 降级显示类型 |
+| ---------- | ------------------------------------------------------------ | ------------ |
+| fullscreen | 应用的显示界面将占满整个屏幕                                 | standalone   |
+| standalone | 浏览器相关UI（如导航栏、工具栏等）将会被隐藏                 | minimal-ui   |
+| minimal-ui | 显示形式与standalone类似，浏览器相关UI会最小化为一个按钮，不同浏览器在实现上略有不同 | browser      |
+| browser    | 浏览器模式，与普通网页在浏览器中打开的显示一致               | （None）     |
+
+> CSS中可以通过display-mode媒体查询条件去指定在不同的显示类型下不同的显示形式
+
+```
+@media all and (display-mode: fullscreen) {
+    body {
+        margin: 0;
+    }
+}
+
+@media all and (display-mode: standalone) {
+    body {
+        margin: 1px;
+    }
+}
+
+@media all and (display-mode: minimal-ui) {
+    body {
+        margin: 2px;
+    }
+}
+
+@media all and (display-mode: browser) {
+    body {
+        margin: 3px;
+    }
+}
+```
+
+##### 指定页面显示方向
+
+- orientation: {string} 应用显示方向
+
+主要有几种：
+
+- landscape-primary
+- landscape-secondary
+- landscape
+- portrait-primary
+- portrait-secondary
+- portrait
+- natural
+- any
+
+##### 设置主题颜色
+
+控住浏览器UI的颜色。如PWA启动画面上状态栏、内容页中状态栏、地址栏的颜色，会被theme_color所影响
+
+- theme_color：{color} css色值
+
+> 在指定了theme_color的值之后，地址栏依然呈白色。可以在页面HTML里设置name为theme_color的meta标签
+>
+> ```
+> <meta name="theme_color" content="green">
+> ```
+>
+> 这个标签的色值会覆盖manifest.json里设置的，
+
+##### 引导用户添加应用至主屏幕
+
+浏览器在PWA站点满足以下条件时会自动显示横幅：
+
+- 站点部署manifest.json，该文件需配置如下属性：
+  - short_name
+  - name
+  - icons(必须**包含一个mime类型为image/png的图标声明**)
+  - start_url
+  - display(必须为**standalone或fullscreen**)
+- 站点注册Service Worker
+- 站点支持HTTPS访问
+- 站点在**同一浏览器中被访问至少两次**，**两次访问间隔至少为5分钟**
+
+##### 引导用户安装原生应用
+
+浏览器在PWA站点满足以下条件时会自动显示横幅：
+
+- 站点部署manifest.json，该文件需配置如下属性：
+  - short_name
+  - name
+  - icons(必须**包含一个192X192且mime类型为image/png的图标声明**)
+  - 包含原生应用相关信息的**related_applications对象**
+- 站点注册Service Worker
+- 站点支持HTTPS访问
+- 站点在**同一浏览器中被访问至少两次**，**两次访问间隔至少为2天**
+
+其中related_applications的定义如下:
+
+- related_applications: Array.< AppInfo >关联应用列表
+
+  AppInfo的属性包括
+
+  - platform：{string} 应用平台
+  - id：{string} 应用id
+
+如果只希望用户安装原生应用，不需要弹出横幅引导用户安装，可以设置："prefer_related_applications": true
+
+### 网络推送通知
+
+即使浏览器关闭的情况下，网络推送通知也可以像原生APP那样进行消息推送，并将推送的消息显示在通知栏里。
