@@ -489,3 +489,41 @@ scope应遵循如下规则：
 ### 网络推送通知
 
 即使浏览器关闭的情况下，网络推送通知也可以像原生APP那样进行消息推送，并将推送的消息显示在通知栏里。
+
+
+
+### 疑惑
+
+1. 内容发生改变时，重新注册安装的最佳方案？
+
+2. App shell 和 skeleton最佳实践？
+
+3. Workbox 参数swSrc、globDirectory、staticFileGlobs、swDest作用？
+
+   > swSrc：模板的路径
+   >
+   > swDest：输出service-worker.js的路径
+   >
+   > globDirectory、staticFileGlobs决定需要缓存的静态文件，这两个参数存在默认值。插件会从compilation参数中获取开发者在webpack配置的output.path作为globDirectory的默认值，staticFileGlobs的默认设置是html，js，css文件，如果需要缓存一些界面必须的图片，这个地方需要自己配置
+
+4. ```
+   navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+           reg.onupdatefound = function() {
+               var installingWorker = reg.installing;
+               installingWorker.onstatechange = function() {
+                   switch (installingWorker.state) {
+                       case 'installed':
+                           if (navigator.serviceWorker.controller) {
+                               var event = document.createEvent('Event');
+                               event.initEvent('sw.update', true, true);
+                               window.dispatchEvent(event);
+                           }
+                           break;
+                   }
+               };
+           };
+   其中 reg.onupdatefound/reg.installing/reg.installing.onstatechange的理解
+   service-worker事件理解
+   ```
+
+5. 
