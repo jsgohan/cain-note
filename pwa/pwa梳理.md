@@ -496,17 +496,45 @@ scope应遵循如下规则：
 
 1. 内容发生改变时，重新注册安装的最佳方案？
 
-2. App shell 和 skeleton最佳实践？
+2. sw.update 事件理解？
 
-3. Workbox 参数swSrc、globDirectory、staticFileGlobs、swDest作用？
+3. App shell 和 skeleton最佳实践？
 
-   > swSrc：模板的路径
+4. Workbox 参数swSrc、globDirectory、staticFileGlobs、swDest作用？
+
+   > **swSrc**：模板的路径
    >
-   > swDest：输出service-worker.js的路径
+   > **swPath**：修改该配置可以指定service-worker.js的scope
+   >
+   > **swDest**：输出service-worker.js的路径
    >
    > globDirectory、staticFileGlobs决定需要缓存的静态文件，这两个参数存在默认值。插件会从compilation参数中获取开发者在webpack配置的output.path作为globDirectory的默认值，staticFileGlobs的默认设置是html，js，css文件，如果需要缓存一些界面必须的图片，这个地方需要自己配置
+   >
+   > **globDirectory** 指定需要预缓存的静态文件的目录
+   >
+   > **globPatterns** 相对于globDirectory指定的目录，指出哪些文件需要被预缓存。
+   >
+   > **globIgnores** 相对于globDirectory指定的目录，指出哪些文件不需要被预缓存
+   >
+   > **dontCacheBustUrlsMatching**  workbox会将符合上述glob开头的三个配置项条件的所有静态文件逐个生成一个版本号（称为revision）存入缓存，后续再面对同名文件时比较缓存中的版本号决定是否更新。可以通过这个参数的正则匹配，匹配成功的会过滤掉不在workbox中生成版本号，省略了生成和比较的过程提升构建速度。
+   >
+   > **以上参数都是workbox中的参数**
+   >
+   > 配置中globIgnores要配sw-register.js和** . *map。不能缓存sw-register，否则无法更新sw
+   >
+   > 另外，workbox返回生成的service-worker.js后，sw-register-webpack-plugin会通过sw-register.js的模板在路径后加上hash值，保证不会读浏览器的缓存。
+   >
+   > 插入在index.html中的引入sw-register.js的也要加上hash值，保证不会读缓存。
+   >
+   > **service-worker.js中WorkboxSW的配置项**：
+   >
+   > - cacheId：指定应用的缓存ID，会影响到缓存的名称。WorkBox还会将域名加载缓存ID中共同作为缓存名称，重名的几率会比较小
+   > - ignoreUrlParametersMatching：指名什么样的请求参数应该被忽略。Service Worker的静态文件缓存会根据请求URL进行匹配。只要请求URL不同则认为是不同的资源。
+   > - skipWaiting：在Service Worker的install阶段完成后无需等待，立即激活（activate）等同于self.skipWaiting()
+   > - clientsClaim：activate阶段让所有没被控制的页面控制。等同于self.clients.claim()
+   > - 同时使用skipWaiting和clientsClaim可以让Service Worker在下载完成后立即生效
 
-4. ```
+5. ```
    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
            reg.onupdatefound = function() {
                var installingWorker = reg.installing;
@@ -526,4 +554,4 @@ scope应遵循如下规则：
    service-worker事件理解
    ```
 
-5. 
+6. 
