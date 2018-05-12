@@ -505,6 +505,17 @@ scope应遵循如下规则：
 2. sw.update 事件理解？
 
    > 注册的sw.update事件是在/components/UpdateToast.vue组件进行监听，并在更新时弹出提示，引导用户刷新页面。
+   >
+   > ```
+   > mounted() {
+   >         window.addEventListener('sw.update', this.handleUpdate);
+   >     },
+   >     beforeDestroy() {
+   >         window.removeEventListener('sw.update', this.handleUpdate);
+   >     },
+   >     
+   > // UpdateToast.vue做监听，若事件发生，则执行handleUpdate方法
+   > ```
 
 3. App shell 和 skeleton最佳实践？
 
