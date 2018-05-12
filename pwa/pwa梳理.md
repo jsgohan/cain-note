@@ -494,9 +494,17 @@ scope应遵循如下规则：
 
 ### 疑惑
 
-1. 内容发生改变时，重新注册安装的最佳方案？
+1. 内容发生改变时，重新注册安装即Service Worker更新的最佳方案？
+
+   为了最大化利用浏览器缓存service-worker.js，但又保证一旦项目更新时浏览器能够及时更新：
+
+   - 将注册代码单独放置在sw-register.js中
+   - 将sw-register.js中实际注册service-worker.js的部分，在后面添加？v=xxx，取值为编译时间。
+   - 在HTML引用sw-register.js，同样在后面添加？v=xxx，但这里取值为当前时间，因为每次请求都在变化，避免浏览器对sw-register.js进行缓存。
 
 2. sw.update 事件理解？
+
+   > 注册的sw.update事件是在/components/UpdateToast.vue组件进行监听，并在更新时弹出提示，引导用户刷新页面。
 
 3. App shell 和 skeleton最佳实践？
 
@@ -533,6 +541,143 @@ scope应遵循如下规则：
    > - skipWaiting：在Service Worker的install阶段完成后无需等待，立即激活（activate）等同于self.skipWaiting()
    > - clientsClaim：activate阶段让所有没被控制的页面控制。等同于self.clients.claim()
    > - 同时使用skipWaiting和clientsClaim可以让Service Worker在下载完成后立即生效
+   >
+   > **strategies**
+   >
+   > ```
+   > // JS 请求：网络优先
+   > workbox.routing.registerRoute(
+   > 	new RegExp('.*\ .js'),
+   > 	workbox.strategies.networkFirst({
+   > 		cacheName: 'workbox:js',
+   > 	})
+   > );
+   > // css 请求：缓存优先，同时后台更新后下次打开页面才会被页面使用
+   > workbox.routing.registerRoute(
+   > 	// cache css files
+   > 	/.*\ .css/,
+   > 	workbox.strategies.staleWhileRevalidate({
+   >         cacheName: 'workbox:css'
+   > 	})
+   > );
+   > // 图片请求：缓存优先
+   > workbox.routing.registerRoute(
+   > 	/.*\ .(?:png|jpg|jpeg|svg|gif)/,
+   > 	workbox.strategies.cacheFirst({
+   >         cacheName: 'workbox:image',
+   >         plugins: [
+   >             new workbox.expiration.plugin({
+   >                 maxEntries: 20,
+   >                 maxAgeSeconds: 7*24*60*60
+   >             })
+   >         ]
+   > 	})
+   > )
+   > // demo页
+   > <html>
+   > <head>
+   >   <link rel="stylesheet" href="./css/style.css">
+   > </head>
+   > <body>
+   >   <h1>Workbox Get Started</h1>
+   >   <img src="./images/google.local.png" alt="同域的文件">
+   >   <script src="./js/index.js"></script>
+   > </body>
+   > </html>
+   > ```
+   >
+   > 第一次访问时的效果：
+   >
+   > ![gs1](gs1.png)
+   >
+   > fetch事件无法在这次访问被捕获
+   >
+   > 刷新页面的效果：
+   >
+   > ![gs2](gs2.png)
+   >
+   > - 全部的css、png、js文件均被ServiceWorker拦截
+   > - workbox-core在拦截后重新发起了fetch请求并返回页面，fetch后服务端**返回304依然使用浏览器本地缓存策略**
+   > - 上述命中规则的请求都被缓存到cache storage中
+   >
+   > 更新css、js和png的内容，然后重新访问页面：
+   >
+   > ![gs4](gs4.png)
+   >
+   > - 由于png是cache first，所以直接从service worker的cache返回，没有真正的网络请求发出
+   > - js是network first，会产生fetch，且运行成功
+   > - css虽然同样fetch了新的内容，但页面并没有生效，用的还是上次的cache（但新的文件内容已经放到cache storage中）
+   >
+   > 不做修改，再刷新页面：
+   >
+   > ![gs5](gs5.png)
+   >
+   > - 新的css生效
+   > - **css、js请求返回304，使用浏览器缓存**
+   >
+   > **离线功能**
+   >
+   > 要做到能够完全离线，要让主文档也能被缓存下来
+   >
+   > ```
+   > // 主文档: 网络优先
+   > workbox.routing.registerRoute(
+   >   /index\.html/,
+   >   workbox.strategies.networkFirst({
+   >     cacheName: 'workbox:html',
+   >   })
+   > );
+   > ```
+   >
+   > 缓存成功后，即便断网，页面依旧可以访问及使用：
+   >
+   > ![ol1](ol1.png)
+   >
+   > **跨域请求**
+   >
+   > 当请求是**跨域资源（不仅限于接口，也包括图片等）**并且目标服务器并**没有设置CORS**时，响应类型会被设置为‘**opaque**’并且HTTP**状态码会被设置为0**.出于安全考虑，workbox对于这类资源的信任度不高，在使用**CacheFirst策略时只缓存HTTP状态码为200的资源**。所以这类资源不会被缓存，当然在离线时也无法被展现
+   >
+   > ```
+   > <div>
+   >   <p>不同域的文件</p>
+   >   <p><img src="https://developers.google.com/web/tools/workbox/images/Workbox-Logo-Grey.svg" alt="不同域的文件"></p>
+   > 
+   >   <p>不同域的文件 且 <code>access-control-allow-origin: *</code></p>
+   >   <img src="https://unpkg.com/resize-image@0.0.4/example/google.png" alt="不同域的文件 且 allow cross origin">
+   > </div>
+   > <!-- 不同域的js 且 access-control-allow-origin: * -->
+   > <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+   > ```
+   >
+   > Workbox可以用**networkFirst**和**staleWhileRevalidate**两种策略**Cache跨域资源**，而**cacheFirst**完全**不行**。**原因是Fetch跨域的请求是无法知道该请求是否成功，因此cacheFirst则有可能缓存下失败的请求，并从此以后都会接管页面的这个请求导致页面错误。**而networkFirst和staleWhileRevalidate是有更新机制，即使错了下次修复了就好了。cacheFirst例子即使**开启offline**也能浏览到页面是因为html是同域的，而**跨域资源有浏览器缓存**。如果同时开启**disable cache**就**无法看到相关跨域的静态资源**了
+   >
+   > 但如果执意要用cacheFirst缓存跨域资源，(cacheableResponse.Plugin)[https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox.cacheableResponse.Plugin]
+   >
+   > ```
+   > // Force Caching of Opaque Responses
+   > workbox.routing.registerRoute(
+   >   new RegExp('https://developers\.google\.com/'),
+   >   workbox.strategies.cacheFirst({
+   >     cacheName: `${CACHE_NAME}:cache-first`,
+   >     plugins: [
+   >       // Force Cache
+   >       new workbox.cacheableResponse.Plugin({
+   >         statuses: [0, 200], // One or more status codes that a Response can have and be considered cacheable.这里允许状态码为0的抢矿也缓存，可以解决跨域不缓存的问题
+   >       }),
+   >     ]
+   >   }),
+   > );
+   > ```
+   >
+   > 此时就可以看到https://developers.google.com/域名下的资源也缓存了：
+   >
+   > ![co1](co1.png)
+   >
+   > **不难看出**，以上的routing需要**第三次访问才能真正从cache中将缓存返回（或者支持离线）**。如果要提前至第二次，那么就要使用precache，使用precache后，会在第一次就将资源全部cache下来了。
+   >
+   > **动态缓存的注册顺序**
+   >
+   > workbox的内部使用一个数组记录所有动态缓存的正则表达式。在开发者使用registerRoute时，内部调用数组的unshift方法进行扩充。因此，结论是 **越后注册的规则将越先匹配**
 
 5. ```
    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
@@ -552,6 +697,7 @@ scope应遵循如下规则：
            };
    其中 reg.onupdatefound/reg.installing/reg.installing.onstatechange的理解
    service-worker事件理解
+   这里注册的sw.update事件是在/components/UpdateToast.vue组件进行监听，并在更新时弹出提示，引导用户刷新页面。
    ```
 
 6. 
