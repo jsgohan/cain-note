@@ -519,6 +519,63 @@ scope应遵循如下规则：
 
 3. App shell 和 skeleton最佳实践？
 
+   在spa中，使用skeleton：
+
+   - 在webpack中引入插件
+
+     ```
+     //webpack.conf.js
+     import SkeletonWebpackPlugin from 'vue-skeleton-webpack-plugin';
+     plugins: [
+         new SkeletonWebpackPlugin({
+             webpackConfig: require('./webpack.skeleton.conf')
+         })
+     ]
+     
+     参数说明：
+     webpackConfig必填，渲染skeleton的webpack配置对象
+     insertAfter选填，渲染DOM结果插入位置，默认值为'<div id="app">'
+     quiet选填，在服务端渲染时是否需要输出信息到控制台
+     router选填，SPA下配置各个路由路径对应的Skeleton
+       -mode 选填路由模式，两个有效值history|hash
+       -routes 选填路由数组，其中每个路由对象包含两个属性：
+       	-path路由路径
+       	-skeletonId Skeleton DOM的id
+     minimize选填，SPA下是否需要压缩注入HTML的JS代码
+     ```
+
+   - 自动插入路由规则
+
+     ```
+     // webpack.dev.conf.js
+     import SkeletonWebpackPlugin from 'vue-skeleton-webpack-plugin';
+     module: {
+         rules: [
+             SkeletonWebpackPlugin.loader({
+                 resource: resolve('src/entry.js'),
+                 options: {
+                     entry: 'skeleton',
+                     routePathTemplate: '/skeleton',
+                     importTmplate: 'import Skeleton from \'./Skeleton.vue\';'
+                 }
+             })
+         ]
+     }
+     参数：
+     1.webpack模块规则，skeleton对应的路由将被插入路由文件中，需要指定一个或多个路由文件，使用resource/include/test都可以指定loader应用的文件
+     2.options将被传入loader中的参数对象，包含以下属性：
+     	entry必填，支持字符串和数组类型，对应页面入口的名称
+     	importTemplate选填，引入skeleton组件的表达式，默认值为'import [nameCap] from \'@/pages/[nameCap].vue\';'
+     	routePathTemplate选填，默认值为'/skeleton-[name]'
+     	insertAfter选填，路由插入位置，默认值为'routes: ['
+     importTemplate和routePathTemplate中使用占位符：
+     	[name]和entry一致
+     	[nameCap]和entry首字母大写一致
+     	[nameHash]和entry名称生成的Hash一致
+     ```
+
+   
+
 4. Workbox 参数swSrc、globDirectory、staticFileGlobs、swDest作用？
 
    > **swSrc**：模板的路径
