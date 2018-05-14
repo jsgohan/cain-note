@@ -574,7 +574,25 @@ scope应遵循如下规则：
      	[nameHash]和entry名称生成的Hash一致
      ```
 
-   
+   在ssr中，使用appShell：
+
+   注意点：
+
+   - 当修改完代码传到服务器上后，需要重启服务器，原因可能是因为缓存，虽然service-worker.js更新了js和css，但是第一次的服务端渲染的请求/appshell如果不重启服务器，会取上一次的cache，导致报内部的js、css找不到文件，接下来将这些错误的信息缓存到了service-worker中，就会一直报错。
+
+   - 当使用了appshell以后，只有第一次会服务端渲染获取appshell的值。第二次请求后，取得是缓存中的appshell，通过body标签中的data-vue-meta="empty-appshell"做标识，存在这个标识，代表从缓存中读取，接下来的页面跳转就是和spa一样，前端获取数据渲染
+
+   - lavas脚手架 在ssr:true有错，appshell加载完成后没有mount。原因是**异步加载了css，此时要把asyncCSS设置为false**；但在**skeleton时，应该使用true，让skeleton更早的出现，减少白屏时间**（修改lavas-config.js中的配置）
+
+     ```
+     // lavas.config.js
+     // spa 用true，ssr用false
+     cssExtract: false,
+     ```
+
+   - 在研究appshell时，产生了对ssr的原理理解思考？
+
+     ssr实际上在第一次刷新整个url时，就把完整的html和js返回到前端做混合，后面做跳转实际是router局部刷新。这个非常重要
 
 4. Workbox 参数swSrc、globDirectory、staticFileGlobs、swDest作用？
 
