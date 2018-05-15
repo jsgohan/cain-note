@@ -786,4 +786,157 @@ scope应遵循如下规则：
    这里注册的sw.update事件是在/components/UpdateToast.vue组件进行监听，并在更新时弹出提示，引导用户刷新页面。
    ```
 
-6. 
+### IOS pwa
+
+ios11版本已经全面兼容pwa，研究研究~
+
+#### 配置index.html文件
+
+配置app的挑战在于理解ios和android的metas标签和web app manifest的不同，先要理解每个配置的作用。
+
+糟糕的是，对于ios，要创建大量的标签适配各种屏幕和想要的方向，否则用户将会在你启动的app中看到白屏。
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- The usual suspects -->
+  <meta charset="utf-8">
+  <meta name="description"
+        content="My app is awesome because...">
+  <title>My awesome app</title>
+  <link rel="shortcut icon"
+        href="%PUBLIC_URL%/favicon.ico">
+  
+  <!-- Use viewport-fit=cover to fill the iPhone X notch and also prevent content going under the status bar (if it's translucent) -->
+  <!-- More info: https://css-tricks.com/the-notch-and-css/ -->
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+  <!-- More PWA settings are in the manifest: https://gist.github.com/sconstantinides/8181934ecf82acde62589bac379f6676 -->
+  <link rel="manifest"
+        href="%PUBLIC_URL%/manifest.json">
+  
+  <!-- Android: Define the nav bar color -->
+  <!-- More info: https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#color_browser_elements -->
+  <meta name="theme-color"
+        content="#32324B">
+  
+  <!-- iOS specific styles -->
+  
+  <meta name="apple-mobile-web-app-capable"
+        content="yes">
+  
+  <!-- Possible values include default, black, or black-translucent; only black-translucent is truly full screen -->
+  <!-- More info: https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html -->
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+  
+  <!-- Home screen icon -->
+  <link rel="apple-touch-icon"
+        href="%PUBLIC_URL%/images/appIcon.png">
+
+  <!-- iOS startup images -->
+  <!-- More info and Sketch template: https://medium.com/@applification/progressive-web-app-splash-screens-80340b45d210 -->
+  
+  <!-- iPhone SE -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-640x1136.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-640x1136-landscape.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  
+  <!-- iPhone 6/7/8 -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-750x1294.png"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-750x1294-landscape.png"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  
+  <!-- iPhone 6+/7+/8+ -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1242x2148.png"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1242x2148-landscape.png"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  
+  <!-- iPhone X -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1125x2436.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1125x2436-landscape.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  
+  <!-- iPad 3/4/Pro 9.7" -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1536x2048.png"
+        media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1536x2048-landscape.png"
+        media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)">
+  
+  <!-- iPad Pro 10.5" -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1668x2224.png"
+        media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-1668x2224-landscape.png"
+        media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)">
+  
+  <!-- iPad Pro 12.9" -->
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-2048x2732.png"
+        media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image"
+        href="%PUBLIC_URL%/images/launch-2048x2732-landscape.png"
+        media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape)">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
+```
+
+#### 设计一致性
+
+可以在安装的pwas中使用css media queries
+
+```
+/* Replace "standalone" with "fullscreen" depending on your manifest.json display mode */
+
+@media (display-mode: standalone) {
+  /* All installed PWAs */
+}
+
+@media (max-width: 576px) and (display-mode: standalone) {
+  /* Installed PWAs on mobile devices */
+  
+  @supports (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile Apple devices */
+  }
+  
+  @supports not (-webkit-overflow-scrolling: touch) {
+    /* Installed PWAs on mobile non-Apple devices */
+  }
+}
+```
+
+切换不同可视pwas的javascript
+
+```
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  // Is installed in standalone display mode
+}
+
+if (window.matchMedia('(display-mode: fullscreen)').matches) {
+  // Is installed in fullscreen display mode
+}
+```
+
