@@ -4,3 +4,10 @@
 >
 > 认真阅读，干货还是不少的~
 
+
+
+## study notes
+
+> This project recorded my knowledge from 2017.03-present. Relatively fragmented, mainly because I was previously java development, to the front-end development, leading to a mess of learning trajectory route.
+>
+> Serious reading, dry goods or a lot of ~
